@@ -1,0 +1,113 @@
+<resources>
+    <string name="app_name">Nilkamal Poultry</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="openDrawer">open_drawer</string>
+    <string name="closeDrawer">close_drawer</string>
+
+    <!-- Navigation Drawer menu labels -->
+    <string name="nav_home">Home</string>
+    <string name="nav_profile">Profile</string>
+    <string name="nav_location">Edit Location</string>
+    <string name="nav_school">About School</string>
+    <string name="nav_settings">Settings</string>
+    <string name="nav_contact">Contact Us</string>
+
+
+    <!-- Toolbar titles when navigation menu item is selected -->
+    <string name="activity_title_about_us">About Us</string>
+
+    <string name="activity_title_privacy_policy">Privacy Policy</string>
+    <string name="action_clear_all">Clear All</string>
+    <string name="action_logout">Logout</string>
+    <string name="action_mark_all_read">Mark All as Read</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="activity_image_trans">activity_image_transition</string>
+
+    <string name="activity_text_trans">activity_text_transition</string>
+    <string name="activity_mixed_trans">activity_mixed_transition</string>
+    <string name="fragment_image_trans">fragment_image_transition</string>
+    <string name="image_default__image">Default Image</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="success">SUCCESS</string>
+
+    <string name="confirm">CONFIRM</string>
+    <string name="info">INFO</string>
+    <string name="error">ERROR</string>
+    <string name="warning">WARNING</string>
+    <string name="version_update">Version Update</string>
+    <string name="update">Update</string>
+    <string name="error_message__select_location">Please select location.!</string>
+
+    <string name="notification__alert">Alert</string>
+    <string name="message__register_success">Successfully Register.</string>
+    <string name="message__loading">Loading…</string>
+    <string name="message__please_wait">Please wait…</string>
+    <string name="message__welcome">सुस्वागतम...</string>
+    <string name="message__want_to_quit">आपणास अॅप बंद करावयाचे आहे काय?</string>
+    <string name="message__ok_close">अोके</string>
+    <!-- Message -->
+    <string name="message__cancel_close">कॅन्सल</string>
+    <string name="file_provider_authority" translatable="false">com.atharvainfo.leader.fileprovider</string>
+
+    <!-- App General -->
+    <string name="app__ok">OK</string>
+    <string name="app__cancel">Cancel</string>
+    <string name="app__drawer_open">Drawer Open</string>
+    <string name="app__drawer_close">Drawer Close</string>
+    <string name="no_internet_error">प्रथम इंटरनेट कनेक्शन चालु करा.</string>
+
+    <!--Warning-->
+    <string name="notification_detail__title">Notification Detail</string>
+
+    <string name="aboutus">Nilkamal Poultry was established by Mr. Eknath C. Mungase in 2003. Today, the Nilkamal Poultry Group is one of the largest poultry producers in India. Through an unwavering commitment towards quality, excellence and strategic integration, we have built a diverse portfolio of operations that include Broiler Contract Farming, Layer Pullet Brooding &amp; Growing, Feed production, poultry processing and large-scale mechanised farming.</string>
+    <string-array name="menuname">
+        <item>About Campus</item>
+        <item>Academic Info</item>
+        <item>Attendance</item>
+        <item>Message</item>
+        <item>Fees</item>
+        <item>Assignment</item>
+        <item>Events</item>
+        <item>Notification</item>
+        <item>Home Work</item>
+        <item>Photo Gallary</item>
+        <item>Video Gallary</item>
+        <item>Transportation</item>
+        <item>Settings</item>
+        <item>Awards</item>
+        <item>Science &amp; Technology</item>
+    </string-array>
+
+    <string-array name="adminmenuname">
+        <item>Class</item>
+        <item>Fee Management</item>
+        <item>Accounts</item>
+        <item>Students</item>
+        <item>Subject</item>
+        <item>Staff</item>
+        <item>Events</item>
+        <item>Notification</item>
+        <item>Home Work</item>
+        <item>Photo Gallary</item>
+        <item>Video Gallary</item>
+        <item>Transportation</item>
+        <item>Settings</item>
+        <item>Awards</item>
+        <item>Science &amp; Technology</item>
+    </string-array>
+    <string-array name="nav_item_activity_titles">
+        <item>Home</item>
+        <item>संपुर्ण मतदार यादी</item>
+        <item>युवा मतदार यादी</item>
+        <item>प्रौढ मतदार यादी</item>
+        <item>जेष्ठ मतदार यादी</item>
+        <item>महीला मतदार यादी</item>
+        <item>मतदार यादी दुरूस्ती</item>
+        <item>संपर्क झालेले मतदार</item>
+        <item>संपर्क न झालेले मतदार</item>
+        <item>मतदान</item>
+    </string-array>
+</resources>
