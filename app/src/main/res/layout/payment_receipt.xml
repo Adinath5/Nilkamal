@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scrolview1"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:configChanges="orientation|screenSize"
+    android:background="@color/md_white_1000">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/md_white_1000">
+
+        <TextView
+            android:id="@+id/txtmessage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+
+            android:layout_marginTop="13dp"
+            android:background="#d4d4d4"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="Payment Receipt"
+            android:textColor="#FF00FF"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/txtmessage"
+            android:text="NEW ENTRY"
+            android:fontFamily="serif"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="17sp"
+            android:textStyle="bold"  />
+        <TextView
+            android:id="@+id/txtvoucherno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/description"
+            android:text="Voucher No:-"
+            android:fontFamily="serif"
+            android:textColor="#25383C"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginStart="10dp" />
+
+        <TextView
+            android:id="@+id/voucherno"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/txtvoucherno"
+            android:layout_marginStart="20dp"
+            android:textSize="15sp"
+            android:background="@drawable/shape"
+
+            android:layout_toEndOf="@+id/txtvoucherno"
+
+            android:singleLine="true"
+
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/txtvoucherno" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/txtvoucherno"
+            android:text="Date:-"
+            android:fontFamily="serif"
+            android:textColor="#25383C"
+            android:textSize="15sp"
+            android:textStyle="bold"  />
+
+        <TextView
+            android:id="@+id/datechoice3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/date"
+            android:layout_marginStart="10dp"
+            android:textSize="15sp"
+            android:layout_toEndOf="@+id/date"
+            android:hint="Choose Date"
+            android:inputType="date"
+            android:maxLength="12"
+            android:singleLine="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/date" />
+
+        <TextView
+            android:id="@+id/txtledger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/date"
+            android:text="Ledger Name:-"
+            android:fontFamily="serif"
+            android:textColor="#25383C"
+            android:textSize="15sp"
+            android:textStyle="bold"  />
+        <Spinner
+            android:id="@+id/ledger"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="12dp"
+            android:layout_below="@+id/datechoice3"
+            android:layout_toEndOf="@+id/txtledger"
+            android:fontFamily="serif"
+            android:prompt="@string/spinner_title"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_toRightOf="@+id/txtledger" />
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/txtledger"
+            android:text="Address:-"
+            android:fontFamily="serif"
+            android:textColor="#25383C"
+            android:textSize="15sp"
+            android:textStyle="bold"  />
+        <EditText
+            android:id="@+id/edtaddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/address"
+            android:layout_marginStart="10dp"
+            android:textSize="15sp"
+
+            android:layout_toEndOf="@+id/address"
+
+            android:inputType="text"
+
+            android:singleLine="true"
+
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/address" />
+
+        <TextView
+            android:id="@+id/txtamount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/address"
+            android:text="Amount:-"
+            android:fontFamily="serif"
+            android:textColor="#25383C"
+            android:textSize="15sp"
+            android:textStyle="bold"  />
+
+        <EditText
+            android:id="@+id/amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/txtamount"
+            android:layout_marginStart="10dp"
+            android:textSize="15sp"
+
+            android:layout_toEndOf="@+id/txtamount"
+
+            android:singleLine="true"
+
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/address" />
+
+        <TextView
+            android:id="@+id/txtchequeno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/txtamount"
+            android:text="Cheque/Receipt No:-"
+            android:fontFamily="serif"
+            android:textColor="#25383C"
+            android:textSize="15sp"
+            android:textStyle="bold"  />
+
+        <EditText
+            android:id="@+id/chequeno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/txtchequeno"
+            android:layout_marginStart="10dp"
+            android:textSize="15sp"
+
+            android:layout_toEndOf="@+id/txtchequeno"
+
+            android:singleLine="true"
+
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/txtchequeno" />
+
+        <TextView
+            android:id="@+id/txtbankname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/txtchequeno"
+            android:text="Bank Name:-"
+            android:fontFamily="serif"
+            android:textColor="#25383C"
+            android:textSize="15sp"
+            android:textStyle="bold"  />
+
+        <EditText
+            android:id="@+id/bankname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/txtbankname"
+            android:layout_marginStart="10dp"
+            android:textSize="15sp"
+
+            android:layout_toEndOf="@+id/txtbankname"
+
+            android:singleLine="true"
+
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/txtbankname" />
+        <TextView
+            android:id="@+id/date1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/txtbankname"
+            android:text="Cheque Date:-"
+            android:fontFamily="serif"
+            android:textColor="#25383C"
+            android:textSize="15sp"
+            android:textStyle="bold"  />
+
+        <TextView
+            android:id="@+id/datechoice4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/date1"
+            android:layout_marginStart="10dp"
+            android:textSize="15sp"
+            android:layout_toEndOf="@+id/date1"
+            android:hint="Choose Date"
+            android:inputType="date"
+            android:maxLength="12"
+            android:singleLine="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/date1" />
+
+        <TextView
+            android:id="@+id/txtscheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/date1"
+            android:text="Under Scheme:-"
+            android:fontFamily="serif"
+            android:textColor="#25383C"
+            android:textSize="15sp"
+            android:textStyle="bold"  />
+        <Spinner
+            android:id="@+id/scheme"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="12dp"
+            android:layout_below="@+id/datechoice4"
+            android:layout_toEndOf="@+id/txtscheme"
+            android:fontFamily="serif"
+            android:prompt="@string/spinner_title"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_toRightOf="@+id/txtscheme" />
+
+        <TextView
+            android:id="@+id/txtnarration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/txtscheme"
+            android:text="Narration:-"
+            android:fontFamily="serif"
+            android:textColor="#25383C"
+            android:textSize="15sp"
+            android:textStyle="bold"  />
+
+        <EditText
+            android:id="@+id/narration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/txtnarration"
+            android:layout_marginStart="10dp"
+            android:textSize="15sp"
+
+            android:layout_toEndOf="@+id/txtnarration"
+
+            android:singleLine="true"
+
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/txtnarration" />
+
+
+    </RelativeLayout>
+</ScrollView>

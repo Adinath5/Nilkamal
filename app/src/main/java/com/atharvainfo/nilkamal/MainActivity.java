@@ -239,7 +239,7 @@ public class MainActivity extends AppCompatActivity {
     private Fragment getHomeFragment() {
         switch (navItemIndex) {
             case 0:
-                HomeFragment homeFragment = new HomeFragment();
+               SupervisorHomeFragment homeFragment = new SupervisorHomeFragment();
                 return homeFragment;
             /*case 1:
                 VoterListFragment voterListFragment = new VoterListFragment();
@@ -270,7 +270,7 @@ public class MainActivity extends AppCompatActivity {
                 return votingFragment;*/
 
             default:
-                return new HomeFragment();
+                return new SupervisorHomeFragment();
         }
     }
 

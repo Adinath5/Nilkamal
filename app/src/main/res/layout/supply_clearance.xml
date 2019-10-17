@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scrolview1"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:configChanges="orientation|screenSize"
+    android:background="@color/md_white_1000">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtmessage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+
+            android:layout_marginTop="13dp"
+            android:background="#d4d4d4"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="Supply Clearance"
+            android:textColor="#FF00FF"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/txtfarmname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/txtmessage"
+            android:text="Farm Name:-"
+            android:fontFamily="serif"
+            android:textColor="#25383C"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginStart="10dp" />
+        <Spinner
+            android:id="@+id/farmname"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+           android:layout_marginTop="50dp"
+            android:layout_toEndOf="@+id/txtfarmname"
+            android:fontFamily="serif"
+            android:prompt="@string/spinner_title"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_toRightOf="@+id/txtfarmname" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/txtfarmname"
+            android:text="Date:-"
+            android:fontFamily="serif"
+            android:textColor="#25383C"
+            android:textSize="15sp"
+            android:textStyle="bold"  />
+
+        <TextView
+            android:id="@+id/datechoice3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/date"
+            android:layout_marginStart="10dp"
+            android:textSize="15sp"
+            android:layout_toEndOf="@+id/date"
+            android:hint="Choose Date"
+            android:inputType="date"
+            android:maxLength="12"
+            android:singleLine="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/date" />
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/date"
+            android:text="Address:-"
+            android:fontFamily="serif"
+            android:textColor="#25383C"
+            android:textSize="15sp"
+            android:textStyle="bold"  />
+
+        <EditText
+            android:id="@+id/income"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/address"
+            android:layout_marginStart="10dp"
+            android:textSize="15sp"
+
+            android:layout_toEndOf="@+id/address"
+
+            android:inputType="text"
+
+            android:singleLine="true"
+
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/address" />
+        <TextView
+            android:id="@+id/txtbatchno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/address"
+            android:text="Last Batch No:-"
+            android:fontFamily="serif"
+            android:textColor="#25383C"
+            android:textSize="15sp"
+            android:textStyle="bold"  />
+        <EditText
+            android:id="@+id/lastbatchno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/txtbatchno"
+            android:layout_marginStart="10dp"
+            android:textSize="15sp"
+            android:layout_toEndOf="@+id/txtbatchno"
+            android:singleLine="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/txtbatchno" />
+        <TextView
+            android:id="@+id/txtaggrementfrom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/txtbatchno"
+            android:text="Aggrement Date From:-"
+            android:fontFamily="serif"
+            android:textColor="#25383C"
+            android:textSize="15sp"
+            android:textStyle="bold"  />
+        <EditText
+            android:id="@+id/aggrementdatefrom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/txtaggrementfrom"
+            android:layout_marginStart="10dp"
+            android:textSize="15sp"
+            android:layout_toEndOf="@+id/txtaggrementfrom"
+            android:singleLine="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/txtaggrementfrom" />
+
+        <TextView
+            android:id="@+id/txtaggrementto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/txtaggrementfrom"
+            android:text="Aggrement Date To:-"
+            android:fontFamily="serif"
+            android:textColor="#25383C"
+            android:textSize="15sp"
+            android:textStyle="bold"  />
+
+        <EditText
+            android:id="@+id/aggrementdateto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/txtaggrementto"
+            android:layout_marginStart="10dp"
+            android:textSize="15sp"
+            android:layout_toEndOf="@+id/txtaggrementto"
+            android:singleLine="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/txtaggrementto" />
+
+        <TextView
+            android:id="@+id/txtbatchcapacity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtaggrementto"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="serif"
+            android:text="Batch Capacity:-"
+            android:textColor="#25383C"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/batchcapacity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/txtbatchcapacity"
+            android:layout_marginStart="10dp"
+            android:textSize="15sp"
+            android:layout_toEndOf="@+id/txtbatchcapacity"
+            android:singleLine="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/txtbatchcapacity" />
+
+        <TextView
+            android:id="@+id/txtsupervisorname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/txtbatchcapacity"
+            android:text="Supervisor Name:-"
+            android:fontFamily="serif"
+            android:textColor="#25383C"
+            android:textSize="15sp"
+            android:textStyle="bold"  />
+        <EditText
+            android:id="@+id/supervisorname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/txtsupervisorname"
+            android:layout_marginStart="10dp"
+            android:textSize="15sp"
+            android:layout_toEndOf="@+id/txtsupervisorname"
+            android:singleLine="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/txtsupervisorname" />
+
+        <TextView
+            android:id="@+id/txtnewbatchno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/txtsupervisorname"
+            android:text="New Batch No:-"
+            android:fontFamily="serif"
+            android:textColor="#25383C"
+            android:textSize="15sp"
+            android:textStyle="bold"  />
+        <EditText
+            android:id="@+id/newbatchno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/txtnewbatchno"
+            android:layout_marginStart="10dp"
+            android:textSize="15sp"
+            android:layout_toEndOf="@+id/txtnewbatchno"
+            android:singleLine="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/txtnewbatchno" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/txtnewbatchno"
+            android:text="Description"
+            android:fontFamily="serif"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="17sp"
+            android:textStyle="bold"  />
+
+        <TextView
+            android:id="@+id/days"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="240dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/newbatchno"
+            android:layout_toEndOf="@+id/description"
+            android:text="Days"
+            android:fontFamily="serif"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:layout_toRightOf="@+id/description" />
+
+        <CheckBox
+            android:id="@+id/simpleCheckBox1"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:text="Removing Manure Out"
+            android:textColor="#25383C"
+            android:textSize="16sp"
+            android:checked="false"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/description"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/simpleCheckBox1"
+            android:layout_toRightOf="@+id/simpleCheckBox1"
+            android:layout_below="@+id/days"
+            android:textColor="#25383C"
+            android:textSize="16sp"
+            android:text="10 Days"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+        android:id="@+id/duedate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_below="@+id/simpleCheckBox1"
+        android:text="Due Date:"
+        android:fontFamily="serif"
+        android:textColor="#25383C"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        />
+        <TextView
+            android:id="@+id/actualdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="250dp"
+            android:layout_below="@+id/simpleCheckBox1"
+            android:text="Actual Date:"
+            android:fontFamily="serif"
+            android:textColor="#25383C"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/txtduedate"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:textSize="15sp"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@+id/duedate"
+            android:background="@drawable/shape"/>
+
+        <TextView
+            android:id="@+id/txtactualdate"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:textSize="15sp"
+            android:layout_marginLeft="220dp"
+            android:layout_below="@+id/duedate"
+            android:background="@drawable/shape"/>
+
+        <CheckBox
+            android:id="@+id/simpleCheckBox2"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:text="Cleaning and Disinfecting the Shed"
+            android:textColor="#25383C"
+            android:textSize="17sp"
+            android:checked="false"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/txtduedate"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/simpleCheckBox2"
+            android:layout_toRightOf="@+id/simpleCheckBox2"
+            android:layout_below="@+id/txtactualdate"
+            android:textColor="#25383C"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="6 Days"
+            android:layout_marginTop="10dp"/>
+        <TextView
+            android:id="@+id/duedate1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_below="@+id/simpleCheckBox2"
+            android:text="Due Date:"
+            android:fontFamily="serif"
+            android:textColor="#25383C"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/actualdate1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="250dp"
+            android:layout_below="@+id/simpleCheckBox2"
+            android:text="Actual Date:"
+            android:fontFamily="serif"
+            android:textColor="#25383C"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/txtduedate1"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:textSize="15sp"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@+id/duedate1"
+            android:background="@drawable/shape"/>
+        <TextView
+            android:id="@+id/txtactualdate1"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:textSize="15sp"
+            android:layout_marginLeft="220dp"
+            android:layout_below="@+id/duedate1"
+            android:background="@drawable/shape"/>
+
+        <CheckBox
+            android:id="@+id/simpleCheckBox3"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+
+            android:text="Cleaning and Disinfecting the Equipment"
+            android:textColor="#25383C"
+            android:textSize="17sp"
+            android:checked="false"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/txtduedate1"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/simpleCheckBox3"
+            android:layout_toRightOf="@+id/simpleCheckBox3"
+            android:layout_below="@+id/txtactualdate1"
+            android:textColor="#25383C"
+            android:textSize="16sp"
+            android:text="4 Days"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            />
+
+        <TextView
+            android:id="@+id/duedate2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_below="@+id/simpleCheckBox3"
+            android:text="Due Date:"
+            android:fontFamily="serif"
+            android:textColor="#25383C"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/txtduedate2"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:textSize="15sp"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@+id/duedate2"
+            android:background="@drawable/shape"/>
+        <TextView
+            android:id="@+id/actualdate2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="250dp"
+            android:layout_below="@+id/simpleCheckBox3"
+            android:text="Actual Date:"
+            android:fontFamily="serif"
+            android:textColor="#25383C"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/txtactualdate2"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:textSize="15sp"
+            android:layout_marginLeft="220dp"
+            android:layout_below="@+id/duedate2"
+            android:background="@drawable/shape"/>
+
+        <CheckBox
+            android:id="@+id/simpleCheckBox4"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+
+            android:text="Arrenging new liter inside shed"
+            android:textColor="#25383C"
+            android:textSize="17sp"
+            android:checked="false"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/txtactualdate2"
+            />
+        <TextView
+            android:id="@+id/duedate3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_below="@+id/simpleCheckBox4"
+            android:text="Due Date:"
+            android:fontFamily="serif"
+            android:textColor="#25383C"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/simpleCheckBox4"
+            android:layout_toRightOf="@+id/simpleCheckBox4"
+            android:layout_below="@+id/txtactualdate2"
+            android:textColor="#25383C"
+            android:textSize="16sp"
+            android:text="2 Days"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            />
+        <TextView
+            android:id="@+id/txtduedate3"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:textSize="15sp"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@+id/duedate3"
+            android:background="@drawable/shape"/>
+        <TextView
+            android:id="@+id/actualdate3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="250dp"
+            android:layout_below="@+id/simpleCheckBox4"
+            android:text="Actual Date:"
+            android:fontFamily="serif"
+            android:textColor="#25383C"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/txtactualdate3"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:textSize="15sp"
+            android:layout_marginLeft="220dp"
+            android:layout_below="@+id/duedate3"
+            android:background="@drawable/shape"/>
+
+        <CheckBox
+            android:id="@+id/simpleCheckBox5"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/txtactualdate3"
+            android:layout_marginTop="10dp"
+            android:checked="false"
+            android:text="Installation of Brooders,Attraction light And Brooding Tent"
+            android:textColor="#25383C"
+            android:textSize="17sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtactualdate3"
+            android:layout_marginTop="15dp"
+            android:layout_toEndOf="@+id/simpleCheckBox5"
+            android:layout_toRightOf="@+id/simpleCheckBox5"
+            android:text="1 Days"
+            android:textColor="#25383C"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/duedate4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_below="@+id/simpleCheckBox5"
+            android:text="Due Date:"
+            android:fontFamily="serif"
+            android:textColor="#25383C"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/txtduedate4"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:textSize="15sp"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@+id/duedate4"
+            android:background="@drawable/shape"/>
+        <TextView
+            android:id="@+id/actualdate4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="250dp"
+            android:layout_below="@+id/simpleCheckBox5"
+            android:text="Actual Date:"
+            android:fontFamily="serif"
+            android:textColor="#25383C"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/txtactualdate4"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:textSize="15sp"
+            android:layout_marginLeft="220dp"
+            android:layout_below="@+id/duedate4"
+            android:background="@drawable/shape"/>
+
+        <CheckBox
+            android:id="@+id/simpleCheckBox6"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+
+            android:text="Inspecting the Shed is Ready to New Batch"
+            android:textColor="#25383C"
+            android:textSize="17sp"
+            android:checked="false"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/txtactualdate4"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtactualdate4"
+            android:layout_marginTop="15dp"
+            android:layout_toEndOf="@+id/simpleCheckBox6"
+            android:layout_toRightOf="@+id/simpleCheckBox6"
+            android:text="1 Days"
+            android:textColor="#25383C"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/duedate5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_below="@+id/simpleCheckBox6"
+            android:text="Due Date:"
+            android:fontFamily="serif"
+            android:textColor="#25383C"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/txtduedate5"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:textSize="15sp"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@+id/duedate5"
+            android:background="@drawable/shape"/>
+        <TextView
+            android:id="@+id/actualdate5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="250dp"
+            android:layout_below="@+id/simpleCheckBox6"
+            android:text="Actual Date:"
+            android:fontFamily="serif"
+            android:textColor="#25383C"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/txtactualdate5"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:textSize="15sp"
+            android:layout_marginLeft="220dp"
+            android:layout_below="@+id/duedate5"
+            android:background="@drawable/shape"/>
+
+        <Button
+            android:id="@+id/btnsave"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="100dp"
+            android:layout_below="@+id/txtduedate5"
+
+            android:fontFamily="serif"
+            android:text="Save"
+            android:backgroundTint="@color/global__primary"
+            android:textColor="@android:color/white"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+</ScrollView>
