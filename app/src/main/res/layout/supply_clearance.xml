@@ -410,7 +410,6 @@
             android:id="@+id/simpleCheckBox3"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-
             android:text="Cleaning and Disinfecting the Equipment"
             android:textColor="#25383C"
             android:textSize="17sp"
@@ -476,7 +475,6 @@
             android:id="@+id/simpleCheckBox4"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-
             android:text="Arrenging new liter inside shed"
             android:textColor="#25383C"
             android:textSize="17sp"

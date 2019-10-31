@@ -118,7 +118,6 @@ public class SupplyClearance extends Fragment {
         });
 
 
-
         Calendar c = Calendar.getInstance();
         int mYear = c.get(Calendar.YEAR);
         int mMonth = c.get(Calendar.MONTH);
@@ -147,9 +146,6 @@ public class SupplyClearance extends Fragment {
         //Display the Result in the Edit Text or Text View your Choice
        // EditText etDOR = (EditText)findViewById(R.id.etDateOfReturn);
         duedate10.setText(dateInString);
-
-
-
 
 
         fetchJSON();
@@ -226,9 +222,7 @@ public class SupplyClearance extends Fragment {
                     spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
                     name.setAdapter(spinnerArrayAdapter);
 
-
                     //eAdapter.setClickListener(this);
-
 
 
                 }else {

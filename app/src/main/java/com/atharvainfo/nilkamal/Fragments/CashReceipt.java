@@ -209,8 +209,6 @@ public class CashReceipt extends Fragment {
 
                     //eAdapter.setClickListener(this);
 
-
-
                 }else {
                     Toast.makeText(getContext(), getErrorCode(response), Toast.LENGTH_SHORT).show();
                 }
