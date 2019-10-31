@@ -28,10 +28,12 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -114,6 +116,41 @@ public class SupplyClearance extends Fragment {
 
             }
         });
+
+
+
+        Calendar c = Calendar.getInstance();
+        int mYear = c.get(Calendar.YEAR);
+        int mMonth = c.get(Calendar.MONTH);
+        int mDay = c.get(Calendar.DAY_OF_MONTH);
+
+        // display the current date
+        String CurrentDate = mYear + "/" + mMonth + "/" + mDay;
+
+        String dateInString = datechoice1.toString(); // Start date
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+        mycal = Calendar.getInstance();
+
+        try {
+            mycal.setTime(sdf.parse(dateInString));
+        } catch (ParseException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        mycal.add(Calendar.DATE, 10);//insert the number of days you want to be added to the current date
+        sdf = new SimpleDateFormat("dd/MM/yyyy");
+        Date resultdate = new Date(c.getTimeInMillis());
+        dateInString = sdf.format(resultdate);
+
+        //Display the Result in the Edit Text or Text View your Choice
+       // EditText etDOR = (EditText)findViewById(R.id.etDateOfReturn);
+        duedate10.setText(dateInString);
+
+
+
+
 
         fetchJSON();
 
