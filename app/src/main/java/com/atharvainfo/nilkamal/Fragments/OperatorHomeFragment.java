@@ -33,7 +33,7 @@ public class OperatorHomeFragment extends Fragment {
     private String[] myImageNameList = new String[]{"Ledger", "Product",
             "Purchase","Sales"
             ,"Bird Sale","Chicks Supply",
-            "Feed Supply","Medicine Supply","Receipt","Bank Voucher"};
+            "Feed Supply","Medicine Supply","Receipt","Payment","Bank Voucher"};
 
 
     public OperatorHomeFragment() {
@@ -110,7 +110,7 @@ public class OperatorHomeFragment extends Fragment {
 
         ArrayList<ImageModel> list = new ArrayList<>();
 
-        for(int i = 0; i < 12; i++){
+        for(int i = 0; i < 10; i++){
             ImageModel imageModel = new ImageModel();
             imageModel.setName(myImageNameList[i]);
             imageModel.setImage_drawable(myImageList[i]);
