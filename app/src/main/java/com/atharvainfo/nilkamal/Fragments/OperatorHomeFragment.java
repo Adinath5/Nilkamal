@@ -110,7 +110,7 @@ public class OperatorHomeFragment extends Fragment {
 
         ArrayList<ImageModel> list = new ArrayList<>();
 
-        for(int i = 0; i < 5; i++){
+        for(int i = 0; i < 12; i++){
             ImageModel imageModel = new ImageModel();
             imageModel.setName(myImageNameList[i]);
             imageModel.setImage_drawable(myImageList[i]);
