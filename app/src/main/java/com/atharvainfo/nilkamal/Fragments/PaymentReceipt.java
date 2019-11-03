@@ -51,7 +51,7 @@ public class PaymentReceipt extends Fragment {
     Calendar mycal=Calendar.getInstance();
     TextView datechoice3,datechoice4;
     String[] scheme1 = { "On Account", "Bill to Bill"};
-    private String jsonURL = "http://www.atharvainfosolutions.com/nilkamal/api.php?apicall=getFarmName";
+    private String jsonURL = "http://103.127.29.138/nilkamal/api.php?apicall=getLedgerName";
     private ArrayList<FarmMast> FarmArrayList;
     private final int jsoncode = 1;
     ArrayAdapter<String> adapter;
@@ -224,7 +224,7 @@ public class PaymentReceipt extends Fragment {
 
         try {
             JSONObject jsonObject = new JSONObject(response);
-            if (jsonObject.getString("status").equals("true")) {
+            if (jsonObject.getString("result").equals("success")) {
                 JSONArray dataArray = jsonObject.getJSONArray("farmerlist");
 
 
@@ -264,7 +264,7 @@ public class PaymentReceipt extends Fragment {
 
                 Log.i("PrintList", FarmArrayList.toString());
                 removeSimpleProgressDialog();  //will remove progress dialog
-            } else if (jsonObject.getString("status").equals("false")) {
+            } else if (jsonObject.getString("result").equals("failure")) {
                 removeSimpleProgressDialog();
             }
 
@@ -279,7 +279,7 @@ public class PaymentReceipt extends Fragment {
 
         try {
             JSONObject jsonObject = new JSONObject(response);
-            if (jsonObject.optString("status").equals("true")) {
+            if (jsonObject.optString("result").equals("success")) {
                 removeSimpleProgressDialog();
                 return true;
             } else {
