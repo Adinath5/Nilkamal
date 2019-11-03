@@ -1,168 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:id="@+id/lead"
-    android:background="@color/cardview_light_background"
-    >
+    android:background="@drawable/background">
 
-    <RelativeLayout
+    <GridView
+        android:id="@+id/gridView"
         android:layout_width="fill_parent"
-        android:layout_height="250dp" >
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:columnWidth="150dp"
+        android:drawSelectorOnTop="true"
+        android:gravity="center"
+        android:numColumns="3"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="5dp"
+        android:focusable="true"
+        android:clickable="true"/>
 
-        <android.support.v4.view.ViewPager
-            android:id="@+id/pager"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_alignParentTop="true" />
-
-        <com.viewpagerindicator.CirclePageIndicator
-            android:id="@+id/indicator"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:gravity="bottom"
-            android:padding="10dip"
-            app:centered="true"
-            app:fillColor="#df0623"
-            app:pageColor="#fff"
-            app:snap="false" />
-    </RelativeLayout>
-
-    <!--<android.support.v7.widget.AppCompatImageView
-        android:id="@+id/myladerimage"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:src="@drawable/balasahebthorat"/>-->
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:id="@+id/titletext"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:layout_margin="10dp"
-            android:textColor="@color/md_blue_grey_500"
-            android:textSize="@dimen/font_h6_size"
-            android:text="Nilkamal Poultry Farm"
-            android:textStyle="bold"
-            />
-
-        <TextView
-            android:id="@+id/infotext"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/titletext"
-            android:textColor="@color/md_blue_grey_500"
-            android:textSize="@dimen/font_h6_size"
-            android:text="@string/aboutus"
-            android:textStyle="normal"
-            android:padding="10dp"
-            android:layout_marginBottom="15dp"
-            android:scrollbars="vertical"
-            />
-        <!--<android.support.v4.widget.NestedScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:layout_below="@id/titletext"
-            android:background="@android:color/white"
-            android:padding="10dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <Button
-                    android:id="@+id/btnallvoterlist"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/titletext"
-                    android:textAlignment="center"
-                    android:text="संपूर्ण मतदार यादी"
-                    android:textSize="@dimen/font_h7_size"
-                    android:textColor="@color/md_white_1000"
-                    android:padding="5dp"
-                    android:layout_margin="5dp"/>
-                <Button
-                    android:id="@+id/btnyouvalist"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/btnallvoterlist"
-                    android:textAlignment="center"
-                    android:text="युवा मतदार यादी"
-                    android:textSize="@dimen/font_h7_size"
-                    android:textColor="@color/md_white_1000"
-                    android:padding="5dp"
-                    android:layout_margin="5dp"/>
-
-                <Button
-                    android:id="@+id/btnprdlist"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/btnyouvalist"
-                    android:textAlignment="center"
-                    android:text="प्रौढ मतदार यादी"
-                    android:textSize="@dimen/font_h7_size"
-                    android:textColor="@color/md_white_1000"
-                    android:padding="5dp"
-                    android:layout_margin="5dp"/>
-
-                <Button
-                    android:id="@+id/btnolderlist"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/btnprdlist"
-                    android:textAlignment="center"
-                    android:text="जेष्ठ मतदार यादी"
-                    android:textSize="@dimen/font_h7_size"
-                    android:textColor="@color/md_white_1000"
-                    android:padding="5dp"
-                    android:layout_margin="5dp"/>
-
-                <Button
-                    android:id="@+id/btnfemalelist"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/btnolderlist"
-                    android:textAlignment="center"
-                    android:text="महीला मतदार यादी"
-                    android:textSize="@dimen/font_h7_size"
-                    android:textColor="@color/md_white_1000"
-                    android:padding="5dp"
-                    android:layout_margin="5dp"/>
-                <Button
-                    android:id="@+id/btnupdatevoter"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/btnolderlist"
-                    android:textAlignment="center"
-                    android:text="मतदार यादी दुरूस्ती"
-                    android:textSize="@dimen/font_h7_size"
-                    android:textColor="@color/md_white_1000"
-                    android:padding="5dp"
-                    android:layout_margin="5dp"/>
-                <Button
-                    android:id="@+id/btncontactedlist"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/btnupdatevoter"
-                    android:textAlignment="center"
-                    android:text="पडताळणी झालेली यादी"
-                    android:textSize="@dimen/font_h7_size"
-                    android:textColor="@color/md_white_1000"
-                    android:padding="5dp"
-                    android:layout_margin="5dp"/>
-
-            </LinearLayout>
-        </android.support.v4.widget.NestedScrollView>-->
-
-    </RelativeLayout>
-
-</LinearLayout>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+</RelativeLayout>

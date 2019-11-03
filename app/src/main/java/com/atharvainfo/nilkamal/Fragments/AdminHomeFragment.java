@@ -6,15 +6,21 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.RecyclerView;
 import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.atharvainfo.nilkamal.Adapter.GridBaseAdapter;
+import com.atharvainfo.nilkamal.Others.ImageModel;
 import com.atharvainfo.nilkamal.R;
 import com.atharvainfo.nilkamal.Others.ConnectionDetector;
 import com.atharvainfo.nilkamal.Others.PSDialogMsg;
@@ -30,32 +36,23 @@ import java.util.TimerTask;
  */
 public class AdminHomeFragment extends Fragment {
 
+    private GridView gridView;
+
+
     private View view;
-    private RecyclerView.LayoutManager layoutManager;
-    RecyclerView recyclerView;
-    DatabaseHelper helper;
-    private String VoterPartNo;
-    //private ArrayList<VoterMast> VoterArrayList;
-    ConnectionDetector connectivity;
-    private final int jsoncode = 1;
-    SQLiteDatabase mdatabase;
-    PSDialogMsg psDialogMsg;
-    TextView infotext;
-    Button btnalllist,btnyouvalist,btnprodlist,btnjesthlist,btnfemalelist,btnupdatevoter,btnContactedList;
-    private static ProgressDialog mProgressDialog;
-    private String jsonURL = "http://www.atharvainfosolutions.com/myleader/api.php?apicall=getVoterListVillage";
+    private GridView gvGallery;
+    private GridBaseAdapter gridBaseAdapter;
+    private ArrayList<ImageModel> imageModelArrayList;
+    private int[] myImageList = new int[]{R.drawable.spstart, R.drawable.spdtran,
+            R.drawable.tasknew,R.drawable.leave
+            ,R.drawable.enquiryn};
+    private String[] myImageNameList = new String[]{"Root Start", "Daily Transaction",
+            "Task","Leave Request"
+            ,"Enquiry","Farm Enquiry",
+            "Placement","Analysis","Aproval","Root Quit"};
 
-    private static ViewPager mPager;
-    private static int currentPage = 0;
-    private static int NUM_PAGES = 0;
 
-    //private String[] urls = new String[] {R.drawable.b1, R.drawable.b2, R.drawable.b3,
-    //       R.drawable.b4, R.drawable.b5, R.drawable.b6};
-    int[] mResources = {R.drawable.b1, R.drawable.b2, R.drawable.b3,
-            R.drawable.b4, R.drawable.b5, R.drawable.b6, R.drawable.b7,R.drawable.b8,R.drawable.b9
-    };
-
-    public AdminHomeFragment() {
+    public  AdminHomeFragment() {
         // Required empty public constructor
     }
 
@@ -63,103 +60,79 @@ public class AdminHomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_admin_home, container, false);
+        view =inflater.inflate(R.layout.fragment_admin_home, container, false);
+        gvGallery = view.findViewById(R.id.gridView);
 
-        connectivity = new ConnectionDetector(getContext());
-        //VoterArrayList = new ArrayList<>();
-       /* btnalllist = view.findViewById(R.id.btnallvoterlist);
-        btnyouvalist = view.findViewById(R.id.btnyouvalist);
-        btnprodlist = view.findViewById(R.id.btnprdlist);
-        btnjesthlist = view.findViewById(R.id.btnolderlist);
-        btnfemalelist = view.findViewById(R.id.btnfemalelist);
-        btnupdatevoter = view.findViewById(R.id.btnupdatevoter);
-        btnContactedList = view.findViewById(R.id.btncontactedlist);*/
+        imageModelArrayList = populateList();
+
+        gridBaseAdapter = new GridBaseAdapter(getActivity().getApplicationContext(),imageModelArrayList);
+        gvGallery.setAdapter(gridBaseAdapter);
 
 
-        helper = new DatabaseHelper(getContext());
-       // infotext = view.findViewById(R.id.infotext);
-       // infotext.setMovementMethod(new ScrollingMovementMethod());
 
-        if (connectivity.isConnectingToInternet()){
-            init();
-        } else {
+        gvGallery.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                switch (position) {
+                    case 3:
+                        LeaveForm leaveForm = new LeaveForm();
+                        FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction.setCustomAnimations(android.R.anim.fade_in,
+                                android.R.anim.fade_out);
+                        fragmentTransaction.add(R.id.frame, leaveForm, "SupervisorHomePage");
+                        fragmentTransaction.addToBackStack("SupervisorHomePage");
+                        fragmentTransaction.commitAllowingStateLoss();
+                        break;
+                    case 0:
+                        SupplyClearance supplyclearace = new SupplyClearance();
+                        FragmentTransaction fragmentTransaction1 = getActivity().getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction1.setCustomAnimations(android.R.anim.fade_in,
+                                android.R.anim.fade_out);
+                        fragmentTransaction1.add(R.id.frame, supplyclearace, "SupervisorHomePage");
+                        fragmentTransaction1.addToBackStack("SupervisorHomePage");
+                        fragmentTransaction1.commitAllowingStateLoss();
+                        break;
+                    case 1:
+                        CashReceipt cashReceipt = new CashReceipt();
+                        FragmentTransaction fragmentTransaction2 = getActivity().getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction2.setCustomAnimations(android.R.anim.fade_in,
+                                android.R.anim.fade_out);
+                        fragmentTransaction2.add(R.id.frame, cashReceipt, "SupervisorHomePage");
+                        fragmentTransaction2.addToBackStack("SupervisorHomePage");
+                        fragmentTransaction2.commitAllowingStateLoss();
+                        break;
+                    case 2:
+                        PaymentReceipt paymentReceipt = new PaymentReceipt();
+                        FragmentTransaction fragmentTransaction3 = getActivity().getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction3.setCustomAnimations(android.R.anim.fade_in,
+                                android.R.anim.fade_out);
+                        fragmentTransaction3.add(R.id.frame, paymentReceipt, "SupervisorHomePage");
+                        fragmentTransaction3.addToBackStack("SupervisorHomePage");
+                        fragmentTransaction3.commitAllowingStateLoss();
+                        break;
 
-            String message = getActivity().getString(R.string.no_internet_error);
-            String okStr =getActivity().getString(R.string.message__ok_close);
-            psDialogMsg.showErrorDialog(message,okStr);
-            psDialogMsg.show();
-
-            psDialogMsg.okButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    psDialogMsg.cancel();
-                    System.exit(0);
                 }
-            });
+                Toast.makeText(getContext(), myImageNameList[position]+" Clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
 
-        }
 
-       // getInformation();
+
         // Inflate the layout for this fragment
         return view;
     }
 
+    private ArrayList<ImageModel> populateList(){
 
-    private void init() {
+        ArrayList<ImageModel> list = new ArrayList<>();
 
-        mPager = (ViewPager) view.findViewById(R.id.pager);
-        mPager.setAdapter(new SlidingImage_Adapter(getActivity(), mResources));
+        for(int i = 0; i < 5; i++){
+            ImageModel imageModel = new ImageModel();
+            imageModel.setName(myImageNameList[i]);
+            imageModel.setImage_drawable(myImageList[i]);
+            list.add(imageModel);
+        }
 
-        CirclePageIndicator indicator = (CirclePageIndicator)
-                view.findViewById(R.id.indicator);
-
-        indicator.setViewPager(mPager);
-
-        final float density = getResources().getDisplayMetrics().density;
-
-//Set circle indicator radius
-        indicator.setRadius(5 * density);
-
-        NUM_PAGES = mResources.length;
-
-        // Auto start of viewpager
-        final Handler handler = new Handler();
-        final Runnable Update = new Runnable() {
-            public void run() {
-                if (currentPage == NUM_PAGES) {
-                    currentPage = 0;
-                }
-                mPager.setCurrentItem(currentPage++, true);
-            }
-        };
-        Timer swipeTimer = new Timer();
-        swipeTimer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                handler.post(Update);
-            }
-        }, 3000, 3000);
-
-        // Pager listener over indicator
-        indicator.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-
-            @Override
-            public void onPageSelected(int position) {
-                currentPage = position;
-
-            }
-
-            @Override
-            public void onPageScrolled(int pos, float arg1, int arg2) {
-
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int pos) {
-
-            }
-        });
-
+        return list;
     }
-
 }
