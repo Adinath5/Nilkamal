@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "962286119827",
+    "firebase_url": "https://nilkamal-b0462.firebaseio.com",
+    "project_id": "nilkamal-b0462",
+    "storage_bucket": "nilkamal-b0462.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:962286119827:android:e0983925d0638a30251666",
+        "android_client_info": {
+          "package_name": "com.atharvainfo.nilkamal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "962286119827-g7vu1qdco7es90735hpmcaoaibtgppjf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBA6zjtF27MzJW0TQjVyHFVjkO31NlXshs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "962286119827-g7vu1qdco7es90735hpmcaoaibtgppjf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
