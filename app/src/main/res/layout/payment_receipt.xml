@@ -7,7 +7,8 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:configChanges="orientation|screenSize"
-    android:background="#dde4dd">
+   
+    android:background="@color/md_white_1000">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
@@ -24,7 +25,7 @@
         android:elevation="10dp"
 
 
-        android:background="@color/md_white_1000">
+        android:background="#dde4dd">
 
         <TextView
             android:id="@+id/txtmessage"
