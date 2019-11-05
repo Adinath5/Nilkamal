@@ -164,178 +164,170 @@
             <android.support.design.widget.TextInputEditText
                 android:layout_width = "match_parent"
                 android:layout_height = "wrap_content"
-                android:id = "@+id/password"
+                android:id = "@+id/address"
                 android:hint = "Address"
-                android:inputType = "textPassword"/>
+                android:inputType = "text"/>
         </android.support.design.widget.TextInputLayout>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view1"
+            android:layout_width="fill_parent"
+            android:layout_height="190dp"
+            android:layout_gravity="center"
+            android:layout_below="@+id/card_view"
+            android:layout_margin="5dp"
+            card_view:cardCornerRadius="2dp"
+            card_view:contentPadding="8dp">
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width = "match_parent"
+                    android:layout_height = "wrap_content"
+                    android:id = "@+id/layoutamount"
+                    android:layout_marginTop = "5dp"
+                    android:layout_marginStart = "10dp"
+                    android:layout_marginEnd = "10dp"
+                    style = "@style/CardViewStyle">
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width = "match_parent"
+                        android:layout_height = "wrap_content"
+                        android:id = "@+id/amount1"
+                        android:hint = "Amount"
+                        android:inputType = "number"/>
+                </android.support.design.widget.TextInputLayout>
+
+
+                <android.support.design.widget.TextInputLayout
+                android:layout_width = "match_parent"
+                android:layout_height = "wrap_content"
+                android:id = "@+id/layoutcheque"
+                    android:layout_below="@+id/layoutamount"
+                android:layout_marginTop = "5dp"
+                android:layout_marginStart = "10dp"
+                android:layout_marginEnd = "10dp"
+                style = "@style/CardViewStyle">
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width = "match_parent"
+                    android:layout_height = "wrap_content"
+                    android:id = "@+id/check"
+                    android:hint = "Cheque/Receipt No"
+                    android:inputType = "number"/>
+            </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width = "match_parent"
+                    android:layout_height = "wrap_content"
+                    android:id = "@+id/layoutbank"
+                    android:layout_below="@+id/layoutcheque"
+                    android:layout_marginTop = "5dp"
+                    android:layout_marginStart = "10dp"
+                    android:layout_marginEnd = "10dp"
+                    style = "@style/CardViewStyle">
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width = "match_parent"
+                        android:layout_height = "wrap_content"
+                        android:id = "@+id/bank"
+                        android:hint = "Bank Name"
+                        android:inputType = "text"/>
+                </android.support.design.widget.TextInputLayout>
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view2"
+            android:layout_width="fill_parent"
+            android:layout_height="160dp"
+            android:layout_gravity="center"
+            android:layout_below="@+id/card_view1"
+            android:layout_margin="5dp"
+            card_view:cardCornerRadius="2dp"
+            card_view:contentPadding="8dp">
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+                <TextView
+                    android:id="@+id/date1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+
+                    android:text="Cheque Date:-"
+                    android:fontFamily="serif"
+                    android:textColor="#25383C"
+                    android:textSize="15sp"
+                    android:textStyle="bold"  />
+                <TextView
+                    android:id="@+id/datechoice4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/date1"
+                    android:layout_marginStart="10dp"
+                    android:textSize="15sp"
+                    android:layout_toEndOf="@+id/date1"
+                    android:hint="Choose Date"
+                    android:inputType="date"
+                    android:maxLength="12"
+                    android:singleLine="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/date1" />
+
+                <TextView
+                    android:id="@+id/txtscheme1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@+id/date1"
+                    android:text="Under Scheme:-"
+                    android:fontFamily="serif"
+                    android:textColor="#25383C"
+                    android:textSize="15sp"
+                    android:textStyle="bold"  />
+                <Spinner
+                    android:id="@+id/scheme"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_below="@+id/datechoice4"
+                    android:layout_toEndOf="@+id/txtscheme1"
+                    android:fontFamily="serif"
+                    android:prompt="@string/spinner_title"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_toRightOf="@+id/txtscheme1" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width = "match_parent"
+                    android:layout_height = "wrap_content"
+                    android:id = "@+id/layoutnarration"
+                    android:layout_below="@+id/txtscheme1"
+                    android:layout_marginTop = "5dp"
+                    android:layout_marginStart = "10dp"
+                    android:layout_marginEnd = "10dp"
+                    style = "@style/CardViewStyle">
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width = "match_parent"
+                        android:layout_height = "wrap_content"
+                        android:id = "@+id/narration"
+                        android:hint = "Narration"
+                        android:inputType = "text"/>
+                </android.support.design.widget.TextInputLayout>
+
+
             </RelativeLayout>
         </android.support.v7.widget.CardView>
 
 
 
-        <TextView
-            android:id="@+id/txtamount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_below="@+id/card_view"
-            android:text="Amount:-"
-            android:fontFamily="serif"
-            android:textColor="#25383C"
-            android:textSize="15sp"
-            android:textStyle="bold"  />
-
-        <EditText
-            android:id="@+id/amount"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/txtamount"
-            android:layout_marginStart="10dp"
-            android:textSize="15sp"
-
-            android:layout_toEndOf="@+id/txtamount"
-
-            android:singleLine="true"
-
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/address" />
-
-        <TextView
-            android:id="@+id/txtchequeno"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_below="@+id/txtamount"
-            android:text="Cheque/Receipt No:-"
-            android:fontFamily="serif"
-            android:textColor="#25383C"
-            android:textSize="15sp"
-            android:textStyle="bold"  />
-
-        <EditText
-            android:id="@+id/chequeno"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/txtchequeno"
-            android:layout_marginStart="10dp"
-            android:textSize="15sp"
-
-            android:layout_toEndOf="@+id/txtchequeno"
-
-            android:singleLine="true"
-
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/txtchequeno" />
-
-        <TextView
-            android:id="@+id/txtbankname"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_below="@+id/txtchequeno"
-            android:text="Bank Name:-"
-            android:fontFamily="serif"
-            android:textColor="#25383C"
-            android:textSize="15sp"
-            android:textStyle="bold"  />
-
-        <EditText
-            android:id="@+id/bankname"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/txtbankname"
-            android:layout_marginStart="10dp"
-            android:textSize="15sp"
-
-            android:layout_toEndOf="@+id/txtbankname"
-
-            android:singleLine="true"
-
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/txtbankname" />
-        <TextView
-            android:id="@+id/date1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_below="@+id/txtbankname"
-            android:text="Cheque Date:-"
-            android:fontFamily="serif"
-            android:textColor="#25383C"
-            android:textSize="15sp"
-            android:textStyle="bold"  />
-
-        <TextView
-            android:id="@+id/datechoice4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/date1"
-            android:layout_marginStart="10dp"
-            android:textSize="15sp"
-            android:layout_toEndOf="@+id/date1"
-            android:hint="Choose Date"
-            android:inputType="date"
-            android:maxLength="12"
-            android:singleLine="true"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/date1" />
-
-        <TextView
-            android:id="@+id/txtscheme"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_below="@+id/date1"
-            android:text="Under Scheme:-"
-            android:fontFamily="serif"
-            android:textColor="#25383C"
-            android:textSize="15sp"
-            android:textStyle="bold"  />
-        <Spinner
-            android:id="@+id/scheme"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="12dp"
-            android:layout_below="@+id/datechoice4"
-            android:layout_toEndOf="@+id/txtscheme"
-            android:fontFamily="serif"
-            android:prompt="@string/spinner_title"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:layout_toRightOf="@+id/txtscheme" />
-
-        <TextView
-            android:id="@+id/txtnarration"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_below="@+id/txtscheme"
-            android:text="Narration:-"
-            android:fontFamily="serif"
-            android:textColor="#25383C"
-            android:textSize="15sp"
-            android:textStyle="bold"  />
-
-        <EditText
-            android:id="@+id/narration"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/txtnarration"
-            android:layout_marginStart="10dp"
-            android:textSize="15sp"
-
-            android:layout_toEndOf="@+id/txtnarration"
-
-            android:singleLine="true"
-
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/txtnarration" />
+      
 
 
     </RelativeLayout>
