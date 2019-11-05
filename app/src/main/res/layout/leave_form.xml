@@ -1,144 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:configChanges="orientation|screenSize"
     android:background="@color/md_white_1000">
-    <TextView
-        android:id="@+id/txtmessage"
+
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_height="match_parent"
+        card_view:cardCornerRadius="4dp"
+        android:elevation="10dp"
+        android:padding="10dp"
+        style="@style/CardView">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:elevation="10dp"
 
-        android:layout_marginTop="13dp"
-        android:background="#d4d4d4"
-        android:fontFamily="serif"
-        android:gravity="center"
-        android:text="Leave Request"
-        android:textColor="#FF00FF"
-        android:textSize="17sp"
-        android:textStyle="bold" />
-    <TextView
-        android:id="@+id/txtfromdate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/txtmessage"
-        android:text="From Date:-"
-        android:fontFamily="serif"
-        android:textColor="#25383C"
-        android:textSize="15sp"
-        android:textStyle="bold"  />
-    <TextView
-        android:id="@+id/datechoice2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/txtfromdate"
-        android:layout_marginStart="20dp"
-        android:textSize="15sp"
 
-        android:layout_toEndOf="@+id/txtfromdate"
-        android:hint="Choose Date"
-        android:inputType="date"
-        android:maxLength="12"
-        android:singleLine="true"
+            android:background="#dde4dd">
 
-        android:layout_marginLeft="20dp"
-        android:layout_toRightOf="@+id/txtfromdate" />
+            <TextView
+                android:id="@+id/txtmessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
 
-    <TextView
-        android:id="@+id/txttodate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/txtfromdate"
-        android:text="To Date:-"
-        android:fontFamily="serif"
-        android:textColor="#25383C"
-        android:textSize="15sp"
-        android:textStyle="bold"  />
+                android:layout_marginTop="13dp"
+                android:background="#d4d4d4"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="Leave Request"
+                android:textColor="#FF00FF"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view3"
+                android:layout_width="fill_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_below="@+id/txtmessage"
+                android:layout_margin="5dp"
+                card_view:cardCornerRadius="2dp"
+                card_view:contentPadding="10dp">
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
 
-    <TextView
-        android:id="@+id/datechoice3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/txttodate"
-        android:layout_marginStart="10dp"
-        android:textSize="15sp"
-        android:layout_toEndOf="@+id/txttodate"
-        android:hint="Choose Date"
-        android:inputType="date"
-        android:maxLength="12"
-        android:singleLine="true"
-        android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@+id/txttodate" />
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width = "match_parent"
+                        android:layout_height = "wrap_content"
+                        android:layout_below="@+id/txtvoucherno"
+                        android:id = "@+id/date"
+                        android:layout_marginTop = "8dp"
+                        android:layout_marginStart = "10dp"
+                        android:layout_marginEnd = "10dp"
+                       >
+                        <android.support.design.widget.TextInputEditText
+                            android:layout_width = "match_parent"
+                            android:layout_height = "wrap_content"
+                            android:id = "@+id/datechoice2"
+                            android:hint = "From Date"
+                            android:inputType="date"
+                            android:maxLength="12"
+                            android:singleLine="true"
 
-    <TextView
-        android:id="@+id/txtreason"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/txttodate"
-        android:text="Reason:-"
-        android:fontFamily="serif"
-        android:textColor="#25383C"
-        android:textSize="15sp"
-        android:textStyle="bold"  />
-    <EditText
-        android:id="@+id/reason"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/txtreason"
-        android:layout_marginStart="10dp"
-        android:textSize="15sp"
-        android:layout_toEndOf="@+id/txtreason"
-        android:inputType="text"
-        android:singleLine="true"
-        android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@+id/txtreason" />
+                            />
+                    </android.support.design.widget.TextInputLayout>
 
-    <Button
-        android:id="@+id/btncancel"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/reason"
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width = "match_parent"
+                        android:layout_height = "wrap_content"
+                        android:layout_below="@+id/date"
+                        android:id = "@+id/date2"
+                        android:layout_marginTop = "8dp"
+                        android:layout_marginStart = "10dp"
+                        android:layout_marginEnd = "10dp"
+                        >
+                        <android.support.design.widget.TextInputEditText
+                            android:layout_width = "match_parent"
+                            android:layout_height = "wrap_content"
+                            android:id = "@+id/datechoice3"
+                            android:hint = "To Date"
+                            android:inputType="date"
+                            android:maxLength="12"
+                            android:singleLine="true"
 
-        android:layout_marginLeft="50dp"
-        android:fontFamily="serif"
-        android:text="Cancel"
-        android:backgroundTint="@color/md_teal_600"
-        android:textColor="@android:color/white"
-        android:textSize="17sp"
-        android:textStyle="bold" />
-    <Button
-        android:id="@+id/btnapply"
-        android:layout_width="170dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/reason"
+                            />
+                    </android.support.design.widget.TextInputLayout>
 
-        android:layout_marginLeft="10dp"
-        android:fontFamily="serif"
-        android:text="Apply Leave"
-        android:layout_toEndOf="@+id/btncancel"
-        android:backgroundTint="@color/md_teal_600"
-        android:textColor="@android:color/white"
-        android:textSize="17sp"
-        android:textStyle="bold"
-        android:layout_toRightOf="@+id/btncancel" />
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width = "match_parent"
+                        android:layout_height = "wrap_content"
+                        android:id = "@+id/layoutreason"
+                        android:layout_below="@+id/date2"
+                        android:layout_marginTop = "5dp"
+                        android:layout_marginStart = "10dp"
+                        android:layout_marginEnd = "10dp"
+                       >
+                        <android.support.design.widget.TextInputEditText
+                            android:layout_width = "match_parent"
+                            android:layout_height = "wrap_content"
+                            android:id = "@+id/reason"
+                            android:hint = "Reason"
+                            android:inputType = "text"/>
+                    </android.support.design.widget.TextInputLayout>
+                </RelativeLayout>
 
-    <EditText
-        android:id="@+id/days"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btncancel"
-        android:textColor="@color/md_black_1000"
-        />
+
+            </android.support.v7.widget.CardView>
+            <Button
+                android:id="@+id/btncancel"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/card_view3"
+
+                android:layout_marginLeft="50dp"
+                android:fontFamily="serif"
+                android:text="Cancel"
+                android:backgroundTint="@color/md_teal_600"
+                android:textColor="@android:color/white"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnapply"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/card_view3"
+
+                android:layout_marginLeft="10dp"
+                android:fontFamily="serif"
+                android:text="Apply Leave"
+                android:layout_toEndOf="@+id/btncancel"
+                android:backgroundTint="@color/md_teal_600"
+                android:textColor="@android:color/white"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:layout_toRightOf="@+id/btncancel" />
+
+            <EditText
+                android:id="@+id/days"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btncancel"
+                android:textColor="@color/md_black_1000"
+                />
+
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+
+
+
+
+
+
+
+
 
 
 
