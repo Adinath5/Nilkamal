@@ -3,6 +3,7 @@ package com.atharvainfo.nilkamal;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -28,11 +29,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.atharvainfo.nilkamal.Fragments.AdminHomeFragment;
 import com.atharvainfo.nilkamal.Fragments.HomeFragment;
+import com.atharvainfo.nilkamal.Fragments.LoginFragement;
 import com.atharvainfo.nilkamal.Fragments.SupervisorHomeFragment;
 import com.atharvainfo.nilkamal.Others.DatabaseHelper;
 import com.atharvainfo.nilkamal.Others.PSDialogMsg;
@@ -50,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
     SQLiteDatabase mdatabase;
     private DatabaseHelper helper;
     protected String loginUserId;
+    protected String EmpName, UserDesignation,UserEmail,UserContact;
     //private FloatingActionButton add;
     private PSDialogMsg psDialogMsg;
     // index to identify current nav menu item
@@ -57,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
 
     // tags used to attach the fragments
     private static final String TAG_HOME = "home";
+    private static final String TAG_SPHOME = "SupervisorHomePage";
+    private static final String TAG_SPLOGIN = "splogin";
     private static final String TAG_ALLLIST = "allist";
     private static final String TAG_YUVALIST = "yova";
     private static final String TAG_PRODLIST = "proud";
@@ -68,10 +74,12 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG_UVOTERLIST = "voterupdate";
 
 
+
     public static String CURRENT_TAG = TAG_HOME;
     private static final int REQUEST= 112;
     // toolbar titles respected to selected nav menu item
     private String[] activityTitles;
+    private String[] activityTitlessp;
 
     // flag to load home fragment when user presses back key
     private boolean shouldLoadHomeFragOnBackPress = true;
@@ -108,9 +116,10 @@ public class MainActivity extends AppCompatActivity {
         // Navigation view header
         navHeader = navigationView.getHeaderView(0);
         imgNavHeaderBg = (ImageView) navHeader.findViewById(R.id.img_header_bg);
-
+        final LinearLayout holder = findViewById(R.id.holder);
 
         activityTitles = getResources().getStringArray(R.array.nav_item_activity_titles);
+        activityTitlessp = getResources().getStringArray(R.array.nav_item_activity_titlessp);
         helper = new DatabaseHelper(this);
         // initializing navigation menu
         setUpNavigationView();
@@ -171,7 +180,6 @@ public class MainActivity extends AppCompatActivity {
     public void callNextActivity(){
 
 
-       /* loginUserId = prefManager.getUserName();
         String data = getuserData();
 
         if(TextUtils.isEmpty(data)){
@@ -180,21 +188,30 @@ public class MainActivity extends AppCompatActivity {
             //Intent intent = new Intent(MainActivity.this, RegisterUser.class);
             //startActivity(intent);
             //finish();
+            navItemIndex = 0;
+            CURRENT_TAG = TAG_HOME;
+            loadHomeFragment();
+            setUpNavigationView();
 
         }else {
-         String[] udata = data.split(",");
-          loginUserId = udata[1];
-          Log.d("UserName ", loginUserId.toString());
+            // loginUserId = udata[1];
+            Log.d("UserName ", loginUserId.toString());
 
-          prefManager.setUserName(loginUserId.toString());*/
-        //callNextActivity();
-
-        navItemIndex = 0;
-        CURRENT_TAG = TAG_HOME;
-        loadHomeFragment();
-
-
-        //}
+            prefManager.setUserName(loginUserId.toString());
+            //callNextActivity();
+            if (UserDesignation == "Supervisor") {
+                navItemIndex = 1;
+                CURRENT_TAG = TAG_SPHOME;
+                loadHomeFragment();
+                setUpNavigationViewSp();
+            } else
+            {
+                navItemIndex = 1;
+                CURRENT_TAG = TAG_SPHOME;
+                loadHomeFragment();
+                setUpNavigationViewSp();
+            }
+        }
 
 
 
@@ -237,10 +254,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private Fragment getHomeFragment() {
+        if (loginUserId == null) {
         switch (navItemIndex) {
             case 0:
-               SupervisorHomeFragment homeFragment = new SupervisorHomeFragment();
+                HomeFragment homeFragment = new HomeFragment();
                 return homeFragment;
+
+            case 5:
+                LoginFragement loginFragement = new LoginFragement();
+                return loginFragement;
             /*case 1:
                 VoterListFragment voterListFragment = new VoterListFragment();
                 return voterListFragment;
@@ -270,12 +292,27 @@ public class MainActivity extends AppCompatActivity {
                 return votingFragment;*/
 
             default:
-                return new SupervisorHomeFragment();
+                return new HomeFragment();
+        }
+        } else {
+            switch (navItemIndex) {
+                case 0:
+                    SupervisorHomeFragment sphomeFragment = new SupervisorHomeFragment();
+                    return sphomeFragment;
+
+                default:
+                    return new SupervisorHomeFragment();
+            }
         }
     }
 
     public void setToolbarTitle() {
-        getSupportActionBar().setTitle(activityTitles[navItemIndex]);
+        if (loginUserId!= null) {
+            getSupportActionBar().setTitle(activityTitlessp[navItemIndex]);
+        } else {
+            getSupportActionBar().setTitle(activityTitles[navItemIndex]);
+        }
+
 
 
         //toolbar.setNavigationIcon(R.mipmap.ic_app_logonc_round);
@@ -295,6 +332,10 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.nav_home:
                         navItemIndex = 0;
                         CURRENT_TAG = TAG_HOME;
+                        break;
+                    case R.id.nav_login:
+                        navItemIndex = 5;
+                        CURRENT_TAG = TAG_SPLOGIN;
                         break;
                     /*case R.id.nav_alllist:
                         navItemIndex = 1;
@@ -367,6 +408,107 @@ public class MainActivity extends AppCompatActivity {
                 super.onDrawerOpened(drawerView);
             }
         };
+
+        //Setting the actionbarToggle to drawer layout
+        drawer.setDrawerListener(actionBarDrawerToggle);
+
+        //calling sync state is necessary or else your hamburger icon wont show up
+        actionBarDrawerToggle.syncState();
+    }
+
+    private void setUpNavigationViewSp() {
+        //Setting Navigation View Item Selected Listener to handle the item click of the navigation menu
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+
+            // This method will trigger on item Click of navigation menu
+            @Override
+            public boolean onNavigationItemSelected(MenuItem menuItem) {
+
+                //Check to see which item was being clicked and perform appropriate action
+                switch (menuItem.getItemId()) {
+                    //Replacing the main content with ContentFragment Which is our Inbox View;
+                    case R.id.nav_home:
+                        navItemIndex = 0;
+                        CURRENT_TAG = TAG_SPHOME;
+                        break;
+                    /*case R.id.nav_alllist:
+                        navItemIndex = 1;
+                        CURRENT_TAG = TAG_ALLLIST;
+                        break;
+                    case R.id.nav_yuvalist:
+                        navItemIndex = 2;
+                        CURRENT_TAG = TAG_YUVALIST;
+                        break;
+                    case R.id.nav_prdvalist:
+                        navItemIndex = 3;
+                        CURRENT_TAG = TAG_PRODLIST;
+                        break;
+                    case R.id.nav_agelist:
+                        navItemIndex = 4;
+                        CURRENT_TAG = TAG_JESTHLIST;
+                        break;
+                    case R.id.nav_femalelist:
+                        navItemIndex = 5;
+                        CURRENT_TAG = TAG_FEMALELIST;
+                        break;
+                    case R.id.nav_updatelist:
+                        navItemIndex = 6;
+                        CURRENT_TAG = TAG_UVOTERLIST;
+                        break;
+                    case R.id.nav_contactvlist:
+                        navItemIndex = 7;
+                        CURRENT_TAG = TAG_CONTACTEDLIST;
+                        break;
+                    case R.id.nav_ncontactvlist:
+                        navItemIndex = 8;
+                        CURRENT_TAG = TAG_NONCONTACT;
+                        break;
+                    case R.id.nav_voting:
+                        navItemIndex = 9;
+                        CURRENT_TAG = TAG_VOTINGLIST;
+                        break;*/
+                    default:
+                        navItemIndex = 0;
+                }
+
+                //Checking if the item is in checked state or not, if not make it in checked state
+//                if (menuItem.isChecked()) {
+//                    menuItem.setChecked(false);
+//                } else {
+//                    menuItem.setChecked(true);
+//                }
+//                menuItem.setChecked(true);
+
+                loadHomeFragment();
+
+                return true;
+            }
+        });
+
+        final LinearLayout holder = findViewById(R.id.holder);
+        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.openDrawer, R.string.closeDrawer)
+        {
+            @Override
+            public void onDrawerSlide(View drawerView, float slideOffset)
+            {
+
+                //this code-block is the real player behind this beautiful ui
+                // basically, it's a mathemetical calculation which handles the shrinking of
+                // our content view.
+
+                float scaleFactor = 7f;
+                float slideX = drawerView.getWidth() * slideOffset;
+
+                holder.setTranslationX(slideX);
+                holder.setScaleX(1 - (slideOffset / scaleFactor));
+                holder.setScaleY(1 - (slideOffset / scaleFactor));
+
+                super.onDrawerSlide(drawerView, slideOffset);
+            }
+        };
+
+
 
         //Setting the actionbarToggle to drawer layout
         drawer.setDrawerListener(actionBarDrawerToggle);
@@ -463,7 +605,7 @@ public class MainActivity extends AppCompatActivity {
         helper.close();
         mdatabase = helper.getWritableDatabase();
         //SQLiteDatabase db = mdatabase.getWritableDatabase();
-        String[] columns = {"userid", "username", "password", "designation", "contact", "email"};
+        String[] columns = {"userid", "username", "password", "designation", "contact", "emailid"};
         Cursor cursor = mdatabase.query("usermast", columns, null, null, null, null, null);
         StringBuffer buffer = new StringBuffer();
         while (cursor.moveToNext()) {
@@ -473,6 +615,19 @@ public class MainActivity extends AppCompatActivity {
             //String userbranch =cursor.getString(cursor.getColumnIndex("userbranch"));
             buffer.append(cid + "," + username);
             loginUserId = cursor.getString(cursor.getColumnIndex("username"));
+            EmpName = cursor.getString(cursor.getColumnIndex("username"));
+            UserDesignation = cursor.getString(cursor.getColumnIndex("designation"));
+            UserContact = cursor.getString(cursor.getColumnIndex("contact"));
+            UserEmail = cursor.getString(cursor.getColumnIndex("emailid"));
+            SharedPreferences sharedPreferences = this.getSharedPreferences("com.atharvainfo.nilkamal.prefs", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString("UserName", loginUserId);
+            editor.putString("UserTp",  UserDesignation);
+            editor.putString("UserContact", UserContact);
+            editor.putString("UserEmail", UserEmail);
+            editor.apply();
+
+            Log.i("UserName", loginUserId);
         }
         return buffer.toString();
 

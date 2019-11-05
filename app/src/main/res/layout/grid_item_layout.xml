@@ -3,7 +3,6 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginTop="5dp"
-    android:background="@drawable/grid_color_selector"
     android:orientation="vertical"
     android:padding="5dp">
 
@@ -21,16 +20,17 @@
         android:textSize="12sp" />-->
 
     <ImageView
-        android:layout_height="130dp"
-        android:layout_width="130dp"
-        android:padding="10dp"
+        android:layout_height="110dp"
+        android:layout_width="wrap_content"
+        android:padding="0dp"
+        android:adjustViewBounds="true"
         android:id="@+id/ivGallery"
         android:src="@mipmap/ic_launcher_round"
         android:scaleType="fitXY"
         />
 
     <TextView
-        android:layout_width="130dp"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:id="@+id/tv"
         android:gravity="center"
