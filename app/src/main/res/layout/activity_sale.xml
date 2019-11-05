@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scrolview1"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:configChanges="orientation|screenSize"
+
+    android:background="@color/md_white_1000">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        card_view:cardCornerRadius="4dp"
+        android:elevation="10dp"
+        android:padding="10dp"
+        style="@style/CardView">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:elevation="10dp"
+
+
+            android:background="#dde4dd">
+            <TextView
+                android:id="@+id/txtmessage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+
+                android:layout_marginTop="13dp"
+                android:background="#d4d4d4"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="Sale Report"
+                android:textColor="#FF00FF"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view1"
+                android:layout_width="fill_parent"
+                android:layout_height="550dp"
+                android:layout_gravity="center"
+                android:layout_below="@+id/txtmessage"
+                android:layout_margin="5dp"
+                card_view:cardCornerRadius="2dp"
+                card_view:contentPadding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <TextView
+                        android:id="@+id/txtbill"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+
+                        android:text="Billed To:-"
+                        android:fontFamily="serif"
+                        android:textColor="#3553F5"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="10dp" />
+
+                    <Button
+                        android:id="@+id/btnadd"
+                        android:layout_width="170dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtbill"
+                        android:text="+Add a Customer "
+                        android:textColor="@color/md_green_700"
+                        android:background="@drawable/dashed_border"/>
+
+                    <TextView
+                        android:id="@+id/txtinvoice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="180dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toEndOf="@+id/txtbill"
+
+                        android:text="Invoice No:"
+                        android:fontFamily="serif"
+                        android:textColor="#25383C"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+
+                        android:layout_toRightOf="@+id/txtbill" />
+                    <TextView
+                        android:id="@+id/invoice"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="180dp"
+                        android:layout_marginTop="10dp"
+                       android:layout_below="@+id/txtinvoice"
+
+
+                        android:fontFamily="serif"
+                        android:textColor="#25383C"
+                        android:textSize="15sp"
+
+
+                        android:layout_toRightOf="@+id/txtbill" />
+
+                    <TextView
+                        android:id="@+id/txtissuedate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="180dp"
+                        android:layout_marginTop="10dp"
+                       android:layout_below="@+id/invoice"
+
+                        android:text="Date of Issue:"
+                        android:fontFamily="serif"
+                        android:textColor="#25383C"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+
+                        android:layout_toRightOf="@+id/txtbill" />
+
+                    <TextView
+                        android:id="@+id/datechoice3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="180dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/txtissuedate"
+
+                        android:hint="Choose Date"
+                        android:inputType="date"
+                        android:maxLength="12"
+                        android:singleLine="true"
+                        android:textColor="#25383C"
+                        android:textSize="15sp"
+
+
+                        android:layout_toRightOf="@+id/txtbill" />
+                    <TextView
+                        android:id="@+id/txtduedate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="180dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/datechoice3"
+
+                        android:text="Due Date:"
+                        android:fontFamily="serif"
+                        android:textColor="#25383C"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+
+                        android:layout_toRightOf="@+id/txtbill" />
+
+                    <TextView
+                        android:id="@+id/datechoice4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="180dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/txtduedate"
+
+                        android:hint="Choose Date"
+                        android:inputType="date"
+                        android:maxLength="12"
+                        android:singleLine="true"
+                        android:textColor="#25383C"
+                        android:textSize="15sp"
+
+
+                        android:layout_toRightOf="@+id/txtbill" />
+
+                    <TextView
+                        android:id="@+id/txtpurchaseno"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="145dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/datechoice4"
+
+                        android:text="Purchase Order No:"
+                        android:fontFamily="serif"
+                        android:textColor="#25383C"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+
+                        android:layout_toRightOf="@+id/txtbill" />
+
+                    <EditText
+                        android:id="@+id/purchaseno"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="170dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_below="@+id/txtpurchaseno"
+
+                        android:hint="PONO"
+                        android:fontFamily="serif"
+                        android:textColor="#25383C"
+                        android:textSize="15sp"
+
+
+                        android:layout_toRightOf="@+id/txtbill" />
+
+                    <View
+                        android:id="@+id/line"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/purchaseno"
+                        android:background="@drawable/line"
+                        />
+
+                    <TextView
+                        android:id="@+id/txtdescription"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/line"
+                        android:text="Description:-"
+                        android:fontFamily="serif"
+                        android:textColor="#3553F5"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="10dp" />
+
+                    <TextView
+                        android:id="@+id/txtline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="180dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/line"
+                        android:layout_toEndOf="@+id/txtdescription"
+                        android:text="Line Total"
+                        android:fontFamily="serif"
+                        android:textColor="#3553F5"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+
+                        android:layout_toRightOf="@+id/txtdescription" />
+
+                    <Button
+                        android:id="@+id/btnadd1"
+                        android:layout_width="350dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtdescription"
+                        android:text="+Add a Item "
+                        android:textColor="@color/md_green_700"
+                        android:background="@drawable/dashed_border"/>
+                    <View
+                        android:id="@+id/line1"
+                        android:layout_width="match_parent"
+                       android:layout_marginTop="10dp"
+                        android:layout_toEndOf="@+id/txtdescription"
+
+                        android:layout_below="@+id/btnadd1"
+                        android:layout_height="1dp"
+                        android:background="@android:color/darker_gray"
+                        android:layout_toRightOf="@+id/txtdescription"
+                        />
+
+                    <TextView
+                        android:id="@+id/txtsubtotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="80dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/line1"
+
+                        android:text="Sub Total:"
+                        android:fontFamily="serif"
+                        android:textColor="#25383C"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+
+                        android:layout_toRightOf="@+id/txtbill" />
+
+                    <TextView
+                        android:id="@+id/subtotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="60dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/line1"
+                        android:layout_toEndOf="@+id/txtsubtotal"
+                       android:hint="0.0"
+                        android:fontFamily="serif"
+                        android:textColor="#25383C"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+
+                        android:layout_toRightOf="@+id/txtbill" />
+                    <TextView
+                        android:id="@+id/txtdiscount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="80dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/txtsubtotal"
+
+                        android:text="Discount:"
+                        android:fontFamily="serif"
+                        android:textColor="#25383C"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+
+                        android:layout_toRightOf="@+id/txtbill" />
+
+                    <TextView
+                        android:id="@+id/discount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="65dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/subtotal"
+                        android:layout_toEndOf="@+id/txtdiscount"
+                        android:hint="0.0"
+                        android:fontFamily="serif"
+                        android:textColor="#25383C"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+
+                        android:layout_toRightOf="@+id/txtbill" />
+
+                    <TextView
+                        android:id="@+id/txtgst"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="100dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/txtdiscount"
+
+                        android:text="GST:"
+                        android:fontFamily="serif"
+                        android:textColor="#25383C"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+
+                        android:layout_toRightOf="@+id/txtbill" />
+
+                    <TextView
+                        android:id="@+id/gst"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="82dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/discount"
+                        android:layout_toEndOf="@+id/txtgst"
+                        android:hint="0.0"
+                        android:fontFamily="serif"
+                        android:textColor="#25383C"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+
+                        android:layout_toRightOf="@+id/txtbill" />
+
+                    <CheckBox
+                        android:id="@+id/simpleCheckBox1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Round off:"
+                        android:layout_marginLeft="50dp"
+                        android:layout_toRightOf="@+id/txtbill"
+                        android:fontFamily="serif"
+                        android:textColor="#25383C"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/txtgst"
+                        />
+
+                    <TextView
+                        android:id="@+id/roundoff"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="55dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/gst"
+                        android:layout_toEndOf="@+id/simpleCheckBox1"
+                        android:hint="0.0"
+                        android:fontFamily="serif"
+                        android:textColor="#25383C"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+
+                        android:layout_toRightOf="@+id/txtbill" />
+
+                    <View
+                        android:id="@+id/line2"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:layout_toEndOf="@+id/txtdescription"
+
+                        android:layout_below="@+id/simpleCheckBox1"
+                        android:layout_height="1dp"
+                        android:background="@android:color/darker_gray"
+                        android:layout_toRightOf="@+id/txtdescription"
+                        />
+
+                    <TextView
+                        android:id="@+id/txttotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="90dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_below="@+id/line2"
+
+                        android:text="Total:"
+                        android:fontFamily="serif"
+                        android:textColor="#25383C"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+
+                        android:layout_toRightOf="@+id/txtbill" />
+
+                </RelativeLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+    </ScrollView>
