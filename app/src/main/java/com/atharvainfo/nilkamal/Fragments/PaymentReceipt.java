@@ -132,7 +132,7 @@ public class PaymentReceipt extends Fragment {
         });
 
 
-        fetchJSON();
+       // fetchJSON();
         return view;
     }
 
@@ -147,8 +147,8 @@ public class PaymentReceipt extends Fragment {
     }
 
 
-    @SuppressLint("StaticFieldLeak")
-    private void fetchJSON(){
+  //  @SuppressLint("StaticFieldLeak")
+  /*  private void fetchJSON(){
 
 
         showSimpleProgressDialog(getContext(), "Loading...","Downloading Farm List",false);
@@ -175,9 +175,9 @@ public class PaymentReceipt extends Fragment {
                 }
             }
         }.execute();
-    }
+    }*/
 
-    @SuppressLint("WrongConstant")
+   /* @SuppressLint("WrongConstant")
     public void onTaskCompleted(String response, int serviceCode) throws JSONException {
         Log.d("responsejson", response.toString());
         switch (serviceCode) {
@@ -218,9 +218,9 @@ public class PaymentReceipt extends Fragment {
                     Toast.makeText(getContext(), getErrorCode(response), Toast.LENGTH_SHORT).show();
                 }
         }
-    }
+    }*/
 
-    public ArrayList<FarmMast> getInfo(String response) {
+  /*  public ArrayList<FarmMast> getInfo(String response) {
 
         try {
             JSONObject jsonObject = new JSONObject(response);
@@ -246,33 +246,33 @@ public class PaymentReceipt extends Fragment {
                     //   farmlist.add(user);
                     // itemList.add(String.valueOf(i + 1));
 
-                 /* for (Map.Entry<String, String> entry : spinnerValueMap.entrySet()) {
-                        String key = dataobj.getString("farmname");
-                        String value = entry.getValue();
+                 // for (Map.Entry<String, String> entry : spinnerValueMap.entrySet()) {
+                      //  String key = dataobj.getString("farmname");
+                       // String value = entry.getValue();
 
-                        /* Build the StringWithTag List using these keys and values. */
+                        // Build the StringWithTag List using these keys and values. */
                     // itemList.add(valueOf(i + 1));
                     //  }*/
 
 
                     // return id;
 
-                }
-                for (int i = 0; i < farmlist.size(); i++){
-                    itemList.add(farmlist.get(i).toString());
-                }
+              //  }
+              //  for (int i = 0; i < farmlist.size(); i++){
+               //     itemList.add(farmlist.get(i).toString());
+              //  }
 
-                Log.i("PrintList", FarmArrayList.toString());
-                removeSimpleProgressDialog();  //will remove progress dialog
-            } else if (jsonObject.getString("result").equals("failure")) {
-                removeSimpleProgressDialog();
-            }
+              //  Log.i("PrintList", FarmArrayList.toString());
+            //    removeSimpleProgressDialog();  //will remove progress dialog
+          //  } else if (jsonObject.getString("result").equals("failure")) {
+            //    removeSimpleProgressDialog();
+         //   }
 
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        return FarmArrayList;
-    }
+      //  } catch (JSONException e) {
+        //    e.printStackTrace();
+      //  }
+      //  return FarmArrayList;
+  ///  }*/
 
 
     public boolean isSuccess(String response) {
