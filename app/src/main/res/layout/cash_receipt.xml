@@ -316,9 +316,9 @@
                         android:textStyle="bold"  />
                     <Spinner
                         android:id="@+id/scheme"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginTop="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="12dp"
                         android:layout_below="@+id/date6"
                         android:layout_toEndOf="@+id/txtscheme1"
                         android:fontFamily="serif"
