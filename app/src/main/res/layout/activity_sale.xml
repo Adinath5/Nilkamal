@@ -249,13 +249,19 @@
 
                         android:layout_toRightOf="@+id/txtdescription" />
 
+                    <ListView
+                        android:id="@+id/list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtdescription"/>
+
                     <Button
                         android:id="@+id/btnadd1"
                         android:layout_width="350dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/txtdescription"
+                        android:layout_below="@+id/list"
                         android:text="+Add a Item "
                         android:textColor="@color/md_green_700"
                         android:background="@drawable/dashed_border"/>

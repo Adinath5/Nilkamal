@@ -69,9 +69,9 @@ public class CashReceipt extends Fragment {
         voucherno=view.findViewById(R.id.voucherno);
         ledger=(Spinner)view.findViewById(R.id.ledger);
         address=view.findViewById(R.id.edtaddress);
-        amount=view.findViewById(R.id.amount);
-        chequeno=view.findViewById(R.id.chequeno);
-        bankname=view.findViewById(R.id.bankname);
+        amount=view.findViewById(R.id.amount1);
+        chequeno=view.findViewById(R.id.check);
+        bankname=view.findViewById(R.id.bank);
         scheme=view.findViewById(R.id.scheme);
         narration=view.findViewById(R.id.narration);
         datechoice3=view.findViewById(R.id.datechoice3);
