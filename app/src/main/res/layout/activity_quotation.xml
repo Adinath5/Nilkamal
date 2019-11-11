@@ -37,7 +37,7 @@
                 android:background="#d4d4d4"
                 android:fontFamily="serif"
                 android:gravity="center"
-                android:text="Sale Invoice"
+                android:text="@string/QutationTitleName"
                 android:textColor="#FF00FF"
                 android:textSize="17sp"
                 android:textStyle="bold" />
@@ -57,15 +57,15 @@
                     android:layout_height="fill_parent">
 
                     <TextView
-                        android:id="@+id/txtbill"
+                        android:id="@+id/txtquotation"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
 
-                        android:text="Billed To:-"
+                        android:text="@string/QutationTo"
                         android:fontFamily="serif"
-                        android:textColor="#3553F5"
+                        android:textColor="@android:color/holo_red_dark"
                         android:textSize="15sp"
                         android:textStyle="bold"
                         android:layout_marginStart="10dp" />
@@ -76,57 +76,26 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/txtbill"
-                        android:text="+Add a Customer "
+                        android:layout_below="@+id/txtquotation"
+                        android:text="@string/QuotationAddCustomer"
                         android:textColor="@color/md_green_700"
                         android:background="@drawable/dashed_border"/>
 
                     <TextView
-                        android:id="@+id/txtinvoice"
+                        android:id="@+id/txtdate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="180dp"
                         android:layout_marginTop="10dp"
-                        android:layout_toEndOf="@+id/txtbill"
+                        android:layout_toEndOf="@+id/txtquotation"
 
-                        android:text="Invoice No:"
+                        android:text="@string/QutationDate"
                         android:fontFamily="serif"
-                        android:textColor="#25383C"
+                        android:textColor="#3553F5"
                         android:textSize="15sp"
                         android:textStyle="bold"
 
-                        android:layout_toRightOf="@+id/txtbill" />
-                    <TextView
-                        android:id="@+id/invoice"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="180dp"
-                        android:layout_marginTop="10dp"
-                       android:layout_below="@+id/txtinvoice"
-
-
-                        android:fontFamily="serif"
-                        android:textColor="#25383C"
-                        android:textSize="15sp"
-
-
-                        android:layout_toRightOf="@+id/txtbill" />
-
-                    <TextView
-                        android:id="@+id/txtissuedate"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="180dp"
-                        android:layout_marginTop="10dp"
-                       android:layout_below="@+id/invoice"
-
-                        android:text="Date of Issue:"
-                        android:fontFamily="serif"
-                        android:textColor="#25383C"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-
-                        android:layout_toRightOf="@+id/txtbill" />
+                        android:layout_toRightOf="@+id/txtquotation" />
 
                     <TextView
                         android:id="@+id/datechoice3"
@@ -134,9 +103,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="180dp"
                         android:layout_marginTop="10dp"
-                        android:layout_below="@+id/txtissuedate"
+                        android:layout_below="@+id/txtdate"
 
-                        android:hint="Choose Date"
+                        android:hint="@string/DateHint"
                         android:inputType="date"
                         android:maxLength="12"
                         android:singleLine="true"
@@ -144,81 +113,135 @@
                         android:textSize="15sp"
 
 
-                        android:layout_toRightOf="@+id/txtbill" />
+                        android:layout_toRightOf="@+id/txtquotation" />
+
                     <TextView
-                        android:id="@+id/txtduedate"
+                        android:id="@+id/txtfarmname"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="190dp"
+                        android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
-                        android:layout_below="@+id/datechoice3"
+                        android:layout_below="@+id/btnadd"
 
-                        android:text="Due Date:"
+                        android:text="@string/QuotationFarmName"
                         android:fontFamily="serif"
-                        android:textColor="#25383C"
+                        android:textColor="#3553F5"
                         android:textSize="15sp"
                         android:textStyle="bold"
 
-                        android:layout_toRightOf="@+id/txtbill" />
-
-                    <TextView
-                        android:id="@+id/datechoice4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="180dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_below="@+id/txtduedate"
-
-                        android:hint="Choose Date"
-                        android:inputType="date"
-                        android:maxLength="12"
-                        android:singleLine="true"
-                        android:textColor="#25383C"
-                        android:textSize="15sp"
-
-
-                        android:layout_toRightOf="@+id/txtbill" />
-
-                    <TextView
-                        android:id="@+id/txtpurchaseno"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="145dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_below="@+id/datechoice4"
-
-                        android:text="Purchase Order No:"
-                        android:fontFamily="serif"
-                        android:textColor="#25383C"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-
-                        android:layout_toRightOf="@+id/txtbill" />
-
+                        />
                     <EditText
-                        android:id="@+id/purchaseno"
-                        android:layout_width="100dp"
+                        android:id="@+id/farmername"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="170dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_below="@+id/txtpurchaseno"
-
-                        android:hint="PONO"
-                        android:fontFamily="serif"
-                        android:textColor="#25383C"
+                        android:layout_alignBaseline="@+id/txtfarmname"
+                        android:layout_marginStart="10dp"
                         android:textSize="15sp"
+                        android:textColor="#25383C"
+                        android:layout_toEndOf="@+id/txtfarmname"
+                        android:inputType="text"
+                        android:singleLine="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/txtfarmname">
+
+                    </EditText>
+
+                    <TextView
+                        android:id="@+id/txtaddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/txtfarmname"
+
+                        android:text="@string/QuotationAddress"
+                        android:fontFamily="serif"
+                        android:textColor="#3553F5"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/txtaddress"
+                        android:layout_marginStart="10dp"
+                        android:textSize="15sp"
+                        android:textColor="#25383C"
+                        android:layout_toEndOf="@+id/txtaddress"
+
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/txtaddress"/>
+
+                    <TextView
+                        android:id="@+id/txtcontactno"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/txtaddress"
+
+                        android:text="@string/QuotationContactNo"
+                        android:fontFamily="serif"
+                        android:textColor="#3553F5"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/contactno"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/txtcontactno"
+                        android:layout_marginStart="10dp"
+                        android:textSize="15sp"
+                        android:textColor="#25383C"
+                        android:layout_toEndOf="@+id/txtcontactno"
+
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/txtcontactno"/>
 
 
-                        android:layout_toRightOf="@+id/txtbill" />
+                    <TextView
+                        android:id="@+id/txtemail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/txtcontactno"
+
+                        android:text="@string/QuotationEmailId"
+                        android:fontFamily="serif"
+                        android:textColor="#3553F5"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/emailid"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/txtemail"
+                        android:layout_marginStart="10dp"
+                        android:textSize="15sp"
+                        android:textColor="#25383C"
+                        android:layout_toEndOf="@+id/txtemail"
+
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/txtemail"/>
 
                     <View
                         android:id="@+id/line"
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_below="@+id/purchaseno"
-                        android:background="@drawable/line"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@+id/txtemail"
+                        android:background="@android:color/darker_gray"
                         />
-
                     <TextView
                         android:id="@+id/txtdescription"
                         android:layout_width="wrap_content"
@@ -226,9 +249,9 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         android:layout_below="@+id/line"
-                        android:text="Description:-"
+                        android:text="@string/QuotationDescription"
                         android:fontFamily="serif"
-                        android:textColor="#3553F5"
+                        android:textColor="@android:color/holo_red_dark"
                         android:textSize="15sp"
                         android:textStyle="bold"
                         android:layout_marginStart="10dp" />
@@ -241,9 +264,9 @@
                         android:layout_marginTop="10dp"
                         android:layout_below="@+id/line"
                         android:layout_toEndOf="@+id/txtdescription"
-                        android:text="Line Total"
+                        android:text="@string/QuotationLineTotal"
                         android:fontFamily="serif"
-                        android:textColor="#3553F5"
+                        android:textColor="@android:color/holo_red_dark"
                         android:textSize="14sp"
                         android:textStyle="bold"
 
@@ -262,13 +285,13 @@
                         android:layout_marginTop="10dp"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/list"
-                        android:text="+Add a Item "
+                        android:text="@string/QuotationAddItem"
                         android:textColor="@color/md_green_700"
                         android:background="@drawable/dashed_border"/>
                     <View
                         android:id="@+id/line1"
                         android:layout_width="match_parent"
-                       android:layout_marginTop="10dp"
+                        android:layout_marginTop="10dp"
                         android:layout_toEndOf="@+id/txtdescription"
 
                         android:layout_below="@+id/btnadd1"
@@ -285,13 +308,13 @@
                         android:layout_marginTop="10dp"
                         android:layout_below="@+id/line1"
 
-                        android:text="Sub Total:"
+                        android:text="@string/QuotationSubTotal"
                         android:fontFamily="serif"
                         android:textColor="#25383C"
                         android:textSize="15sp"
                         android:textStyle="bold"
 
-                        android:layout_toRightOf="@+id/txtbill" />
+                        android:layout_toRightOf="@+id/txtquotation" />
 
                     <TextView
                         android:id="@+id/subtotal"
@@ -301,13 +324,13 @@
                         android:layout_marginTop="10dp"
                         android:layout_below="@+id/line1"
                         android:layout_toEndOf="@+id/txtsubtotal"
-                       android:hint="0.0"
+                        android:hint="0.0"
                         android:fontFamily="serif"
                         android:textColor="#25383C"
                         android:textSize="15sp"
                         android:textStyle="bold"
 
-                        android:layout_toRightOf="@+id/txtbill" />
+                        android:layout_toRightOf="@+id/txtquotation" />
                     <TextView
                         android:id="@+id/txtdiscount"
                         android:layout_width="wrap_content"
@@ -316,13 +339,13 @@
                         android:layout_marginTop="10dp"
                         android:layout_below="@+id/txtsubtotal"
 
-                        android:text="Discount:"
+                        android:text="@string/QuotationDiscount"
                         android:fontFamily="serif"
                         android:textColor="#25383C"
                         android:textSize="15sp"
                         android:textStyle="bold"
 
-                        android:layout_toRightOf="@+id/txtbill" />
+                        android:layout_toRightOf="@+id/txtquotation" />
 
                     <TextView
                         android:id="@+id/discount"
@@ -338,7 +361,7 @@
                         android:textSize="15sp"
                         android:textStyle="bold"
 
-                        android:layout_toRightOf="@+id/txtbill" />
+                        android:layout_toRightOf="@+id/txtquotation" />
 
                     <TextView
                         android:id="@+id/txtgst"
@@ -348,13 +371,13 @@
                         android:layout_marginTop="10dp"
                         android:layout_below="@+id/txtdiscount"
 
-                        android:text="GST:"
+                        android:text="@string/QuotationGST"
                         android:fontFamily="serif"
                         android:textColor="#25383C"
                         android:textSize="15sp"
                         android:textStyle="bold"
 
-                        android:layout_toRightOf="@+id/txtbill" />
+                        android:layout_toRightOf="@+id/txtquotation" />
 
                     <TextView
                         android:id="@+id/gst"
@@ -370,15 +393,15 @@
                         android:textSize="15sp"
                         android:textStyle="bold"
 
-                        android:layout_toRightOf="@+id/txtbill" />
+                        android:layout_toRightOf="@+id/txtquotation" />
 
                     <CheckBox
                         android:id="@+id/simpleCheckBox1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Round off:"
+                        android:text="@string/QuotationRoundOff"
                         android:layout_marginLeft="50dp"
-                        android:layout_toRightOf="@+id/txtbill"
+                        android:layout_toRightOf="@+id/txtquotation"
                         android:fontFamily="serif"
                         android:textColor="#25383C"
                         android:textSize="15sp"
@@ -401,7 +424,7 @@
                         android:textSize="15sp"
                         android:textStyle="bold"
 
-                        android:layout_toRightOf="@+id/txtbill" />
+                        android:layout_toRightOf="@+id/txtquotation" />
 
                     <View
                         android:id="@+id/line2"
@@ -423,13 +446,13 @@
                         android:layout_marginTop="8dp"
                         android:layout_below="@+id/line2"
 
-                        android:text="Total:"
+                        android:text="@string/QuotationTotal"
                         android:fontFamily="serif"
                         android:textColor="#25383C"
                         android:textSize="15sp"
                         android:textStyle="bold"
 
-                        android:layout_toRightOf="@+id/txtbill" />
+                        android:layout_toRightOf="@+id/txtquotation" />
 
                     <TextView
                         android:id="@+id/total"
@@ -445,7 +468,7 @@
                         android:textSize="15sp"
                         android:textStyle="bold"
 
-                        android:layout_toRightOf="@+id/txtbill" />
+                        android:layout_toRightOf="@+id/txtquotation" />
 
                     <TextView
                         android:id="@+id/txtamount"
@@ -455,13 +478,13 @@
                         android:layout_marginTop="10dp"
                         android:layout_below="@+id/txttotal"
 
-                        android:text="Paid Amount:"
+                        android:text="@string/QuotationPaidAmount"
                         android:fontFamily="serif"
-                        android:textColor="#3553F5"
+                        android:textColor="@android:color/holo_red_dark"
                         android:textSize="15sp"
                         android:textStyle="bold"
 
-                        android:layout_toRightOf="@+id/txtbill" />
+                        android:layout_toRightOf="@+id/txtquotation" />
 
                     <Spinner
                         android:id="@+id/paidamount"
@@ -474,13 +497,13 @@
                         android:prompt="@string/spinner_title"
                         android:textSize="15sp"
                         android:textStyle="bold"
-                        android:layout_toRightOf="@+id/txtbill" />
+                        android:layout_toRightOf="@+id/txtquotation" />
 
                     <TextView
                         android:id="@+id/paidamt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="55dp"
+                        android:layout_marginLeft="50dp"
                         android:layout_marginTop="15dp"
                         android:layout_below="@+id/txtamount"
                         android:layout_toEndOf="@+id/paidamount"
@@ -490,7 +513,7 @@
                         android:textSize="15sp"
                         android:textStyle="bold"
 
-                        android:layout_toRightOf="@+id/txtbill" />
+                        android:layout_toRightOf="@+id/txtquotation" />
 
                     <View
                         android:id="@+id/line3"
@@ -512,20 +535,20 @@
                         android:layout_marginTop="10dp"
                         android:layout_below="@+id/line3"
 
-                        android:text="Amount Due:"
+                        android:text="@string/QuotationAmountDue"
                         android:fontFamily="serif"
-                        android:textColor="#3553F5"
+                        android:textColor="@android:color/holo_red_dark"
                         android:textSize="15sp"
                         android:textStyle="bold"
 
-                        android:layout_toRightOf="@+id/txtbill" />
+                        android:layout_toRightOf="@+id/txtquotation" />
 
 
                     <TextView
                         android:id="@+id/dueamount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="97dp"
+                        android:layout_marginLeft="92dp"
                         android:layout_marginTop="10dp"
                         android:layout_below="@+id/line3"
                         android:layout_toEndOf="@+id/txtdueamt"
@@ -535,7 +558,7 @@
                         android:textSize="15sp"
                         android:textStyle="bold"
 
-                        android:layout_toRightOf="@+id/txtbill" />
+                        android:layout_toRightOf="@+id/txtquotation" />
 
                     <android.support.design.widget.TextInputLayout
                         android:layout_width = "match_parent"
@@ -550,19 +573,17 @@
                             android:layout_width = "match_parent"
                             android:layout_height = "wrap_content"
                             android:id = "@+id/narration"
-                            android:hint = "Narration"
+                            android:hint = "@string/QuotationNarrationHint"
                             android:inputType = "text"/>
                     </android.support.design.widget.TextInputLayout>
 
 
 
 
+
+
                 </RelativeLayout>
-
-
             </android.support.v7.widget.CardView>
-
-
         </RelativeLayout>
     </android.support.v7.widget.CardView>
-    </ScrollView>
+</ScrollView>

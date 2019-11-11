@@ -61,6 +61,29 @@
     <string name="app__drawer_close">Drawer Close</string>
     <string name="no_internet_error">प्रथम इंटरनेट कनेक्शन चालु करा.</string>
 
+    <!-- Quotation -->
+    <string name="QutationTitleName">Quotation</string>
+    <string name="QutationTo">Quotation To:</string>
+    <string name="QutationDate">Date:</string>
+    <string name="DateHint">Choose Date</string>
+    <string name="QuotationFarmName">Farm / Farmer Name:</string>
+    <string name="QuotationAddress">Address:</string>
+    <string name="QuotationContactNo">Contact No:</string>
+    <string name="QuotationEmailId">Email Id:</string>
+    <string name="QuotationAddCustomer">+Add a Customer </string>
+    <string name="QuotationDescription">Description:</string>
+    <string name="QuotationLineTotal">Line Total</string>
+    <string name="QuotationAddItem">+Add a Item</string>
+    <string name="QuotationSubTotal">Sub Total:</string>
+    <string name="QuotationDiscount">Discount:</string>
+    <string name="QuotationGST">GST:</string>
+    <string name="QuotationRoundOff">Round Off:</string>
+    <string name="QuotationTotal">Total:</string>
+    <string name="QuotationPaidAmount">Paid Amount:</string>
+    <string name="QuotationAmountDue">Amount Due:</string>
+    <string name="QuotationNarrationHint">Narration</string>
+
+
     <!-- Error Message -->
     <string name="error_message__login_first">Please login first!</string>
     <string name="error_message__rating">Please fill completely for rating.</string>

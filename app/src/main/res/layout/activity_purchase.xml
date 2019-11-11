@@ -37,7 +37,7 @@
                 android:background="#d4d4d4"
                 android:fontFamily="serif"
                 android:gravity="center"
-                android:text="Sale Invoice"
+                android:text="Purchase Invoice"
                 android:textColor="#FF00FF"
                 android:textSize="17sp"
                 android:textStyle="bold" />
@@ -102,7 +102,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="180dp"
                         android:layout_marginTop="10dp"
-                       android:layout_below="@+id/txtinvoice"
+                        android:layout_below="@+id/txtinvoice"
 
 
                         android:fontFamily="serif"
@@ -118,7 +118,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="180dp"
                         android:layout_marginTop="10dp"
-                       android:layout_below="@+id/invoice"
+                        android:layout_below="@+id/invoice"
 
                         android:text="Date of Issue:"
                         android:fontFamily="serif"
@@ -268,7 +268,7 @@
                     <View
                         android:id="@+id/line1"
                         android:layout_width="match_parent"
-                       android:layout_marginTop="10dp"
+                        android:layout_marginTop="10dp"
                         android:layout_toEndOf="@+id/txtdescription"
 
                         android:layout_below="@+id/btnadd1"
@@ -301,7 +301,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_below="@+id/line1"
                         android:layout_toEndOf="@+id/txtsubtotal"
-                       android:hint="0.0"
+                        android:hint="0.0"
                         android:fontFamily="serif"
                         android:textColor="#25383C"
                         android:textSize="15sp"
@@ -565,4 +565,4 @@
 
         </RelativeLayout>
     </android.support.v7.widget.CardView>
-    </ScrollView>
+</ScrollView>
