@@ -151,6 +151,22 @@
     <string name="LeaveForm_ApplyButton">Apply Leave</string>
 
 
+    <!-- PaymentReceipt -->
+    <string name="PaymentReceiptTitle">PAYMENT RECEIPT</string>
+    <string name="PaymentReceipt_Message">NEW ENTRY</string>
+    <string name="PaymentReceipt_VoucherNo">Voucher No:</string>
+    <string name="PaymentReceipt_Datehint">Choose Date</string>
+    <string name="PaymentReceipt_LedgerName">Ledger Name:</string>
+    <string name="PaymentReceipt_Address">Address:</string>
+    <string name="PaymentReceipt_AmountHint">Amount</string>
+    <string name="PaymentReceipt_NarrationHint">Narration</string>
+    <string name="PaymentReceipt_Cheque_ReceiptNo">Cheque / Receipt No</string>
+    <string name="PaymentReceipt_BankName">Bank Name</string>
+    <string name="PaymentReceipt_UnderScheme">Under Scheme:</string>
+    <string name="PaymentReceipt_SaveButton">Save</string>
+
+
+
 
 
     <!-- Error Message -->
