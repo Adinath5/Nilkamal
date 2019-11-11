@@ -166,6 +166,37 @@
     <string name="PaymentReceipt_SaveButton">Save</string>
 
 
+    <!-- SupplyClearance -->
+    <string name="SupplyClearanceTitle">SUPPLY CLEARANCE</string>
+    <string name="SupplyClearance_FarmName">Farm Name:</string>
+    <string name="SupplyClearance_Date">Date:</string>
+    <string name="SupplyClearance_Address">Address:</string>
+    <string name="SupplyClearance_LastBatchNo">Last Batch No:</string>
+    <string name="SupplyClearance_AggrementDateFrom">Aggrement Date From:</string>
+    <string name="SupplyClearance_AggrementDateTo">Aggrement Date To:</string>
+    <string name="SupplyClearance_BatchCapacity">Batch Capacity:</string>
+    <string name="SupplyClearance_SupervisorName">Supervisor Name:</string>
+    <string name="SupplyClearance_NewBatchNo">New Batch No:</string>
+    <string name="SupplyClearance_Description">Description</string>
+    <string name="SupplyClearance_Days">Days</string>
+    <string name="SupplyClearance_CheckBox1">Removing Manure Out</string>
+    <string name="SupplyClearance_10Days">10 Days</string>
+    <string name="SupplyClearance_DueDate">Due Date:</string>
+    <string name="SupplyClearance_ActualDate">Actual Date:</string>
+    <string name="SupplyClearance_Checkbox2">Cleaning and Disinfecting the Shed</string>
+    <string name="SupplyClearance_6Days">6 Days</string>
+   <string name="SupplyClearance_CheckBox3">Cleaning and Disinfecting the Equipment</string>
+    <string name="SupplyClearance_4days">4 Days</string>
+    <string name="SupplyClearance_CheckBox4">Arrenging new liter inside shed</string>
+    <string name="SupplyClearance_2Days">2 Days</string>
+    <string name="SupplyClearance_CheckBox5">Installation of Brooders,Attraction light And Brooding Tent</string>
+    <string name="SupplyClearance_1Day">1 Day</string>
+    <string name="SupplyClearance_CheckBox6">Inspecting the Shed is Ready to New Batch</string>
+    <string name="SupplyClearance_saveButton">Save</string>
+
+
+
+
 
 
 
