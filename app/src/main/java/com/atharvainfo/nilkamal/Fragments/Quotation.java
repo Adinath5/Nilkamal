@@ -69,7 +69,7 @@ public class Quotation  extends Fragment {
 
             }
         });
-      
+
         return view;
     }
 

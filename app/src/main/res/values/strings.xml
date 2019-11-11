@@ -84,6 +84,27 @@
     <string name="QuotationNarrationHint">Narration</string>
 
 
+    <!-- PurchaseInvoice -->
+    <string name="PurchaseInvoiceTitle">Purchase Invoice</string>
+    <string name="PurchaseInvoice_BilledTo">Billed To:</string>
+    <string name="PurchaseInvoice_AddCustomer">+Add a customer</string>
+    <string name="PurchaseInvoice_InvoiceNo">Invoice No:</string>
+    <string name="PurchaseInvoice_Dateofissue">Date of Issue:</string>
+    <string name="PurchaseInvoice_DueDate">Due Date:</string>
+    <string name="PurchaseInvoice_OrderNo">Purchase Order No:</string>
+    <string name="PurchaseInvoice_Decription">Description:</string>
+    <string name="PurchaseInvoice_LineTotal">Line Total</string>
+    <string name="PurchaseInvoice_AddItem">+Add a Item</string>
+    <string name="PurchaseInvoice_SubTotal">Sub Total:</string>
+    <string name="PurchaseInvoice_Discount">Discount:</string>
+    <string name="PurchaseInvoice_GST">GST:</string>
+    <string name="PurchaseInvoice_RoundOff">Round Off:</string>
+    <string name="PurchaseInvoice_Total">Total:</string>
+    <string name="PurchaseInvoice_PaidAmount">Paid Amount:</string>
+    <string name="PurchaseInvoice_AmountDue">Amount Due:</string>
+    <string name="PurchaseInvoice_NarrationHint">Narration</string>
+
+
     <!-- Error Message -->
     <string name="error_message__login_first">Please login first!</string>
     <string name="error_message__rating">Please fill completely for rating.</string>
