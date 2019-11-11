@@ -38,7 +38,7 @@
                 android:background="#d4d4d4"
                 android:fontFamily="serif"
                 android:gravity="center"
-                android:text="Cash Receipt"
+                android:text="@string/CashReceiptTitle"
                 android:textColor="#FF00FF"
                 android:textSize="17sp"
                 android:textStyle="bold" />
@@ -50,7 +50,7 @@
                 android:layout_marginLeft="150dp"
                 android:layout_marginTop="20dp"
                 android:layout_below="@+id/txtmessage"
-                android:text="NEW ENTRY"
+                android:text="@string/CashReceipt_Message"
                 android:fontFamily="serif"
                 android:textColor="@android:color/holo_red_dark"
                 android:textSize="17sp"
@@ -79,7 +79,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="20dp"
 
-                        android:text="Voucher No:-"
+                        android:text="@string/CashReceipt_VoucherNo"
                         android:fontFamily="serif"
                         android:textColor="#25383C"
                         android:textSize="15sp"
@@ -115,7 +115,7 @@
                             android:layout_width = "match_parent"
                             android:layout_height = "wrap_content"
                             android:id = "@+id/datechoice3"
-                            android:hint = "Choose Date"
+                            android:hint = "@string/CashReceipt_Datehint"
                             android:inputType="date"
                             android:maxLength="12"
                             android:singleLine="true"
@@ -129,7 +129,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="20dp"
                         android:layout_below="@+id/date"
-                        android:text="Ledger Name:-"
+                        android:text="@string/CashReceipt_LedgerName"
                         android:fontFamily="serif"
                         android:textColor="#25383C"
                         android:textSize="15sp"
@@ -176,7 +176,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="20dp"
                         android:layout_below="@+id/txtledger"
-                        android:text="Address:-"
+                        android:text="@string/Cash_Receipt_Address"
                         android:fontFamily="serif"
                         android:textColor="#25383C"
                         android:textSize="15sp"
@@ -227,7 +227,7 @@
                             android:layout_width = "match_parent"
                             android:layout_height = "wrap_content"
                             android:id = "@+id/amount1"
-                            android:hint = "Amount"
+                            android:hint = "@string/CashReceipt_AmountHint"
                             android:inputType = "number"/>
                     </android.support.design.widget.TextInputLayout>
 
@@ -245,7 +245,7 @@
                             android:layout_width = "match_parent"
                             android:layout_height = "wrap_content"
                             android:id = "@+id/check"
-                            android:hint = "Cheque/Receipt No"
+                            android:hint = "@string/CashReceipt_Cheque_ReceiptNo"
                             android:inputType = "number"/>
                     </android.support.design.widget.TextInputLayout>
 
@@ -262,7 +262,7 @@
                             android:layout_width = "match_parent"
                             android:layout_height = "wrap_content"
                             android:id = "@+id/bank"
-                            android:hint = "Bank Name"
+                            android:hint = "@string/CashReceipt_BankName"
                             android:inputType = "text"/>
                     </android.support.design.widget.TextInputLayout>
                 </RelativeLayout>
@@ -309,7 +309,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="20dp"
                         android:layout_below="@+id/date6"
-                        android:text="Under Scheme:-"
+                        android:text="@string/CashReceipt_UnderScheme"
                         android:fontFamily="serif"
                         android:textColor="#25383C"
                         android:textSize="15sp"
@@ -340,7 +340,7 @@
                             android:layout_width = "match_parent"
                             android:layout_height = "wrap_content"
                             android:id = "@+id/narration"
-                            android:hint = "Narration"
+                            android:hint = "@string/CashReceipt_NarrationHint"
                             android:inputType = "text"/>
                     </android.support.design.widget.TextInputLayout>
 
@@ -358,7 +358,7 @@
                 android:layout_below="@+id/card_view2"
 
                 android:fontFamily="serif"
-                android:text="Save"
+                android:text="@string/CashReceipt_SaveButton"
                 android:backgroundTint="@color/global__primary"
                 android:textColor="@android:color/white"
                 android:textSize="17sp"

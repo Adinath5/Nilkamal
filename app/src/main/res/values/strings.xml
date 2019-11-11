@@ -62,7 +62,7 @@
     <string name="no_internet_error">प्रथम इंटरनेट कनेक्शन चालु करा.</string>
 
     <!-- Quotation -->
-    <string name="QutationTitleName">Quotation</string>
+    <string name="QutationTitleName">QUOTATION</string>
     <string name="QutationTo">Quotation To:</string>
     <string name="QutationDate">Date:</string>
     <string name="DateHint">Choose Date</string>
@@ -85,7 +85,7 @@
 
 
     <!-- PurchaseInvoice -->
-    <string name="PurchaseInvoiceTitle">Purchase Invoice</string>
+    <string name="PurchaseInvoiceTitle">PURCHASE INVOICE</string>
     <string name="PurchaseInvoice_BilledTo">Billed To:</string>
     <string name="PurchaseInvoice_AddCustomer">+Add a customer</string>
     <string name="PurchaseInvoice_InvoiceNo">Invoice No:</string>
@@ -106,7 +106,7 @@
 
 
     <!-- SaleInvoice -->
-    <string name="SaleInvoiceTitle">Sale Invoice</string>
+    <string name="SaleInvoiceTitle">SALE INVOICE</string>
     <string name="SaleInvoice_BilledTo">Billed To:</string>
     <string name="SaleInvoice_AddCustomer">+Add a customer</string>
     <string name="SaleInvoice_InvoiceNo">Invoice No:</string>
@@ -125,6 +125,20 @@
     <string name="SaleInvoice_AmountDue">Amount Due:</string>
     <string name="SaleInvoice_NarrationHint">Narration</string>
 
+
+    <!-- CashReceipt -->
+    <string name="CashReceiptTitle">CASH RECEIPT</string>
+    <string name="CashReceipt_Message">NEW ENTRY</string>
+    <string name="CashReceipt_VoucherNo">Voucher No:</string>
+    <string name="CashReceipt_Datehint">Choose Date</string>
+    <string name="CashReceipt_LedgerName">Ledger Name:</string>
+    <string name="Cash_Receipt_Address">Address:</string>
+    <string name="CashReceipt_AmountHint">Amount</string>
+    <string name="CashReceipt_NarrationHint">Narration</string>
+    <string name="CashReceipt_Cheque_ReceiptNo">Cheque / Receipt No</string>
+    <string name="CashReceipt_BankName">Bank Name</string>
+    <string name="CashReceipt_UnderScheme">Under Scheme:</string>
+    <string name="CashReceipt_SaveButton">Save</string>
 
 
 
