@@ -37,7 +37,7 @@
                 android:background="#d4d4d4"
                 android:fontFamily="serif"
                 android:gravity="center"
-                android:text="Sale Invoice"
+                android:text="@string/SaleInvoiceTitle"
                 android:textColor="#FF00FF"
                 android:textSize="17sp"
                 android:textStyle="bold" />
@@ -63,7 +63,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
 
-                        android:text="Billed To:-"
+                        android:text="@string/SaleInvoice_BilledTo"
                         android:fontFamily="serif"
                         android:textColor="#3553F5"
                         android:textSize="15sp"
@@ -77,7 +77,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txtbill"
-                        android:text="+Add a Customer "
+                        android:text="@string/SaleInvoice_AddCustomer"
                         android:textColor="@color/md_green_700"
                         android:background="@drawable/dashed_border"/>
 
@@ -89,7 +89,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_toEndOf="@+id/txtbill"
 
-                        android:text="Invoice No:"
+                        android:text="@string/SaleInvoice_InvoiceNo"
                         android:fontFamily="serif"
                         android:textColor="#25383C"
                         android:textSize="15sp"
@@ -120,7 +120,7 @@
                         android:layout_marginTop="10dp"
                        android:layout_below="@+id/invoice"
 
-                        android:text="Date of Issue:"
+                        android:text="@string/SaleInvoice_Dateofissue"
                         android:fontFamily="serif"
                         android:textColor="#25383C"
                         android:textSize="15sp"
@@ -153,7 +153,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_below="@+id/datechoice3"
 
-                        android:text="Due Date:"
+                        android:text="@string/SaleInvoice_DueDate"
                         android:fontFamily="serif"
                         android:textColor="#25383C"
                         android:textSize="15sp"
@@ -187,7 +187,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_below="@+id/datechoice4"
 
-                        android:text="Purchase Order No:"
+                        android:text="@string/SaleInvoice_OrderNo"
                         android:fontFamily="serif"
                         android:textColor="#25383C"
                         android:textSize="15sp"
@@ -226,7 +226,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         android:layout_below="@+id/line"
-                        android:text="Description:-"
+                        android:text="@string/SaleInvoice_Decription"
                         android:fontFamily="serif"
                         android:textColor="#3553F5"
                         android:textSize="15sp"
@@ -241,7 +241,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_below="@+id/line"
                         android:layout_toEndOf="@+id/txtdescription"
-                        android:text="Line Total"
+                        android:text="@string/SaleInvoice_LineTotal"
                         android:fontFamily="serif"
                         android:textColor="#3553F5"
                         android:textSize="14sp"
@@ -262,7 +262,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/list"
-                        android:text="+Add a Item "
+                        android:text="@string/SaleInvoice_AddItem"
                         android:textColor="@color/md_green_700"
                         android:background="@drawable/dashed_border"/>
                     <View
@@ -285,7 +285,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_below="@+id/line1"
 
-                        android:text="Sub Total:"
+                        android:text="@string/SaleInvoice_SubTotal"
                         android:fontFamily="serif"
                         android:textColor="#25383C"
                         android:textSize="15sp"
@@ -316,7 +316,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_below="@+id/txtsubtotal"
 
-                        android:text="Discount:"
+                        android:text="@string/SaleInvoice_Discount"
                         android:fontFamily="serif"
                         android:textColor="#25383C"
                         android:textSize="15sp"
@@ -348,7 +348,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_below="@+id/txtdiscount"
 
-                        android:text="GST:"
+                        android:text="@string/SaleInvoice_GST"
                         android:fontFamily="serif"
                         android:textColor="#25383C"
                         android:textSize="15sp"
@@ -376,7 +376,7 @@
                         android:id="@+id/simpleCheckBox1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Round off:"
+                        android:text="@string/SaleInvoice_RoundOff"
                         android:layout_marginLeft="50dp"
                         android:layout_toRightOf="@+id/txtbill"
                         android:fontFamily="serif"
@@ -423,7 +423,7 @@
                         android:layout_marginTop="8dp"
                         android:layout_below="@+id/line2"
 
-                        android:text="Total:"
+                        android:text="@string/SaleInvoice_Total"
                         android:fontFamily="serif"
                         android:textColor="#25383C"
                         android:textSize="15sp"
@@ -455,7 +455,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_below="@+id/txttotal"
 
-                        android:text="Paid Amount:"
+                        android:text="@string/SaleInvoice_PaidAmount"
                         android:fontFamily="serif"
                         android:textColor="#3553F5"
                         android:textSize="15sp"
@@ -512,7 +512,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_below="@+id/line3"
 
-                        android:text="Amount Due:"
+                        android:text="@string/SaleInvoice_AmountDue"
                         android:fontFamily="serif"
                         android:textColor="#3553F5"
                         android:textSize="15sp"
@@ -550,7 +550,7 @@
                             android:layout_width = "match_parent"
                             android:layout_height = "wrap_content"
                             android:id = "@+id/narration"
-                            android:hint = "Narration"
+                            android:hint = "@string/SaleInvoice_NarrationHint"
                             android:inputType = "text"/>
                     </android.support.design.widget.TextInputLayout>
 

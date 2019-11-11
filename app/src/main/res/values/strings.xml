@@ -105,6 +105,29 @@
     <string name="PurchaseInvoice_NarrationHint">Narration</string>
 
 
+    <!-- SaleInvoice -->
+    <string name="SaleInvoiceTitle">Sale Invoice</string>
+    <string name="SaleInvoice_BilledTo">Billed To:</string>
+    <string name="SaleInvoice_AddCustomer">+Add a customer</string>
+    <string name="SaleInvoice_InvoiceNo">Invoice No:</string>
+    <string name="SaleInvoice_Dateofissue">Date of Issue:</string>
+    <string name="SaleInvoice_DueDate">Due Date:</string>
+    <string name="SaleInvoice_OrderNo">Purchase Order No:</string>
+    <string name="SaleInvoice_Decription">Description:</string>
+    <string name="SaleInvoice_LineTotal">Line Total</string>
+    <string name="SaleInvoice_AddItem">+Add a Item</string>
+    <string name="SaleInvoice_SubTotal">Sub Total:</string>
+    <string name="SaleInvoice_Discount">Discount:</string>
+    <string name="SaleInvoice_GST">GST:</string>
+    <string name="SaleInvoice_RoundOff">Round Off:</string>
+    <string name="SaleInvoice_Total">Total:</string>
+    <string name="SaleInvoice_PaidAmount">Paid Amount:</string>
+    <string name="SaleInvoice_AmountDue">Amount Due:</string>
+    <string name="SaleInvoice_NarrationHint">Narration</string>
+
+
+
+
     <!-- Error Message -->
     <string name="error_message__login_first">Please login first!</string>
     <string name="error_message__rating">Please fill completely for rating.</string>
