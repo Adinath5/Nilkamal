@@ -142,6 +142,17 @@
 
 
 
+    <!-- LeaveForm -->
+    <string name="LeaveForm_Title">LEAVE REQUEST</string>
+    <string name="LeaveForm_FromDate">From Date</string>
+    <string name="LeaveForm_ToDate">To Date</string>
+    <string name="LeaveForm_Reason">Reason</string>
+    <string name="LeaveForm_CancleButton">CANCLE</string>
+    <string name="LeaveForm_ApplyButton">Apply Leave</string>
+
+
+
+
     <!-- Error Message -->
     <string name="error_message__login_first">Please login first!</string>
     <string name="error_message__rating">Please fill completely for rating.</string>

@@ -34,7 +34,7 @@
                 android:background="#d4d4d4"
                 android:fontFamily="serif"
                 android:gravity="center"
-                android:text="Leave Request"
+                android:text="@string/LeaveForm_Title"
                 android:textColor="#FF00FF"
                 android:textSize="17sp"
                 android:textStyle="bold" />
@@ -64,7 +64,7 @@
                             android:layout_width = "match_parent"
                             android:layout_height = "wrap_content"
                             android:id = "@+id/datechoice2"
-                            android:hint = "From Date"
+                            android:hint = "@string/LeaveForm_FromDate"
                             android:inputType="date"
                             android:maxLength="12"
                             android:singleLine="true"
@@ -85,7 +85,7 @@
                             android:layout_width = "match_parent"
                             android:layout_height = "wrap_content"
                             android:id = "@+id/datechoice3"
-                            android:hint = "To Date"
+                            android:hint = "@string/LeaveForm_ToDate"
                             android:inputType="date"
                             android:maxLength="12"
                             android:singleLine="true"
@@ -106,7 +106,7 @@
                             android:layout_width = "match_parent"
                             android:layout_height = "wrap_content"
                             android:id = "@+id/reason"
-                            android:hint = "Reason"
+                            android:hint = "@string/LeaveForm_Reason"
                             android:inputType = "text"/>
                     </android.support.design.widget.TextInputLayout>
                 </RelativeLayout>
@@ -121,7 +121,7 @@
 
                 android:layout_marginLeft="50dp"
                 android:fontFamily="serif"
-                android:text="Cancel"
+                android:text="@string/LeaveForm_CancleButton"
                 android:backgroundTint="@color/md_teal_600"
                 android:textColor="@android:color/white"
                 android:textSize="17sp"
@@ -135,7 +135,7 @@
 
                 android:layout_marginLeft="10dp"
                 android:fontFamily="serif"
-                android:text="Apply Leave"
+                android:text="@string/LeaveForm_ApplyButton"
                 android:layout_toEndOf="@+id/btncancel"
                 android:backgroundTint="@color/md_teal_600"
                 android:textColor="@android:color/white"
