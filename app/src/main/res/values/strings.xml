@@ -195,6 +195,23 @@
     <string name="SupplyClearance_saveButton">Save</string>
 
 
+    <!-- FeedSupply -->
+    <string name="FeedSupplyTitle"> FEED SUPPLY</string>
+    <string name="FeedSupplyFarmName">Farm Name:</string>
+    <string name="FeedSupply_AddFarmer">+Add a Farmer</string>
+    <string name="FeedSupply_InvoiceNo">Invoice No:</string>
+    <string name="FeedSupply_Dateofissue">Date of Issue:</string>
+    <string name="FeedSupply_DocumentNo">Document No:</string>
+    <string name="FeedSupply_Decription">Description:</string>
+    <string name="FeedSupply_LineTotal">Line Total</string>
+    <string name="FeedSupply_AddItem">+Add a Item</string>
+    <string name="FeedSupply_SubTotal">Sub Total:</string>
+    <string name="FeedSupply_RoundOff">Round Off:</string>
+    <string name="FeedSupply_Total">Total:</string>
+    <string name="FeedSupply_PaidAmount">Paid Amount:</string>
+    <string name="FeedSupply_AmountDue">Amount Due:</string>
+    <string name="FeedSupply_NarrationHint">Narration</string>
+
 
 
 
