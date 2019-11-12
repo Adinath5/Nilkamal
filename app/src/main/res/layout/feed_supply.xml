@@ -352,102 +352,13 @@
 
                         android:layout_toRightOf="@+id/txtfarmname" />
 
-                    <TextView
-                        android:id="@+id/txtamount"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="35dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_below="@+id/txttotal"
-
-                        android:text="@string/FeedSupply_PaidAmount"
-                        android:fontFamily="serif"
-                        android:textColor="#3553F5"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-
-                        android:layout_toRightOf="@+id/txtfarmname" />
-
-                    <Spinner
-                        android:id="@+id/paidamount"
-                        android:layout_width="160dp"
-                        android:layout_height="40dp"
-                        android:layout_marginTop="12dp"
-                        android:layout_below="@+id/txtamount"
-                        android:layout_marginLeft="35dp"
-                        android:fontFamily="serif"
-                        android:prompt="@string/spinner_title"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:layout_toRightOf="@+id/txtfarmname" />
-
-                    <TextView
-                        android:id="@+id/paidamt"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="55dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_below="@+id/txtamount"
-                        android:layout_toEndOf="@+id/paidamount"
-                        android:hint="0.0"
-                        android:fontFamily="serif"
-                        android:textColor="#25383C"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-
-                        android:layout_toRightOf="@+id/txtfarmname" />
-
-                    <View
-                        android:id="@+id/line3"
-                        android:layout_width="match_parent"
-                        android:layout_marginTop="10dp"
-                        android:layout_toEndOf="@+id/txtdescription"
-
-                        android:layout_below="@+id/paidamount"
-                        android:layout_height="1dp"
-                        android:background="@android:color/darker_gray"
-                        android:layout_toRightOf="@+id/txtdescription"
-                        />
-
-                    <TextView
-                        android:id="@+id/txtdueamt"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="35dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_below="@+id/line3"
-
-                        android:text="@string/FeedSupply_AmountDue"
-                        android:fontFamily="serif"
-                        android:textColor="#3553F5"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-
-                        android:layout_toRightOf="@+id/txtfarmname" />
-
-
-                    <TextView
-                        android:id="@+id/dueamount"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="97dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_below="@+id/line3"
-                        android:layout_toEndOf="@+id/txtdueamt"
-                        android:hint=" $ 0.0"
-                        android:fontFamily="serif"
-                        android:textColor="#25383C"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-
-                        android:layout_toRightOf="@+id/txtfarmname" />
 
                     <android.support.design.widget.TextInputLayout
                         android:layout_width = "match_parent"
                         android:layout_height = "wrap_content"
                         android:id = "@+id/layoutnarration"
-                        android:layout_below="@+id/txtdueamt"
-                        android:layout_marginTop = "15dp"
+                        android:layout_below="@+id/txttotal"
+                        android:layout_marginTop = "10dp"
                         android:layout_marginStart = "10dp"
                         android:layout_marginEnd = "10dp"
                         >
