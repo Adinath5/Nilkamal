@@ -45,7 +45,7 @@ public class Quotation  extends Fragment {
     SimpleDateFormat dateform=new SimpleDateFormat(dateformat, Locale.US);
     Calendar mycal=Calendar.getInstance();
     TextView datechoice3,farmername,address,contactno,emailid,subtotal,discount,gst,roundoff,total,paidamt,dueamount,narration;
-    Button btnadditem;
+    Button btnadditem,btnaddcustomer;
     ArrayList<HashMap<String, String>> saladdsublist;
     private ListView subslrtnlist;
     ArrayAdapter<String> adapter;
@@ -75,6 +75,7 @@ public class Quotation  extends Fragment {
         scheme=view.findViewById(R.id.paidamount);
 
         btnadditem=view.findViewById(R.id.btnadd1);
+        btnaddcustomer=view.findViewById(R.id.btnadd);
         subslrtnlist = (ListView) view.findViewById(R.id.list);
         saladdsublist = new ArrayList<HashMap<String, String>>();
 
@@ -114,6 +115,12 @@ public class Quotation  extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), AddItem.class));
+            }
+        });
+        btnaddcustomer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), AddCustomer.class));
             }
         });
         subslrtnlist.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
