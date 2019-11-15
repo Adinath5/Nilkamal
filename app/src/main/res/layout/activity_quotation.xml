@@ -130,7 +130,7 @@
                         android:textStyle="bold"
 
                         />
-                    <EditText
+                    <TextView
                         android:id="@+id/farmername"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -144,7 +144,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_toRightOf="@+id/txtfarmname">
 
-                    </EditText>
+                    </TextView>
 
                     <TextView
                         android:id="@+id/txtaddress"

@@ -28,7 +28,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static String DB_NAME = "poultrydata.db";
     private final Context myContext;
     public static String DB_PATH ="";// "/data/data/com.atharvainfosolutions.myleader/databases/";
-    //public static String mPath = DB_NAME;
+    public static String mPath = DB_PATH+DB_NAME;
     private static final String DATABASE_NAME = "poultrydata.db";
 
     private static final int DATABASE_VERSION = 1;

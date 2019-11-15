@@ -32,7 +32,7 @@ public class FeedSupply  extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.activity_sale, container, false);
+        view = inflater.inflate(R.layout.feed_supply, container, false);
 
         datechoice3 = view.findViewById(R.id.datechoice3);
 

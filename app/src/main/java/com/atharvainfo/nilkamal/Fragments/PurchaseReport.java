@@ -2,12 +2,16 @@ package com.atharvainfo.nilkamal.Fragments;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
+import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -28,7 +32,11 @@ public class PurchaseReport extends Fragment {
     String dateformat="yyyy-MM-dd";
     SimpleDateFormat dateform=new SimpleDateFormat(dateformat, Locale.US);
     Calendar mycal=Calendar.getInstance();
-    TextView datechoice3,datechoice4;
+    TextView datechoice3,datechoice4,invoiceno,subtotal,discount,gst,roundoff,total,paidamt,dueamount;
+    EditText purchaseno;
+    Button btnaddcustomer,btnadditem;
+    ListView itemlist;
+    TextInputEditText narration;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -37,6 +45,20 @@ public class PurchaseReport extends Fragment {
         datechoice3=view.findViewById(R.id.datechoice3);
         datechoice4=view.findViewById(R.id.datechoice4);
         scheme=view.findViewById(R.id.paidamount);
+        btnaddcustomer=view.findViewById(R.id.btnadd);
+        btnadditem=view.findViewById(R.id.btnadd1);
+        invoiceno=view.findViewById(R.id.invoice);
+        purchaseno=view.findViewById(R.id.purchaseno);
+        itemlist=view.findViewById(R.id.list);
+        subtotal=view.findViewById(R.id.subtotal);
+        discount=view.findViewById(R.id.discount);
+        gst=view.findViewById(R.id.gst);
+        roundoff=view.findViewById(R.id.roundoff);
+        total=view.findViewById(R.id.total);
+        paidamt=view.findViewById(R.id.paidamt);
+        dueamount=view.findViewById(R.id.dueamount);
+        narration=view.findViewById(R.id.narration);
+
 
         ArrayAdapter aa = new ArrayAdapter(getActivity(),android.R.layout.simple_spinner_item,scheme1);
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
