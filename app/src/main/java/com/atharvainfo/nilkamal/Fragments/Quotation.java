@@ -44,11 +44,12 @@ public class Quotation  extends Fragment {
     String dateformat="yyyy-MM-dd";
     SimpleDateFormat dateform=new SimpleDateFormat(dateformat, Locale.US);
     Calendar mycal=Calendar.getInstance();
-    TextView datechoice3,farmername,address,contactno,emailid,subtotal,discount,gst,roundoff,total,paidamt,dueamount,narration;
+    TextView datechoice3,farmername1,address1,contactno1,emailid1,subtotal,discount,gst,roundoff,total,paidamt,dueamount,narration;
     Button btnadditem,btnaddcustomer;
     ArrayList<HashMap<String, String>> saladdsublist;
     private ListView subslrtnlist;
     ArrayAdapter<String> adapter;
+    String farmername,address,contactno,emailid;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -59,10 +60,10 @@ public class Quotation  extends Fragment {
 
 
         datechoice3=view.findViewById(R.id.datechoice3);
-        farmername=view.findViewById(R.id.farmername);
-        address=view.findViewById(R.id.address);
-        contactno=view.findViewById(R.id.contactno);
-        emailid=view.findViewById(R.id.emailid);
+        farmername1=view.findViewById(R.id.farmername);
+        address1=view.findViewById(R.id.address);
+        contactno1=view.findViewById(R.id.contactno);
+        emailid1=view.findViewById(R.id.emailid);
         subtotal=view.findViewById(R.id.subtotal);
         discount=view.findViewById(R.id.discount);
         gst=view.findViewById(R.id.gst);
@@ -121,6 +122,7 @@ public class Quotation  extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), AddCustomer.class));
+                displaydetails();
             }
         });
         subslrtnlist.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
@@ -137,6 +139,32 @@ public class Quotation  extends Fragment {
 
         showlist();
         return view;
+    }
+
+    private void displaydetails(){
+        String qry = "Select  farmername,address,contactno,emailid From temp_customerlist ";
+
+        Cursor c = mdatabase.rawQuery(qry, null);
+        c.moveToPosition(0);
+        int column1 = c.getColumnIndex("farmername");
+        int column2 = c.getColumnIndex("address");
+        int column3=c.getColumnIndex("contactno");
+        int column4=c.getColumnIndex("emailid");
+
+
+
+        farmername = c.getString(column1);
+        address = c.getString(column2);
+        contactno=c.getString(column3);
+        emailid=c.getString(column4);
+
+
+
+        farmername1.setText(farmername);
+        address1.setText(address);
+        contactno1.setText(contactno);
+        emailid1.setText(emailid);
+
     }
 
     private void updateDate()
