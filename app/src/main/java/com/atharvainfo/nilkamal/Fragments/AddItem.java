@@ -135,8 +135,8 @@ public class AddItem extends Fragment {
                         "values('" +prodname.getText().toString() +"','"+qty.getText().toString()+"','" +rate1 .getText().toString() + "','" +amount1 .getText().toString() + "')");
 
                 Toast.makeText(getActivity(), "Data Save Sucessfully", Toast.LENGTH_LONG).show();
-               // finish();
-                isResumed();
+               getActivity().finish();
+
 
                 
 
