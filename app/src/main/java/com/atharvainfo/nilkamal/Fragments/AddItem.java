@@ -138,6 +138,8 @@ public class AddItem extends Fragment {
                // finish();
                 isResumed();
 
+                
+
             }
         });
     }
