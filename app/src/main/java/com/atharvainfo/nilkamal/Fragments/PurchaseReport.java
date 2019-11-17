@@ -71,7 +71,7 @@ public class PurchaseReport extends Fragment {
         btnadditem=view.findViewById(R.id.btnadd1);
         invoiceno=view.findViewById(R.id.invoice);
         purchaseno=view.findViewById(R.id.purchaseno);
-        itemlist=view.findViewById(R.id.list);
+       // itemlist=view.findViewById(R.id.list);
         subtotal=view.findViewById(R.id.subtotal);
         discount=view.findViewById(R.id.discount);
         gst=view.findViewById(R.id.gst);
