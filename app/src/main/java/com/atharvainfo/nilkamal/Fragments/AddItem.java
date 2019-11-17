@@ -131,7 +131,7 @@ public class AddItem extends Fragment {
                 mdatabase.execSQL("CREATE TABLE IF NOT EXISTS temp_list (prodname TEXT,quantity INTIGER,rate INTEGER,amount DOUBLE)");
 
 
-                mdatabase.execSQL("insert into temp_productlist (prodname,quantity,rate,amount)" +
+                mdatabase.execSQL("insert into temp_list (prodname,quantity,rate,amount)" +
                         "values('" +prodname.getText().toString() +"','"+qty.getText().toString()+"','" +rate1 .getText().toString() + "','" +amount1 .getText().toString() + "')");
 
                 Toast.makeText(getActivity(), "Data Save Sucessfully", Toast.LENGTH_LONG).show();
