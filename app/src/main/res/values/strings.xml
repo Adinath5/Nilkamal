@@ -103,6 +103,10 @@
     <string name="PurchaseInvoice_PaidAmount">Paid Amount:</string>
     <string name="PurchaseInvoice_AmountDue">Amount Due:</string>
     <string name="PurchaseInvoice_NarrationHint">Narration</string>
+    <string name="PurchaseInvoice_Address">Address:</string>
+    <string name="PurchaseInvoice_EmailId">Email:</string>
+    <string name="PurchaseInvoice_ContactNo">Contact No:</string>
+
 
 
     <!-- SaleInvoice -->
