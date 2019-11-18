@@ -46,7 +46,7 @@ public class SaleReport extends Fragment {
     String dateformat="yyyy-MM-dd";
     SimpleDateFormat dateform=new SimpleDateFormat(dateformat, Locale.US);
     Calendar mycal=Calendar.getInstance();
-    TextView datechoice3,datechoice4,invoiceno,subtotal,discount,gst,roundoff,total,paidamt,dueamount;
+    TextView datechoice3,datechoice4,invoiceno,subtotal,discount,gst,roundoff,total,paidamt,dueamount,address1,email1,mobileno;
     EditText purchaseno;
     Button btnaddcustomer,btnadditem;
     ListView itemlist;
@@ -80,6 +80,10 @@ public class SaleReport extends Fragment {
         paidamt=view.findViewById(R.id.paidamt);
         dueamount=view.findViewById(R.id.dueamount);
         narration=view.findViewById(R.id.narration);
+        address1=view.findViewById(R.id.address1);
+        email1=view.findViewById(R.id.email1);
+        mobileno=view.findViewById(R.id.mobileno);
+
 
 
         ArrayAdapter aa = new ArrayAdapter(getActivity(),android.R.layout.simple_spinner_item,scheme1);

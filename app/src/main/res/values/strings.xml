@@ -124,6 +124,9 @@
     <string name="SaleInvoice_PaidAmount">Paid Amount:</string>
     <string name="SaleInvoice_AmountDue">Amount Due:</string>
     <string name="SaleInvoice_NarrationHint">Narration</string>
+    <string name="SaleInvoice_Address">Address:</string>
+    <string name="SaleInvoice_EmailId">Email:</string>
+    <string name="SaleInvoice_ContactNo">Contact No:</string>
 
 
     <!-- CashReceipt -->
