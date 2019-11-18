@@ -23,7 +23,7 @@ public class AddCustomerSale extends Fragment {
     ImageButton imgButton;
     private AppCompatAutoCompleteTextView autoTextView;
     Button btnaddcustomer;
-    TextInputEditText address,contactno,emailid;
+    TextInputEditText address,contactno,emailid,openingbal;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -36,6 +36,7 @@ public class AddCustomerSale extends Fragment {
         address=view.findViewById(R.id.address);
         contactno=view.findViewById(R.id.contactno);
         emailid=view.findViewById(R.id.emailid);
+        openingbal=view.findViewById(R.id.openingbal);
 
         autoTextView = (AppCompatAutoCompleteTextView)view.findViewById(R.id.custname);
 
@@ -58,11 +59,11 @@ public class AddCustomerSale extends Fragment {
             public void onClick(View v) {
 
 
-                mdatabase.execSQL("CREATE TABLE IF NOT EXISTS temp_customerlist (farmername TEXT,address TEXT,contactno INTEGER,emailid TEXT)");
+                mdatabase.execSQL("CREATE TABLE IF NOT EXISTS temp_customerlist (farmername TEXT,address TEXT,contactno INTEGER,emailid TEXT,openingbal DOUBLE)");
 
 
-                mdatabase.execSQL("insert into temp_productlist (prodname,quantity,rate,amount)" +
-                        "values('" +autoTextView.getText().toString() +"','"+address.getText().toString()+"','" +contactno .getText().toString() + "','" +emailid .getText().toString() + "')");
+                mdatabase.execSQL("insert into temp_customerlist (prodname,quantity,rate,amount,openingbal)" +
+                        "values('" +autoTextView.getText().toString() +"','"+address.getText().toString()+"','" +contactno.getText().toString() + "','" +emailid.getText().toString() + "','" +openingbal.getText().toString() + "')");
 
                 Toast.makeText(getActivity(), "Data Save Sucessfully", Toast.LENGTH_LONG).show();
                 // finish();

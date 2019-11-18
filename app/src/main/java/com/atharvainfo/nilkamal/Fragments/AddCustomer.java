@@ -20,7 +20,7 @@ public class AddCustomer extends Fragment {
 
     private View view;
     Button btnaddcustomer;
-    TextInputEditText farmername,address,contactno,emailid;
+    TextInputEditText farmername,address,contactno,emailid,openingbal;
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -34,6 +34,7 @@ public class AddCustomer extends Fragment {
         address=view.findViewById(R.id.address);
         contactno=view.findViewById(R.id.contactno);
         emailid=view.findViewById(R.id.emailid);
+        openingbal=view.findViewById(R.id.openingbal);
 
         savedata();
 
@@ -48,11 +49,11 @@ public class AddCustomer extends Fragment {
             public void onClick(View v) {
 
 
-                mdatabase.execSQL("CREATE TABLE IF NOT EXISTS temp_customerlist (farmername TEXT,address TEXT,contactno INTEGER,emailid TEXT)");
+                mdatabase.execSQL("CREATE TABLE IF NOT EXISTS temp_customerlist (farmername TEXT,address TEXT,contactno INTEGER,emailid TEXT,openingbal DOUBLE)");
 
 
-                mdatabase.execSQL("insert into temp_productlist (prodname,quantity,rate,amount)" +
-                        "values('" +farmername.getText().toString() +"','"+address.getText().toString()+"','" +contactno .getText().toString() + "','" +emailid .getText().toString() + "')");
+                mdatabase.execSQL("insert into temp_customerlist (farmername,address,contactno,emailid,openingbal)" +
+                        "values('" +farmername.getText().toString() +"','"+address.getText().toString()+"','" +contactno.getText().toString() + "','" +emailid.getText().toString() + "','" +openingbal.getText().toString() + "')");
 
                 Toast.makeText(getActivity(), "Data Save Sucessfully", Toast.LENGTH_LONG).show();
                 // finish();
