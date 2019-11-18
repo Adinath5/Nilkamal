@@ -2,14 +2,15 @@ package com.atharvainfo.nilkamal.Fragments;
 
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.atharvainfo.nilkamal.Adapter.GridBaseAdapter;
 import com.atharvainfo.nilkamal.Others.ImageModel;
@@ -54,7 +55,6 @@ public class SupervisorHomeFragment extends Fragment {
         gvGallery.setAdapter(gridBaseAdapter);
 
 
-
         gvGallery.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -68,7 +68,7 @@ public class SupervisorHomeFragment extends Fragment {
                         fragmentTransaction.addToBackStack("SupervisorHomePage");
                         fragmentTransaction.commitAllowingStateLoss();
                         break;
-                        case 0:
+                    case 0:
                         SupplyClearance supplyclearace = new SupplyClearance();
                         FragmentTransaction fragmentTransaction1 = getActivity().getSupportFragmentManager().beginTransaction();
                         fragmentTransaction1.setCustomAnimations(android.R.anim.fade_in,

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -44,11 +44,11 @@
             android:id="@+id/dialogOkButton"
             android:layout_width="match_parent"
             android:layout_height="45dp"
+            android:layout_below="@id/view18"
             android:background="@color/md_white_1000"
             android:text="Button"
-            android:textColor="@color/global__primary"
-            android:textStyle="bold"
-            android:layout_below="@id/view18"/>
+            android:textColor="@color/md_white_1000"
+            android:textStyle="bold" />
 
 
         <ImageView
@@ -72,4 +72,4 @@
             android:layout_toRightOf="@id/dialogIconImageView"
             android:textStyle="bold"/>
     </RelativeLayout>
-</android.support.v7.widget.CardView>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.FarmEnquiry">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/global__primary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:contentInsetStartWithNavigation="0dp"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/app_bar_layout"
+        android:layout_above="@+id/plv2"
+        android:id="@+id/lv1"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical"
+        >
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/md_white_1000">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_view1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    card_view:cardCornerRadius="2dp"
+                    card_view:contentPadding="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/txt_farmname"
+                            android:padding="5dp">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/gothic"
+                                android:id="@+id/txtfarmname"
+                                android:maxLines="1"
+                                android:minLines="1"
+                                android:inputType="textCapSentences"
+                                android:background="@drawable/rounded_border_edittext"
+                                android:hint="@string/farm_int" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/txt_farmername"
+                            android:layout_below="@id/txt_farmname"
+                            android:padding="5dp">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/gothic"
+                                android:id="@+id/txtfarmername"
+                                android:maxLines="1"
+                                android:minLines="1"
+                                android:inputType="textCapSentences"
+                                android:background="@drawable/rounded_border_edittext"
+                                android:hint="@string/farmer_name" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_view2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    card_view:cardCornerRadius="2dp"
+                    card_view:contentPadding="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/txt_village"
+                            android:padding="5dp"
+                            >
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/gothic"
+                                android:id="@+id/txtvillage"
+                                android:maxLines="1"
+                                android:minLines="1"
+                                android:inputType="textCapSentences"
+                                android:background="@drawable/rounded_border_edittext"
+                                android:hint="@string/farm_village" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/txt_taluka"
+                            android:layout_below="@id/txt_village"
+                            android:padding="5dp"
+                            >
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/gothic"
+                                android:id="@+id/txttaluka"
+                                android:maxLines="1"
+                                android:minLines="1"
+                                android:inputType="textCapSentences"
+                                android:background="@drawable/rounded_border_edittext"
+                                android:hint="@string/farm_taluka" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/txt_dist"
+                            android:layout_below="@id/txt_taluka"
+                            android:padding="5dp"
+                            >
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/gothic"
+                                android:id="@+id/txtdistrict"
+                                android:maxLines="1"
+                                android:minLines="1"
+                                android:inputType="textCapSentences"
+                                android:background="@drawable/rounded_border_edittext"
+                                android:hint="@string/farm_distirct" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/txt_contact"
+                            android:layout_below="@id/txt_dist"
+                            android:padding="5dp"
+                            >
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/gothic"
+                                android:id="@+id/txtcontact"
+                                android:maxLines="1"
+                                android:minLines="1"
+                                android:maxLength="10"
+                                android:inputType="number"
+                                android:background="@drawable/rounded_border_edittext"
+                                android:hint="@string/farm_contact" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_view3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    card_view:cardCornerRadius="2dp"
+                    card_view:contentPadding="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txt_shedlengh"
+                        android:padding="5dp"
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/gothic"
+                            android:id="@+id/txtwidth"
+                            android:maxLines="1"
+                            android:minLines="1"
+                            android:inputType="textCapSentences"
+                            android:background="@drawable/rounded_border_edittext"
+                            android:hint="@string/farm_sheddimen" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txt_capacity"
+                        android:layout_below="@id/txt_shedlengh"
+                        android:padding="5dp"
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/gothic"
+                            android:id="@+id/txtcapacity"
+                            android:maxLines="1"
+                            android:minLines="1"
+                            android:inputType="textCapSentences"
+                            android:background="@drawable/rounded_border_edittext"
+                            android:hint="@string/farm_capacity" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/txt_prevcomp"
+                            android:layout_below="@id/txt_capacity"
+                            android:padding="5dp"
+                            >
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/gothic"
+                                android:id="@+id/txtprevcomp"
+                                android:maxLines="1"
+                                android:minLines="1"
+                                android:inputType="textCapSentences"
+                                android:background="@drawable/rounded_border_edittext"
+                                android:hint="@string/farm_prevcomp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/txt_detail"
+                            android:layout_below="@id/txt_prevcomp"
+                            android:padding="5dp"
+                            >
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/gothic"
+                                android:id="@+id/txtdetails"
+                                android:maxLines="2"
+                                android:minLines="1"
+                                android:inputType="textCapSentences"
+                                android:background="@drawable/rounded_border_edittext"
+                                android:hint="@string/farm_detail" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/plv2"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cancle"
+                android:clickable="true"
+                android:id="@+id/btncancle"
+                android:textColor="@color/global__primary"
+                android:fontFamily="@font/gothicb"
+                app:cornerRadius="10dp"
+                app:backgroundTint="@color/md_white_1000"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Save"
+                android:clickable="true"
+                android:id="@+id/btnsavefarm"
+                android:textColor="@color/md_white_1000"
+                android:fontFamily="@font/gothicb"
+                app:cornerRadius="10dp"
+                app:backgroundTint="@color/global__primary"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

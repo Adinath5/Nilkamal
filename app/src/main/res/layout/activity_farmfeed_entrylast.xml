@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    tools:context=".Activity.FarmfeedEntrylast">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/global__primary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:contentInsetStartWithNavigation="0dp"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtspname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="James Pratterson"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textColor="@color/md_grey_600" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtspcode"
+            android:visibility="gone"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textColor="@color/md_grey_600"/>
+
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:padding="@dimen/spacing_xmedium"
+        android:scrollbars="none"
+        android:scrollingCache="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_large"
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/lyt_parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:clickable="true"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    card_view:cardCornerRadius="4dp"
+                    android:elevation="10dp"
+                    android:padding="10dp"
+                    style="@style/CardView">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:elevation="10dp"
+                        android:id="@+id/rl"
+                        android:background="#dde4dd">
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card_view1"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="5dp"
+                            card_view:cardCornerRadius="2dp"
+                            card_view:contentPadding="10dp">
+                            <RelativeLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/lv1"
+                                    android:orientation="horizontal">
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:orientation="vertical">
+                                        <TextView
+                                            android:id="@+id/txtfarmname"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginTop="10dp"
+                                            android:text="Farm Name"
+                                            android:fontFamily="@font/gothic"
+                                            android:textColor="#3553F5"
+                                            android:textSize="15sp"
+                                            android:textStyle="bold"
+                                            android:layout_marginStart="10dp" />
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:textAlignment="textStart"
+                                            android:fontFamily="@font/gothic"
+                                            android:textColor="#25383C"
+                                            android:textSize="15sp"
+                                            android:textStyle="bold"
+                                            android:padding="5dp"
+                                            android:id="@+id/txtfname"
+                                            android:layout_gravity="start"/>
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:textAlignment="textStart"
+                                            android:fontFamily="@font/gothic"
+                                            android:textColor="#25383C"
+                                            android:textSize="15sp"
+                                            android:textStyle="bold"
+                                            android:padding="5dp"
+                                            android:id="@+id/txtfbatch"
+                                            android:layout_gravity="start"/>
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:textAlignment="textStart"
+                                            android:fontFamily="@font/gothic"
+                                            android:textColor="#25383C"
+                                            android:textSize="15sp"
+                                            android:textStyle="bold"
+                                            android:padding="5dp"
+                                            android:visibility="gone"
+                                            android:id="@+id/txtspaddress"
+                                            android:layout_gravity="start"/>
+
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/lv2"
+                                    android:layout_below="@id/lv1"
+                                    android:orientation="horizontal">
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:orientation="vertical">
+
+                                        <com.google.android.material.textfield.TextInputLayout
+                                            android:layout_width = "match_parent"
+                                            android:layout_height = "wrap_content"
+                                            android:id = "@+id/lblfarmobs"
+                                            android:padding="5dp"
+                                            android:layout_marginStart = "10dp"
+                                            android:layout_marginEnd = "10dp"
+                                            >
+                                            <com.google.android.material.textfield.TextInputEditText
+                                                android:layout_width = "match_parent"
+                                                android:layout_height = "wrap_content"
+                                                android:id = "@+id/txtfarmobsrv"
+                                                android:layout_gravity="start"
+                                                android:textAlignment="textStart"
+                                                android:inputType="text"
+                                                android:hint = "Observation"
+                                                android:singleLine="true"
+                                                android:padding="5dp"
+                                                android:background="@drawable/rounded_border_edittext"
+                                                android:fontFamily="@font/gothic"
+                                                />
+                                        </com.google.android.material.textfield.TextInputLayout>
+
+                                        <com.google.android.material.textfield.TextInputLayout
+                                            android:layout_width = "match_parent"
+                                            android:layout_height = "wrap_content"
+                                            android:id = "@+id/lblfarmsugg"
+                                            android:padding="5dp"
+                                            android:layout_marginStart = "10dp"
+                                            android:layout_marginEnd = "10dp"
+                                            >
+                                            <com.google.android.material.textfield.TextInputEditText
+                                                android:layout_width = "match_parent"
+                                                android:layout_height = "wrap_content"
+                                                android:id = "@+id/txtfarmsugg"
+                                                android:layout_gravity="start"
+                                                android:textAlignment="textStart"
+                                                android:inputType="text"
+                                                android:hint = "Suggestion"
+                                                android:singleLine="true"
+                                                android:padding="5dp"
+                                                android:background="@drawable/rounded_border_edittext"
+                                                android:fontFamily="@font/gothic"
+                                                />
+                                        </com.google.android.material.textfield.TextInputLayout>
+                                        <com.google.android.material.textfield.TextInputLayout
+                                            android:layout_width = "match_parent"
+                                            android:layout_height = "wrap_content"
+                                            android:id = "@+id/lblfarmbtemp"
+                                            android:padding="5dp"
+                                            android:layout_marginStart = "10dp"
+                                            android:layout_marginEnd = "10dp"
+                                            >
+                                            <com.google.android.material.textfield.TextInputEditText
+                                                android:layout_width = "match_parent"
+                                                android:layout_height = "wrap_content"
+                                                android:id = "@+id/txtfarmbemp"
+                                                android:layout_gravity="start"
+                                                android:textAlignment="textStart"
+                                                android:inputType="text"
+                                                android:hint = "Brood Temp"
+                                                android:singleLine="true"
+                                                android:padding="5dp"
+                                                android:background="@drawable/rounded_border_edittext"
+                                                android:fontFamily="@font/gothic"
+                                                />
+                                        </com.google.android.material.textfield.TextInputLayout>
+                                        <com.google.android.material.textfield.TextInputLayout
+                                            android:layout_width = "match_parent"
+                                            android:layout_height = "wrap_content"
+                                            android:id = "@+id/lblfarmbwt"
+                                            android:padding="5dp"
+                                            android:layout_marginStart = "10dp"
+                                            android:layout_marginEnd = "10dp"
+                                            >
+                                            <com.google.android.material.textfield.TextInputEditText
+                                                android:layout_width = "match_parent"
+                                                android:layout_height = "wrap_content"
+                                                android:id = "@+id/txtfarmbwt"
+                                                android:layout_gravity="start"
+                                                android:textAlignment="textStart"
+                                                android:inputType="text"
+                                                android:hint = "Body Weight"
+                                                android:singleLine="true"
+                                                android:padding="5dp"
+                                                android:background="@drawable/rounded_border_edittext"
+                                                android:fontFamily="@font/gothic"
+                                                />
+                                        </com.google.android.material.textfield.TextInputLayout>
+                                        <com.google.android.material.textfield.TextInputLayout
+                                            android:layout_width = "match_parent"
+                                            android:layout_height = "wrap_content"
+                                            android:id = "@+id/lblfarmfeeder"
+                                            android:padding="5dp"
+                                            android:layout_marginStart = "10dp"
+                                            android:layout_marginEnd = "10dp"
+                                            >
+                                            <com.google.android.material.textfield.TextInputEditText
+                                                android:layout_width = "match_parent"
+                                                android:layout_height = "wrap_content"
+                                                android:id = "@+id/txtfarmfdr"
+                                                android:layout_gravity="start"
+                                                android:textAlignment="textStart"
+                                                android:inputType="text"
+                                                android:hint = "About Feeder"
+                                                android:singleLine="true"
+                                                android:padding="5dp"
+                                                android:background="@drawable/rounded_border_edittext"
+                                                android:fontFamily="@font/gothic"
+                                                />
+                                        </com.google.android.material.textfield.TextInputLayout>
+                                        <com.google.android.material.textfield.TextInputLayout
+                                            android:layout_width = "match_parent"
+                                            android:layout_height = "wrap_content"
+                                            android:id = "@+id/lblfarmdrinker"
+                                            android:padding="5dp"
+                                            android:layout_marginStart = "10dp"
+                                            android:layout_marginEnd = "10dp"
+                                            >
+                                            <com.google.android.material.textfield.TextInputEditText
+                                                android:layout_width = "match_parent"
+                                                android:layout_height = "wrap_content"
+                                                android:id = "@+id/txtfarmdrnk"
+                                                android:layout_gravity="start"
+                                                android:textAlignment="textStart"
+                                                android:inputType="text"
+                                                android:hint = "About Drinkers"
+                                                android:singleLine="true"
+                                                android:padding="5dp"
+                                                android:background="@drawable/rounded_border_edittext"
+                                                android:fontFamily="@font/gothic"
+                                                />
+                                        </com.google.android.material.textfield.TextInputLayout>
+
+                                        <com.google.android.material.textfield.TextInputLayout
+                                            android:layout_width = "match_parent"
+                                            android:layout_height = "wrap_content"
+                                            android:id = "@+id/lblfarmwtq"
+                                            android:padding="5dp"
+                                            android:layout_marginStart = "10dp"
+                                            android:layout_marginEnd = "10dp"
+                                            >
+                                            <com.google.android.material.textfield.TextInputEditText
+                                                android:layout_width = "match_parent"
+                                                android:layout_height = "wrap_content"
+                                                android:id = "@+id/txtfarmwaterq"
+                                                android:layout_gravity="start"
+                                                android:textAlignment="textStart"
+                                                android:inputType="text"
+                                                android:hint = "Water Quality"
+                                                android:singleLine="true"
+                                                android:padding="5dp"
+                                                android:background="@drawable/rounded_border_edittext"
+                                                android:fontFamily="@font/gothic"
+                                                />
+                                        </com.google.android.material.textfield.TextInputLayout>
+                                        <com.google.android.material.textfield.TextInputLayout
+                                            android:layout_width = "match_parent"
+                                            android:layout_height = "wrap_content"
+                                            android:id = "@+id/lblfarmltrcond"
+                                            android:padding="5dp"
+                                            android:layout_marginStart = "10dp"
+                                            android:layout_marginEnd = "10dp"
+                                            >
+                                            <com.google.android.material.textfield.TextInputEditText
+                                                android:layout_width = "match_parent"
+                                                android:layout_height = "wrap_content"
+                                                android:id = "@+id/txtfarmlitterc"
+                                                android:layout_gravity="start"
+                                                android:textAlignment="textStart"
+                                                android:inputType="text"
+                                                android:hint = "Litter Condition"
+                                                android:singleLine="true"
+                                                android:padding="5dp"
+                                                android:background="@drawable/rounded_border_edittext"
+                                                android:fontFamily="@font/gothic"
+                                                />
+                                        </com.google.android.material.textfield.TextInputLayout>
+                                        <com.google.android.material.textfield.TextInputLayout
+                                            android:layout_width = "match_parent"
+                                            android:layout_height = "wrap_content"
+                                            android:id = "@+id/lblfarmlight"
+                                            android:padding="5dp"
+                                            android:layout_marginStart = "10dp"
+                                            android:layout_marginEnd = "10dp"
+                                            >
+                                            <com.google.android.material.textfield.TextInputEditText
+                                                android:layout_width = "match_parent"
+                                                android:layout_height = "wrap_content"
+                                                android:id = "@+id/txtfarmlightp"
+                                                android:layout_gravity="start"
+                                                android:textAlignment="textStart"
+                                                android:inputType="text"
+                                                android:hint = "Light Programme"
+                                                android:singleLine="true"
+                                                android:padding="5dp"
+                                                android:background="@drawable/rounded_border_edittext"
+                                                android:fontFamily="@font/gothic"
+                                                />
+                                        </com.google.android.material.textfield.TextInputLayout>
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/plv2"
+                android:gravity="bottom"
+                android:layout_marginTop="15dp"
+                android:layout_alignParentBottom="true"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Cancle"
+                        android:clickable="true"
+                        android:id="@+id/btnfdlcancle"
+                        android:textColor="@color/global__primary"
+                        android:fontFamily="@font/gothicb"
+                        app:backgroundTint="@color/md_white_1000"
+                        app:cornerRadius="10dp"
+                        app:strokeColor="@color/global__primary"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Save And Finish"
+                        android:clickable="true"
+                        android:id="@+id/btnfdlsave"
+                        android:textColor="@color/md_white_1000"
+                        android:fontFamily="@font/gothicb"
+                        app:cornerRadius="10dp"
+                        app:backgroundTint="@color/global__primary"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

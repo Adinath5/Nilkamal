@@ -27,7 +27,7 @@ public class FileHelper {
 
             while ( (line = bufferedReader.readLine()) != null )
             {
-                stringBuilder.append(line + System.getProperty("line.separator"));
+                stringBuilder.append(line + System.getProperty("line1.separator"));
             }
             fileInputStream.close();
             line = stringBuilder.toString();

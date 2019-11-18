@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".Activity.rpt_receivablepayable">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/apbar"
+        android:theme="@style/Base.PSTheme.AppBarOverlay">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:layout_alignParentTop="true"
+            app:popupTheme="@style/Base.PSTheme.PopupOverlay" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/plv1"
+        android:layout_below="@+id/apbar"
+        android:layout_above="@id/plv2"
+        android:orientation="vertical"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            card_view:cardCornerRadius="4dp"
+            android:elevation="10dp"
+            android:padding="10dp"
+            style="@style/CardView">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:elevation="10dp"
+                android:id="@+id/rl"
+                android:background="#dde4dd">
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_view1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_margin="5dp"
+                    card_view:cardCornerRadius="2dp"
+                    card_view:contentPadding="10dp">
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/lv1"
+                            android:orientation="horizontal">
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txtgrid"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:text=""
+                                    android:visibility="gone"/>
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/lblbankame"
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
+
+                                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:id = "@+id/txttransactiontype"
+                                        android:hint = "@string/transactiontype"
+                                        android:singleLine="true"
+                                        android:fontFamily="@font/gothic"
+                                        android:inputType="textCapSentences"
+                                        android:background="@drawable/rounded_border_edittext"
+                                        />
+                                </com.google.android.material.textfield.TextInputLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/lv2"
+                            android:layout_below="@id/lv1"
+                            android:orientation="horizontal">
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:elevation="10dp"
+                                android:id="@+id/r3"
+                                android:background="#dde4dd">
+
+                                <TextView
+                                    android:id="@+id/lblparticular"
+                                    android:layout_width="170dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/partyname"
+
+                                    android:fontFamily="@font/gothic"
+                                    android:textColor="#3553F5"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"
+                                    android:layout_marginStart="10dp" />
+                                <TextView
+                                    android:id="@+id/lbldebittran"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/recivablepayable"
+                                    android:layout_toEndOf="@id/lblparticular"
+                                    android:fontFamily="@font/gothic"
+                                    android:textColor="#3553F5"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"
+                                    android:textAlignment="textEnd"
+                                    android:layout_marginEnd="10dp"
+                                    android:gravity="end" />
+
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/plv3"
+                    android:layout_below="@id/card_view1"
+                    android:orientation="vertical"
+                    >
+                    <ListView
+                        android:id="@+id/recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scrollbars="vertical" />
+                </LinearLayout>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/plv2"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:elevation="10dp"
+            android:id="@+id/r2"
+            android:background="@color/md_pink_50">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/lbltotal"
+                android:text="@string/total"
+                android:textSize="12sp"
+                android:layout_marginStart="20sp"
+                android:padding="5dp"
+                android:textColor="@color/md_light_blue_900"
+                android:fontFamily="@font/poppinsregular"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/lblreceivabletotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10sp"
+                android:fontFamily="@font/poppinsregular"
+                android:gravity="end"
+                android:padding="5dp"
+                android:text="0.00"
+                android:textAlignment="textEnd"
+                android:textColor="@color/md_light_blue_900"
+                android:textSize="12sp"
+                android:textStyle="normal" />
+
+
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

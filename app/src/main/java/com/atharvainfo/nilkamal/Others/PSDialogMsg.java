@@ -2,7 +2,6 @@ package com.atharvainfo.nilkamal.Others;
 
 import android.app.Activity;
 import android.app.Dialog;
-import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -10,6 +9,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
 
 import com.atharvainfo.nilkamal.R;
 

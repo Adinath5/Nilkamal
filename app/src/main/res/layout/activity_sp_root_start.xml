@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_sproot"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtusername"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:textColor="@color/md_black_1000"
+        android:gravity="center_horizontal" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtwebsite"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:visibility="gone"
+        android:textColor="@color/md_grey_300"
+        android:gravity="center_horizontal" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtlocationaddress"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:visibility="gone"
+        android:textColor="@color/md_grey_300"
+        android:gravity="center_horizontal" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtusername"
+        android:id="@+id/location_updates_result"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:textColor="@color/md_grey_300"
+        android:gravity="center_horizontal" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="false"
+        android:layout_below="@id/location_updates_result"
+        android:layout_marginTop="10dp"
+        android:padding="5dp"
+        android:id="@+id/l1"
+        android:orientation="horizontal" >
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/tracking_is_off"
+            android:id="@+id/trackingButton"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@android:color/holo_green_dark"
+            android:onClick="requestLocationUpdates"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <Button
+            android:id="@+id/remove_updates_button"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@android:color/holo_red_light"
+            android:onClick="removeLocationUpdates"
+            android:text="@string/remove_updates"
+            android:visibility="gone"
+            android:textColor="@color/md_black_1000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+
+    </LinearLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width = "match_parent"
+        android:layout_height = "wrap_content"
+        android:id = "@+id/lblopkm"
+        android:layout_below="@+id/l1"
+        android:padding="5dp"
+        android:layout_marginStart = "10dp"
+        android:layout_marginEnd = "10dp"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width = "match_parent"
+            android:layout_height = "wrap_content"
+            android:id = "@+id/txtopeningkm"
+            android:layout_gravity="start"
+            android:textAlignment="textStart"
+            android:inputType="text"
+            android:hint = "Opening Km"
+            android:singleLine="true"
+            android:background="@drawable/rounded_border_edittext"
+            android:fontFamily="@font/gothic"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/lblopkm"
+        android:layout_above="@id/l2"
+        android:layout_marginTop="10dp"
+        android:id="@+id/l3"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageopkm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="10dp"
+        android:padding="5dp"
+        android:id="@+id/l2"
+        android:orientation="horizontal" >
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/md_blue_300"
+            android:text="TAKE PHOTO"
+            android:id="@+id/btntakephoto"
+            android:layout_weight="1"
+            android:height="50dip" />
+    </LinearLayout>
+
+</RelativeLayout>

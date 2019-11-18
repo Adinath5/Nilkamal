@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        card_view:cardCornerRadius="2dp"
+        card_view:contentPadding="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:text="Supervisor Name"
+                android:id="@+id/txtspname"
+                android:textColor="@color/md_light_blue_900"
+                android:fontFamily="@font/poppinsregular"
+                android:layout_margin="5dp"/>
+
+            <TextView
+                android:id="@+id/txtvisitdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtspname"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/poppinsregular"
+                android:text="Visit Date"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/txtopkm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtvisitdate"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/poppinsregular"
+                android:text="Opening KM"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtvisitdate"
+                android:textStyle="normal"
+                android:visibility="gone"
+                android:id="@+id/txtopkmpath"
+                android:fontFamily="@font/poppinsregular"
+                android:layout_margin="5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtvisitdate"
+                android:layout_alignParentEnd="true"
+                android:textStyle="normal"
+                android:textSize="14sp"
+                android:text="Closing Km"
+                android:id="@+id/txtclkm"
+                android:fontFamily="@font/poppinsregular"
+                android:layout_margin="5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtvisitdate"
+                android:layout_alignParentEnd="true"
+                android:textStyle="normal"
+                android:visibility="gone"
+                android:id="@+id/txtclkmpath"
+                android:fontFamily="@font/poppinsregular"
+                android:layout_margin="5dp"/>
+
+            <ImageView
+                android:id="@+id/opkmimage"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/txtopkm"
+                android:scaleType="fitCenter" />
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:id="@+id/clkmimage"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/txtopkm"
+                android:scaleType="fitCenter"/>
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

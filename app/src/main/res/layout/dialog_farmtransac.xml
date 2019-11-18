@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/space_12"
+        android:paddingLeft="@dimen/space_12"
+        android:paddingRight="@dimen/space_12"
+        android:paddingTop="@dimen/space_12">
+
+        <View
+            android:layout_width="@dimen/space_24"
+            android:layout_height="0dp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Farm Transaction"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
+                android:textColor="@color/md_red_600"
+                android:textStyle="bold"
+                app:fontFamily="@font/gothicb" />
+
+            <!-- <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="match_parent"
+                 android:text="last update January 2018"
+                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
+                 android:textColor="@color/teal_200"
+                 android:textStyle="italic"
+                 app:fontFamily="serif" />-->
+
+        </LinearLayout>
+
+        <!-- <ImageButton
+             android:id="@+id/bt_download"
+             android:layout_width="?attr/actionBarSize"
+             android:layout_height="?attr/actionBarSize"
+             android:background="?attr/selectableItemBackgroundBorderless"
+             android:tint="@color/grey_60"
+             app:srcCompat="@drawable/ic_file_download" />-->
+
+         <ImageButton
+             android:id="@+id/bt_close"
+             android:layout_width="?attr/actionBarSize"
+             android:layout_height="?attr/actionBarSize"
+             android:background="?attr/selectableItemBackgroundBorderless"
+             android:tint="@color/md_grey_600"
+             app:srcCompat="@drawable/ic_close" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/md_red_400" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/space_2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:descendantFocusability="blocksDescendants"
+                android:orientation="vertical"
+                android:padding="@dimen/space_2">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/space_2"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/md_grey_300"
+                        app:cardCornerRadius="3dp"
+                        app:cardElevation="0dp">
+
+                        <com.balysv.materialripple.MaterialRippleLayout
+                            style="@style/RippleStyleBlack"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:id="@+id/lyt_suplclr"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:clickable="true"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="@dimen/space_9">
+
+                                <ImageView
+                                    android:layout_width="100dp"
+                                    android:layout_height="80dp"
+                                    android:layout_marginBottom="@dimen/space_9"
+                                    app:srcCompat="@mipmap/ic_suplclr" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/supplyclearance"
+                                    android:lines="2"
+                                    android:textAlignment="center"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                    android:textColor="@color/md_grey_600"
+                                    android:gravity="center_horizontal" />
+
+                            </LinearLayout>
+
+                        </com.balysv.materialripple.MaterialRippleLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/space_2"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/md_grey_300"
+                        app:cardCornerRadius="3dp"
+                        app:cardElevation="0dp">
+
+                        <com.balysv.materialripple.MaterialRippleLayout
+                            style="@style/RippleStyleBlack"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:id="@+id/lyt_birdsupl"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:clickable="true"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="@dimen/space_9">
+
+                                <ImageView
+                                    android:layout_width="100dp"
+                                    android:layout_height="80dp"
+                                    android:layout_marginBottom="@dimen/space_9"
+                                    app:srcCompat="@mipmap/ic_birdsupl" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/birdplacement"
+                                    android:lines="2"
+                                    android:textAlignment="center"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                    android:textColor="@color/md_grey_600"
+                                    android:gravity="center_horizontal" />
+
+                            </LinearLayout>
+
+                        </com.balysv.materialripple.MaterialRippleLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/space_2"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/md_grey_300"
+                        app:cardCornerRadius="3dp"
+                        app:cardElevation="0dp">
+
+                        <com.balysv.materialripple.MaterialRippleLayout
+                            style="@style/RippleStyleBlack"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:id="@+id/lyt_feedsupl"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:clickable="true"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="@dimen/space_9">
+
+                                <ImageView
+                                    android:layout_width="100dp"
+                                    android:layout_height="80dp"
+                                    android:layout_marginBottom="@dimen/space_9"
+                                    app:srcCompat="@mipmap/ic_feedsupl" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/feedsupplytofarm"
+                                    android:lines="2"
+                                    android:textAlignment="center"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                    android:textColor="@color/md_grey_600"
+                                    android:gravity="center_horizontal" />
+
+                            </LinearLayout>
+
+                        </com.balysv.materialripple.MaterialRippleLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/space_2"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/md_grey_300"
+                        app:cardCornerRadius="3dp"
+                        app:cardElevation="0dp">
+
+                        <com.balysv.materialripple.MaterialRippleLayout
+                            style="@style/RippleStyleBlack"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:id="@+id/lyt_birdmort"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:clickable="true"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="@dimen/space_9">
+
+                                <ImageView
+                                    android:layout_width="100dp"
+                                    android:layout_height="80dp"
+                                    android:layout_marginBottom="@dimen/space_9"
+                                    app:srcCompat="@mipmap/ic_birdmort" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Bird Mortality"
+                                    android:lines="2"
+                                    android:textAlignment="center"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                    android:textColor="@color/md_grey_600"
+                                    android:gravity="center_horizontal" />
+
+                            </LinearLayout>
+
+                        </com.balysv.materialripple.MaterialRippleLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/space_2"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/md_grey_300"
+                        app:cardCornerRadius="3dp"
+                        app:cardElevation="0dp">
+
+                        <com.balysv.materialripple.MaterialRippleLayout
+                            style="@style/RippleStyleBlack"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:id="@+id/lyt_Eggsprod"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:clickable="true"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="@dimen/space_9">
+
+                                <ImageView
+                                    android:layout_width="100dp"
+                                    android:layout_height="80dp"
+                                    android:layout_marginBottom="@dimen/space_9"
+                                    app:srcCompat="@mipmap/ic_eggsprod" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Eggs Production"
+                                    android:lines="2"
+                                    android:textAlignment="center"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                    android:textColor="@color/md_grey_600"
+                                    android:gravity="center_horizontal" />
+
+                            </LinearLayout>
+
+                        </com.balysv.materialripple.MaterialRippleLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/space_2"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/md_grey_300"
+                        app:cardCornerRadius="3dp"
+                        app:cardElevation="0dp">
+
+                        <com.balysv.materialripple.MaterialRippleLayout
+                            style="@style/RippleStyleBlack"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:id="@+id/lyt_birdsale"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:clickable="true"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="@dimen/space_9">
+
+                                <ImageView
+                                    android:layout_width="100dp"
+                                    android:layout_height="80dp"
+                                    android:layout_marginBottom="@dimen/space_9"
+                                    app:srcCompat="@mipmap/ic_birdsale" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Bird Sales"
+                                    android:lines="2"
+                                    android:textAlignment="center"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                    android:textColor="@color/md_grey_600"
+                                    android:gravity="center_horizontal" />
+
+                            </LinearLayout>
+
+                        </com.balysv.materialripple.MaterialRippleLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/md_teal_700" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/space_2"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/md_grey_300"
+                        app:cardCornerRadius="3dp"
+                        app:cardElevation="0dp">
+
+                        <com.balysv.materialripple.MaterialRippleLayout
+                            style="@style/RippleStyleBlack"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:id="@+id/lyt_feedprod"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:clickable="true"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="@dimen/space_9">
+
+                                <ImageView
+                                    android:layout_width="100dp"
+                                    android:layout_height="80dp"
+                                    android:layout_marginBottom="@dimen/space_9"
+                                    app:srcCompat="@mipmap/ic_feedprod" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Feed Production"
+                                    android:lines="2"
+                                    android:textAlignment="center"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                    android:textColor="@color/md_grey_600"
+                                    android:gravity="center_horizontal" />
+
+                            </LinearLayout>
+
+                        </com.balysv.materialripple.MaterialRippleLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/space_2"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/md_grey_300"
+                        app:cardCornerRadius="3dp"
+                        app:cardElevation="0dp">
+
+                        <com.balysv.materialripple.MaterialRippleLayout
+                            style="@style/RippleStyleBlack"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:id="@+id/lyt_f2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:clickable="true"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="@dimen/space_9">
+
+                                <ImageView
+                                    android:layout_width="100dp"
+                                    android:layout_height="80dp"
+                                    android:layout_marginBottom="@dimen/space_9"
+                                    />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=""
+                                    android:lines="2"
+                                    android:textAlignment="center"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                    android:textColor="@color/md_grey_600"
+                                    android:gravity="center_horizontal" />
+
+                            </LinearLayout>
+
+                        </com.balysv.materialripple.MaterialRippleLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+                <!--android:text="@string/very_long_lorem_ipsum_2"-->
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
+</LinearLayout>

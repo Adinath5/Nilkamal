@@ -40,28 +40,51 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     File sd = Environment.getExternalStorageDirectory();
     File backupDB = new File(sd, backupDBPath);
     private SQLiteDatabase mDataBase;
-
     private static final int DB_VERSION = 1;
 
 
-
-    public DatabaseHelper(Context context)
-    {
-        super(context, DATABASE_NAME ,null, DATABASE_VERSION);
+    public DatabaseHelper(Context context) {
+        super(context, DB_NAME, null, DB_VERSION);
         this.myContext = context;
-        DB_PATH = context.getDatabasePath(DB_NAME).getPath();
-        //pathToSaveDBFile = filePath.toString();
-        boolean dbexist = checkDataBase();
-        if (dbexist) {
-            openDatabase();
+        Log.d("DBVERSION","The Database Version (as hard coded) is " + String.valueOf(DB_VERSION));
+
+        int dbversion = DatabaseAssetHandler.getVersionFromDBFile(context,DB_NAME);
+        Log.d("DBVERSION","The Database Version (as per the database file) is " + String.valueOf(dbversion));
+
+        // Copy the Database if no database exists
+        if (!DatabaseAssetHandler.checkDataBase(context,DB_NAME)) {
+            DatabaseAssetHandler.copyDataBase(context,DB_NAME,true,DB_VERSION);
         } else {
-            System.out.println("Database doesn't exist");
-            try {
-                createDataBase();
-            } catch (IOException e) {
-                e.printStackTrace();
+            // Copy the database if DB_VERSION is greater then the version stored in the database (user_version value in the db header)
+            if (DB_VERSION > dbversion && DatabaseAssetHandler.checkDataBase(context, DB_NAME)) {
+                DatabaseAssetHandler.copyDataBase(context, DB_NAME, true,DB_VERSION);
+                // DatabaseAssetHandler.restoreTable(context,DB_NAME,????THE_TABLE_NAME????); // Example of restoring a table (note ????THE_TABLE_NAME???? must be changed accordingly)
+                DatabaseAssetHandler.clearForceBackups(context, DB_NAME); // Clear the backups
             }
         }
+        mDataBase = this.getWritableDatabase();
+    }
+    public boolean openDatabase() throws SQLiteException
+    {
+        Log.d(TAG, "Database open");
+        Log.d(TAG, DB_PATH.toString());
+        mDataBase = SQLiteDatabase.openDatabase(DB_PATH, null, SQLiteDatabase.CREATE_IF_NECESSARY);
+        return mDataBase != null;
+
+    }
+    public synchronized void close(){
+        if(mDataBase != null)
+            mDataBase.close();
+        SQLiteDatabase.releaseMemory();
+        super.close();
+    }
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+    }
+
+    // onUpgrade should not be used for the copy as may be issues due to db being opened
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
     }
 
     public void createDataBase() throws IOException {
@@ -84,15 +107,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         try {
             File file = new File(DB_PATH);
             checkDB = file.exists();
-            Log.d("Database", "Database Exist");
+            Log.d("Database", "Database Exist-2");
         } catch(SQLiteException e) {
             Log.d(TAG, e.getMessage());
         }
         return checkDB;
 
-       // File DbFile = new File(DB_PATH + DB_NAME);
-       // Log.d("Database", "Database Exist");
-       // return DbFile.exists();
+        // File DbFile = new File(DB_PATH + DB_NAME);
+        // Log.d("Database", "Database Exist");
+        // return DbFile.exists();
     }
 
     private void copyDataBase() throws IOException {
@@ -109,205 +132,37 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         os.close();
     }
 
+    public boolean isTableExists(String tableName, boolean openDb) {
+        if(openDb) {
+            if(mDataBase == null || !mDataBase.isOpen()) {
+                mDataBase = getReadableDatabase();
+            }
 
-    public void deleteDB(){
-        File file = new File(pathToSaveDBFile);
-
-        if (file.exists()){
-            file.delete();
-            Log.d(TAG, "Database Deleted");
-        }
-    }
-   public boolean openDatabase() throws SQLiteException
-    {
-        Log.d(TAG, "Database open");
-        Log.d(TAG, DB_PATH.toString());
-        mDataBase = SQLiteDatabase.openDatabase(DB_PATH, null, SQLiteDatabase.CREATE_IF_NECESSARY);
-        return mDataBase != null;
-
-    }
-    public synchronized void close(){
-        if(mDataBase != null)
-            mDataBase.close();
-        SQLiteDatabase.releaseMemory();
-        super.close();
-    }
-
-    @Override
-    public void onCreate(SQLiteDatabase db){
-
-    }
-
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
-
-    }
-
-    private int getVersionId() {
-        SQLiteDatabase db = SQLiteDatabase.openDatabase(pathToSaveDBFile, null, SQLiteDatabase.OPEN_READONLY);
-        String query = "SELECT version_id FROM dbVersion";
-        Cursor cursor = db.rawQuery(query, null);
-        cursor.moveToFirst();
-        int v =  cursor.getInt(0);
-        db.close();
-        return v;
-    }
-
-    /*public void openDatabase() {
-        String dbpath = myContext.getDatabasePath(DB_NAME).getPath();
-        Log.d(TAG, "opening connection");
-
-        if(mDatabase !=null && mDatabase.isOpen())
-        {
-            return;
+            if(!mDataBase.isReadOnly()) {
+                mDataBase.close();
+                mDataBase = getReadableDatabase();
+            }
         }
 
-        mDatabase = SQLiteDatabase.openDatabase("/data/data/com.info.tredonline/databases/agrodata.db", null, SQLiteDatabase.OPEN_READWRITE);
-    }*/
-
-
-
-    /*public List<MyObject> read(String searchTerm) {
-
-        List<MyObject> recordsList = new ArrayList<MyObject>();
-
-        // select query
-        String sql = "";
-        sql += "SELECT * FROM messmast_tbl WHERE  msname LIKE '%" + searchTerm + "%'";
-        sql += " ORDER BY msname DESC";
-        sql += " LIMIT 0,5";
-
-        SQLiteDatabase db = this.getWritableDatabase();
-
-        // execute the query
-        Cursor cursor = db.rawQuery(sql, null);
-
-        // looping through all rows and adding to list
-        if (cursor.moveToFirst()) {
-            do {
-
-                // int productId = Integer.parseInt(cursor.getString(cursor.getColumnIndex(fieldProductId)));
-                String objectName = cursor.getString(cursor.getColumnIndex("msname"));
-                MyObject myObject = new MyObject(objectName);
-
-                // add to list
-                recordsList.add(myObject);
-
-            } while (cursor.moveToNext());
+        String query = "select DISTINCT tbl_name from sqlite_master where tbl_name = '"+tableName+"'";
+        try (Cursor cursor = mDataBase.rawQuery(query, null)) {
+            if(cursor!=null) {
+                if(cursor.getCount()>0) {
+                    return true;
+                }
+            }
+            return false;
         }
-
-        cursor.close();
-        db.close();
-
-        // return the list of records
-        return recordsList;
     }
+    public void CreateSaleTranTbl(){
+        String query = "Create Table salestran(tempvochno TEXT, vdate Date, grid TEXT,glcode TEXT, addedby TEXT, prodno TEXT, prodname TEXT, " +
+                "qty NUMERIC DEFAULT '0.00',netqty NUMERIC DEFAULT '0.00', fqty NUMERIC DEFAULT '0.00', mrp NUMERIC DEFAULT '0.00'," +
+                "rateinctax NUMERIC DEFAULT '0.00',amountinctax NUMERIC DEFAULT '0.00',rateexctax NUMERIC DEFAULT '0.00',amountexctax NUMERIC DEFAULT '0.00'," +
+                "igstp NUMERIC DEFAULT '0.00',igstamount NUMERIC DEFAULT '0.00', mfgcomp TEXT,prodtype TEXT,prodcategory TEXT,prodhsn TEXT,prodpack TEXT,batchno TEXT," +
+                "expdate TEXT,prodprate TEXT,typcode TEXT,prodacd TEXT,gname TEXT,addeddate TEXT,ledgername TEXT,paddress TEXT, vochid INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT)";
+        mDataBase = this.getWritableDatabase();
+        mDataBase.execSQL(query);
 
-    public List<MyProduct> newread(String searchProduct) {
-
-        List<MyProduct> productList = new ArrayList<MyProduct>();
-
-        // select query
-        String sql = "";
-        sql += "SELECT prodname FROM productmast WHERE prodname LIKE '%" + searchProduct + "%'";
-        sql += " ORDER BY prodname DESC";
-        sql += " LIMIT 0,5";
-
-        SQLiteDatabase db = this.getWritableDatabase();
-
-        // execute the query
-        Cursor cursor = db.rawQuery(sql, null);
-
-        // looping through all rows and adding to list
-        if (cursor.moveToFirst()) {
-            do {
-
-                // int productId = Integer.parseInt(cursor.getString(cursor.getColumnIndex(fieldProductId)));
-                String objectName = cursor.getString(cursor.getColumnIndex("prodname"));
-                MyProduct myProduct = new MyProduct(objectName);
-
-                // add to list
-                productList.add(myProduct);
-
-            } while (cursor.moveToNext());
-        }
-
-        cursor.close();
-        db.close();
-
-        // return the list of records
-        return productList;
-    }
-
-    public List<myPurchaseLedger> plgread(String searchTerm) {
-
-        List<myPurchaseLedger> recordsList = new ArrayList<myPurchaseLedger>();
-
-        // select query
-        String sql = "";
-        sql += "SELECT * FROM subledger_tbl WHERE  sledgername LIKE '%" + searchTerm + "%'";
-        sql += " ORDER BY sledgername DESC";
-        sql += " LIMIT 0,5";
-
-        SQLiteDatabase db = this.getWritableDatabase();
-
-        // execute the query
-        Cursor cursor = db.rawQuery(sql, null);
-
-        // looping through all rows and adding to list
-        if (cursor.moveToFirst()) {
-            do {
-
-                // int productId = Integer.parseInt(cursor.getString(cursor.getColumnIndex(fieldProductId)));
-                String objectName = cursor.getString(cursor.getColumnIndex("sledgername"));
-                myPurchaseLedger myPurchaseLedger = new myPurchaseLedger(objectName);
-
-                // add to list
-                recordsList.add(myPurchaseLedger);
-
-            } while (cursor.moveToNext());
-        }
-
-        cursor.close();
-        db.close();
-
-        // return the list of records
-        return recordsList;
-    }*/
-
-    public List<String> getLoksabha() {
-        List<String> list = new ArrayList<String>();
-        String sql = "";
-        sql += "SELECT parliment FROM booth_master group by parliment";
-
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery(sql, null);
-
-        if (cursor.moveToFirst()) {
-            do {
-                list.add(cursor.getString(0));//adding 2nd column data
-            } while (cursor.moveToNext());
-        }
-        // closing connection
-        cursor.close();
-        db.close();
-
-        return list;
-    }
-
-    public ArrayList<HashMap<String, String>> GetVoterListAll(){
-        SQLiteDatabase db = this.getWritableDatabase();
-        ArrayList<HashMap<String, String>> voterList = new ArrayList<>();
-        String query = "Select voter_name_r,voter_middle_r,voter_surname_r,voter_village_r,voter_taluka_r,voter_voterid,voter_gender,voter_age,voter_unipque_id,voter_boothno,voterparliment,voterparlno,voterassmno from voter_mast order by voter_name_r,voter_middle_r,voter_surname_r";
-        Cursor cursor = db.rawQuery(query,null);
-        cursor.moveToFirst();
-        while (cursor.isAfterLast() == false) {
-            HashMap<String, String> user = new HashMap<>();
-            user.put("voternamef",cursor.getString(cursor.getColumnIndex("voter_name_r")));
-            user.put("voternamem",cursor.getString(cursor.getColumnIndex("voter_middle_r")));
-            user.put("voternames",cursor.getString(cursor.getColumnIndex("voter_surname_r")));
-            voterList.add(user);
-        }
-        return  voterList;
     }
 
 }

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.rpt_spkmreport">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/global__primary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:contentInsetStartWithNavigation="0dp"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_large"
+        >
+        <TextView
+            android:id="@+id/txtspname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date :"
+            android:textSize="12sp"
+            android:textStyle="normal"
+            android:fontFamily="@font/poppinsregular"
+            android:layout_gravity="start"
+            android:layout_marginStart="15dp"
+            android:textColor="@color/global__primary_dark" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/txtspname"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/poppinsregular"
+            android:text="28/02/2020"
+            android:textStyle="normal"
+            app:drawableRightCompat="@drawable/ic_today_black_24dp"
+            android:id="@+id/txtvdate"
+            android:textColor="@color/md_grey_600"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/txtspname"
+            android:text="28/02/2020"
+            android:textStyle="normal"
+            app:drawableRightCompat="@drawable/ic_today_black_24dp"
+            android:id="@+id/txtnvdate"
+            android:visibility="gone"
+            android:textColor="@color/md_grey_600"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/spfvisitlist"
+            android:layout_margin="10dp"
+            />
+    </LinearLayout>
+
+</LinearLayout>

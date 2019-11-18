@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/saleitem"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    tools:context=".Activity.SaleItemSelectActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarit"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:layout_alignParentTop="true"
+        app:popupTheme="@style/Base.PSTheme.PopupOverlay" />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_below="@id/toolbarit"
+        card_view:cardCornerRadius="2dp"
+        card_view:contentPadding="10dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtacname"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
+                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id = "@+id/prodname"
+                    android:hint = "@string/productname"
+                    android:singleLine="true"
+                    android:fontFamily="@font/gothic"
+                    android:inputType="textCapSentences"
+                    android:background="@drawable/rounded_border_edittext"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:id="@+id/lblitemno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothic"
+                android:textSize="15sp"
+                android:textStyle="normal"
+                android:visibility="gone"
+                />
+            <TextView
+                android:id="@+id/lblcat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothic"
+                android:textSize="15sp"
+                android:textStyle="normal"
+                android:visibility="gone"
+                />
+            <TextView
+                android:id="@+id/lblmfg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothic"
+                android:textSize="15sp"
+                android:textStyle="normal"
+                android:visibility="gone"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lv1"
+                android:layout_below="@id/txtacname"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width = "match_parent"
+                        android:layout_height = "wrap_content"
+                        android:id = "@+id/layoutqty"
+                        android:layout_marginTop = "8dp"
+                        android:layout_marginStart = "10dp"
+                        android:layout_marginEnd = "10dp">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width = "match_parent"
+                            android:layout_height = "wrap_content"
+                            android:id = "@+id/txtqty"
+                            android:text=""
+                            android:inputType="numberDecimal"
+                            android:hint = "@string/quantityout"
+                            android:singleLine="true"
+                            android:background="@drawable/rounded_border_edittext"
+                            android:fontFamily="@font/gothic"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width = "match_parent"
+                        android:layout_height = "wrap_content"
+                        android:id = "@+id/layoutrate"
+                        android:layout_marginTop = "8dp"
+                        android:layout_marginStart = "10dp"
+                        android:layout_marginEnd = "10dp">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width = "match_parent"
+                            android:layout_height = "wrap_content"
+                            android:id = "@+id/txtrate"
+                            android:text=""
+                            android:inputType="numberDecimal"
+                            android:hint = "@string/rate"
+                            android:singleLine="true"
+                            android:background="@drawable/rounded_border_edittext"
+                            android:fontFamily="@font/gothic"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width = "match_parent"
+                        android:layout_height = "wrap_content"
+                        android:id = "@+id/layoutdisc"
+                        android:layout_marginTop = "8dp"
+                        android:layout_marginStart = "10dp"
+                        android:layout_marginEnd = "10dp">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width = "match_parent"
+                            android:layout_height = "wrap_content"
+                            android:id = "@+id/txtdiscamt"
+                            android:layout_gravity="end"
+                            android:text=""
+                            android:inputType="numberDecimal"
+                            android:hint = "@string/discount_amount"
+                            android:singleLine="true"
+                            android:background="@drawable/rounded_border_edittext"
+                            android:fontFamily="@font/gothic"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width = "match_parent"
+                        android:layout_height = "wrap_content"
+                        android:id = "@+id/layoutgstp"
+                        android:layout_marginTop = "8dp"
+                        android:layout_marginStart = "10dp"
+                        android:layout_marginEnd = "10dp">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width = "match_parent"
+                            android:layout_height = "wrap_content"
+                            android:id = "@+id/txtgstperc"
+                            android:layout_gravity="end"
+                            android:text=""
+                            android:inputType="numberDecimal"
+                            android:hint = "@string/gstpercent"
+                            android:singleLine="true"
+                            android:background="@drawable/rounded_border_edittext"
+                            android:fontFamily="@font/gothic"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width = "match_parent"
+                        android:layout_height = "wrap_content"
+                        android:id = "@+id/layoutgstamt"
+                        android:layout_marginTop = "8dp"
+                        android:layout_marginStart = "10dp"
+                        android:layout_marginEnd = "10dp">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width = "match_parent"
+                            android:layout_height = "wrap_content"
+                            android:id = "@+id/txtgstamt"
+                            android:layout_gravity="end"
+                            android:text=""
+                            android:inputType="numberDecimal"
+                            android:hint = "@string/gst_amount"
+                            android:singleLine="true"
+                            android:background="@drawable/rounded_border_edittext"
+                            android:fontFamily="@font/gothic"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width = "match_parent"
+                        android:layout_height = "wrap_content"
+                        android:id = "@+id/layoutamount"
+                        android:layout_marginTop = "8dp"
+                        android:layout_marginStart = "10dp"
+                        android:layout_marginEnd = "10dp">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width = "match_parent"
+                            android:layout_height = "wrap_content"
+                            android:id = "@+id/txtamount"
+                            android:inputType="numberDecimal"
+                            android:hint = "@string/product_total"
+                            android:singleLine="true"
+                            android:background="@drawable/rounded_border_edittext"
+                            android:fontFamily="@font/gothic"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtmrp"
+                    android:visibility="gone"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txthsnsac"
+                    android:visibility="gone"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtpacking"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/prlv2"
+        android:layout_below="@id/card_view1"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/cancle"
+                android:clickable="true"
+                android:id="@+id/btncancleitem"
+                android:textColor="@color/global__primary"
+                android:fontFamily="@font/gothicb"
+                app:cornerRadius="10dp"
+                app:backgroundTint="@color/md_white_1000"
+                app:strokeColor="@color/global__primary"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:focusable="true" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/save"
+                android:clickable="true"
+                android:id="@+id/btnsavepurchaseitem"
+                android:textColor="@color/md_white_1000"
+                android:fontFamily="@font/gothicb"
+                app:backgroundTint="@color/global__primary"
+                app:cornerRadius="10dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:focusable="true" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

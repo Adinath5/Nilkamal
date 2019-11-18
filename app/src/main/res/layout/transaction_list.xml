@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/ltview"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_view4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_margin="5dp"
+        card_view:cardElevation="2dp"
+        card_view:cardCornerRadius="2dp"
+        card_view:contentPadding="10dp">
+
+        <FrameLayout
+            android:background="#FF0000"
+            android:id="@+id/trframe"
+            android:layout_width="5dp"
+            android:layout_height="match_parent"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/plv2"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtinvtype"
+                        android:textSize="16sp"
+                        android:layout_marginLeft="5dp"
+                        android:text="Party Name"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/gothic"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtledgername"
+                        android:textSize="14sp"
+                        android:layout_marginLeft="5dp"
+                        android:text="Ledger Name"
+                        android:textStyle="normal"
+                        android:fontFamily="@font/gothic"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtinvamount"
+                        android:textSize="14sp"
+                        android:layout_marginLeft="5dp"
+                        android:text="Amount"
+                        android:textStyle="normal"
+                        android:fontFamily="@font/gothic"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtblanck"
+                        android:textSize="14sp"
+                        android:layout_marginLeft="5dp"
+                        android:text=""
+                        android:textStyle="normal"
+                        android:layout_margin="5dp"
+                        android:fontFamily="@font/gothic"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtinvno"
+                        android:textSize="16sp"
+                        android:layout_marginRight="5dp"
+                        android:text="Party Name"
+                        android:textAlignment="textEnd"
+                        android:layout_gravity="end"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/gothic"/>
+
+                    <TextView
+                        android:id="@+id/txtinvdate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="31dp"
+                        android:layout_gravity="end"
+                        android:layout_marginLeft="5dp"
+                        android:fontFamily="@font/gothic"
+                        android:text="Invoice Date"
+                        android:textAlignment="textEnd"
+                        android:textSize="14sp"
+                        android:textStyle="normal" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtamount"
+                        android:textSize="14sp"
+                        android:layout_marginLeft="5dp"
+                        android:text="Invoice Date"
+                        android:textStyle="normal"
+                        android:textAlignment="textEnd"
+                        android:layout_gravity="end"
+                        android:fontFamily="@font/gothic"/>
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="end"
+                        android:gravity="end">
+                        <ImageButton
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:id="@+id/btnprintvoch"
+                            android:visibility="gone"
+                            android:background="@color/md_white_1000"
+                            card_view:srcCompat="@drawable/ic_baseline_print_24"
+                            />
+                        <ImageButton
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:id="@+id/btnsharevoch"
+                            android:layout_toRightOf="@id/btnprintvoch"
+                            android:background="@color/md_white_1000"
+                            android:scaleType="fitXY"
+                            card_view:srcCompat="@drawable/ic_baseline_visibility_24"/>
+                        <ImageButton
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:id="@+id/btndelvoch"
+                            android:layout_toRightOf="@id/btnsharevoch"
+                            android:background="@color/md_white_1000"
+                            android:scaleType="fitXY"
+                            card_view:srcCompat="@drawable/ic_baseline_delete_forever_24"/>
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+</LinearLayout>

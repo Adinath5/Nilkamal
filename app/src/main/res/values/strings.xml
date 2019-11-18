@@ -6,6 +6,7 @@
     <string name="closeDrawer">close_drawer</string>
     <string name="spinner_title">Select Category</string>
 
+
     <!-- Navigation Drawer menu labels -->
     <string name="nav_home">Home</string>
     <string name="nav_profile">Products</string>
@@ -14,17 +15,47 @@
     <string name="nav_settings">Settings</string>
     <string name="nav_contact">Contact Us</string>
     <string name="nav_login">Login</string>
-
-
+    <string name="dashboard">DashBoard</string>
+    <string name="reports">Reports</string>
+    <string name="sale">Sale</string>
+    <string name="quotation">Pullet Quotation</string>
+    <string name="salereturn">Sale Return</string>
+    <string name="purchase">Purchase</string>
+    <string name="purchasereturn">Purchase Return</string>
+    <string name="receipt">Receipt</string>
+    <string name="payment">Payment</string>
+    <string name="language">Language</string>
+    <string name="backup">Backup &amp; Restore</string>
+    <string name="other">Other</string>
+    <string name="help">Help</string>
+    <string name="contactus">Contact Us</string>
+    <string name="menu__logout">Log Out</string>
+    <string name="print">Print</string>
+    <string name="share">Share</string>
+    <string name="edit_setting__logout_question">Are you sure to logout ? </string>
+    <string name="edit_setting__terms_and_conditions">Terms and Conditions</string>
+    <string name="WelComeUser">Wel Come %1$s</string>
+    <string name="VoucherTypeCash">Cash</string>
+    <string name="VoucherTypeCredit">Credit</string>
+    <string name="LedgerBalance">Balance : %1$s</string>
     <!-- Toolbar titles when navigation menu item is selected -->
     <string name="activity_title_about_us">About Us</string>
+    <string name="msg_token_fmt" translatable="false">FCM registration Token: %s</string>
 
     <string name="activity_title_privacy_policy">Privacy Policy</string>
     <string name="action_clear_all">Clear All</string>
     <string name="action_logout">Logout</string>
+    <string name="action_stop">Location Stop</string>
+    <string name="channel_id">Supervisor Channel</string>
     <string name="action_mark_all_read">Mark All as Read</string>
     <string name="privacy_policy">Privacy Policy</string>
     <string name="activity_image_trans">activity_image_transition</string>
+    <string name="accountsavesuccess">Account Save Successfully...</string>
+
+    <string name="tracking_is_off">Tracking is Off</string>
+    <string name="tracking_is_on">Tracking is On</string>
+    <string name="textfields_empty_or_spaces">Please fill in both fields. User names cannot have a space.</string>
+    <string name="google_play_services_unavailable">Please go into Settings > Apps and enable Google Play Services.</string>
 
     <string name="activity_text_trans">activity_text_transition</string>
     <string name="activity_mixed_trans">activity_mixed_transition</string>
@@ -52,14 +83,78 @@
     <string name="message__ok_close">अोके</string>
     <!-- Message -->
     <string name="message__cancel_close">कॅन्सल</string>
-    <string name="file_provider_authority" translatable="false">com.atharvainfo.leader.fileprovider</string>
+    <string name="file_provider_authority" translatable="false">com.atharvainfo.nilkamal.fileprovider</string>
 
     <!-- App General -->
+    <string name="version_unknown">Unknown</string>
+    <string name="app_version">Version</string>
+    <string name="default_notification_channel_id">Default</string>
+    <string name="webview_loading">Load Content... </string>
+
+
+    <string name="backbutton">Are you sure,want to Exit from App?</string>
+    <string name="SaveMessage">Entry Save Successfully...</string>
+    <string name="ok_dialog">Ok</string>
+    <string name="yes_dialog">Yes</string>
+    <string name="no_dialog">No</string>
+
+    <string name="url_app_google_play">https://play.google.com/store/apps/details?id=com.wire</string>
+
+    <string name="http">http://</string>
+    <string name="download">Download</string>
+    <string name="write_file">This app needs access to your file storage so that it can write files.</string>
+
     <string name="app__ok">OK</string>
     <string name="app__cancel">Cancel</string>
     <string name="app__drawer_open">Drawer Open</string>
     <string name="app__drawer_close">Drawer Close</string>
     <string name="no_internet_error">प्रथम इंटरनेट कनेक्शन चालु करा.</string>
+    <string name="youAreNotUpdatedTitle">Update Available</string>
+    <string name="youAreNotUpdatedMessage">A new version is available. Please update to New version</string>
+    <string name="youAreNotUpdatedMessage1">\s now</string>
+    <string name="updateapp">Update</string>
+    <string name="appupto_date">App Is UpToDate</string>
+    <string name="update_now">Update Now</string>
+
+    <string name="restart" translatable="false">Restart</string>
+
+    <string name="permission_rationale">Location permission is needed for core functionality</string>
+    <string name="permission_denied_explanation">Permission was denied, but is needed for core
+        functionality.</string>
+    <string name="settings">Settings</string>
+    <string name="ok">OK</string>
+
+    <string name="request_updates">Request updates</string>
+    <string name="remove_updates">Remove updates</string>
+    <string name="unknown_location">Unknown location</string>
+    <string name="dashboard_toreceive">To Receive</string>
+    <string name="dashboard_topay">To Pay</string>
+    <string name="cashinhand">Cash In Hand</string>
+    <string name="dashboard_bankbal">Bank Balance</string>
+    <string name="todo" />
+    <string name="allproductdashbord">Inventory Products</string>
+    <string name="itemtobefinish">Product About To Finish</string>
+    <string name="batched_location_updates">Batched location updates</string>
+
+    <plurals name="num_locations_reported">
+        <item quantity="zero">No location reported</item>
+        <item quantity="one">One location reported</item>
+        <item quantity="other">%d locations reported</item>
+    </plurals>
+
+    <string name="default_channel">Default channel</string>
+
+
+    <string name="gps_dialog_title">GPS...</string>
+    <string name="gps_enable_message"><![CDATA[GPS is not enable, Please enable it in next window.<br>]]></string>
+    <string name="username">Username/Email</string>
+    <string name="password">Password</string>
+    <string name="toggle_login_signin">New Here? Sign up</string>
+    <string name="login">Login</string>
+    <string name="new_here_question"><![CDATA[New Here? Sign Up >]]></string>
+    <string name="right_arrow">Right Arrow</string>
+    <string name="error_email_required">Email Required</string>
+    <string name="error_password_required">password can not be empty</string>
 
     <!-- Quotation -->
     <string name="QutationTitleName">QUOTATION</string>
@@ -74,6 +169,10 @@
     <string name="QuotationDescription">Description:</string>
     <string name="QuotationLineTotal">Line Total</string>
     <string name="QuotationAddItem">+Add a Item</string>
+    <string name="QuotationItemName">Product Name</string>
+    <string name="QuotationItemQuantity">Quantity</string>
+    <string name="QuotationItemRate">Rate</string>
+    <string name="QuotationItemAmount">Total Amount</string>
     <string name="QuotationSubTotal">Sub Total:</string>
     <string name="QuotationDiscount">Discount:</string>
     <string name="QuotationGST">GST:</string>
@@ -82,16 +181,16 @@
     <string name="QuotationPaidAmount">Paid Amount:</string>
     <string name="QuotationAmountDue">Amount Due:</string>
     <string name="QuotationNarrationHint">Narration</string>
-
+    <string name="QuotationNo">Quotation No.</string>
 
     <!-- PurchaseInvoice -->
     <string name="PurchaseInvoiceTitle">PURCHASE INVOICE</string>
     <string name="PurchaseInvoice_BilledTo">Billed To:</string>
-    <string name="PurchaseInvoice_AddCustomer">+Add a customer</string>
+    <string name="PurchaseInvoice_AddCustomer">+Select Supplier</string>
     <string name="PurchaseInvoice_InvoiceNo">Invoice No:</string>
     <string name="PurchaseInvoice_Dateofissue">Date of Issue:</string>
     <string name="PurchaseInvoice_DueDate">Due Date:</string>
-    <string name="PurchaseInvoice_OrderNo">Purchase Order No:</string>
+    <string name="PurchaseInvoice_OrderNo">Supplier Bill No</string>
     <string name="PurchaseInvoice_Decription">Description:</string>
     <string name="PurchaseInvoice_LineTotal">Line Total</string>
     <string name="PurchaseInvoice_AddItem">+Add a Item</string>
@@ -103,6 +202,10 @@
     <string name="PurchaseInvoice_PaidAmount">Paid Amount:</string>
     <string name="PurchaseInvoice_AmountDue">Amount Due:</string>
     <string name="PurchaseInvoice_NarrationHint">Narration</string>
+    <string name="PurchaseInvoice_Address">Address:</string>
+    <string name="PurchaseInvoice_EmailId">Email:</string>
+    <string name="PurchaseInvoice_ContactNo">Contact No:</string>
+
 
 
     <!-- SaleInvoice -->
@@ -112,7 +215,7 @@
     <string name="SaleInvoice_InvoiceNo">Invoice No:</string>
     <string name="SaleInvoice_Dateofissue">Date of Issue:</string>
     <string name="SaleInvoice_DueDate">Due Date:</string>
-    <string name="SaleInvoice_OrderNo">Purchase Order No:</string>
+    <string name="SaleInvoice_OrderNo">Challan No</string>
     <string name="SaleInvoice_Decription">Description:</string>
     <string name="SaleInvoice_LineTotal">Line Total</string>
     <string name="SaleInvoice_AddItem">+Add a Item</string>
@@ -144,7 +247,6 @@
     <string name="CashReceipt_SaveButton">Save</string>
 
 
-
     <!-- LeaveForm -->
     <string name="LeaveForm_Title">LEAVE REQUEST</string>
     <string name="LeaveForm_FromDate">From Date</string>
@@ -155,7 +257,7 @@
 
 
     <!-- PaymentReceipt -->
-    <string name="PaymentReceiptTitle">PAYMENT RECEIPT</string>
+    <string name="PaymentReceiptTitle">CASH PAYMENT</string>
     <string name="PaymentReceipt_Message">NEW ENTRY</string>
     <string name="PaymentReceipt_VoucherNo">Voucher No:</string>
     <string name="PaymentReceipt_Datehint">Choose Date</string>
@@ -167,6 +269,20 @@
     <string name="PaymentReceipt_BankName">Bank Name</string>
     <string name="PaymentReceipt_UnderScheme">Under Scheme:</string>
     <string name="PaymentReceipt_SaveButton">Save</string>
+
+    <!-- ChequePaymentReceipt -->
+    <string name="ChequePaymentReceiptTitle">BANK VOUCHER</string>
+    <string name="bank_Message">NEW ENTRY</string>
+    <string name="bank_VoucherNo">Voucher No:</string>
+    <string name="bank_Datehint">Choose Date</string>
+    <string name="bank_LedgerName">Ledger Name:</string>
+    <string name="bank_Address">Address:</string>
+    <string name="bank_AmountHint">Amount</string>
+    <string name="bank_NarrationHint">Narration</string>
+    <string name="bank_Cheque_ReceiptNo">Cheque / Receipt No</string>
+    <string name="bank_BankName">Bank Name</string>
+    <string name="bank_UnderScheme">Under Scheme:</string>
+    <string name="bank_SaveButton">Save</string>
 
 
     <!-- SupplyClearance -->
@@ -188,7 +304,7 @@
     <string name="SupplyClearance_ActualDate">Actual Date:</string>
     <string name="SupplyClearance_Checkbox2">Cleaning and Disinfecting the Shed</string>
     <string name="SupplyClearance_6Days">6 Days</string>
-   <string name="SupplyClearance_CheckBox3">Cleaning and Disinfecting the Equipment</string>
+    <string name="SupplyClearance_CheckBox3">Cleaning and Disinfecting the Equipment</string>
     <string name="SupplyClearance_4days">4 Days</string>
     <string name="SupplyClearance_CheckBox4">Arrenging new liter inside shed</string>
     <string name="SupplyClearance_2Days">2 Days</string>
@@ -239,10 +355,9 @@
     <string name="AddCustomerSale_btnadd">Add</string>
     <string name="AddCustomerSale_openingbal">Opening Balance</string>
 
-
-
-
-
+    <!-- Feed Requirement -->
+    <string name="FRFarmerName">Farm Name</string>
+    <string name="FRSelectFarmer">+Select Farm </string>
 
 
     <!-- Error Message -->
@@ -255,6 +370,7 @@
     <string name="error_message__order_fail">Process Failed with unknown error! Please try again</string>
     <string name="error_message__blank_contact_message">Please input Contact Message.</string>
     <string name="error_message__blank_password">योग्य पासवर्ड भरा</string>
+    <string name="error_message__blank_email">योग्य Email ID भरा</string>
     <string name="error_message__blank_name">Please input name.</string>
     <string name="error_message__blank_keyword">Please input search keyword.</string>
     <string name="error_message__password_not_equal">Password are not equal!</string>
@@ -320,6 +436,439 @@
         <item>Settings</item>
         <item>User Login</item>
         <item>Contact Us</item>
+
+    </string-array>
+
+    <string name="OK">OK</string>
+    <string name="GOT_IT">GOT IT</string>
+    <string name="YES">YES</string>
+    <string name="NO">NO</string>
+    <string name="SETTING">SETTING</string>
+    <string name="CANCEL">CANCEL</string>
+    <string name="CLOSE">CLOSE</string>
+    <string name="UPDATE">UPDATE</string>
+    <string name="DISMISS">DISMISS</string>
+    <string name="HIDE">HIDE</string>
+    <string name="RETRY">RETRY</string>
+    <string name="TRY_AGAIN">TRY AGAIN</string>
+    <string name="DETAILS">DETAILS</string>
+    <string name="FAILED">FAILED</string>
+    <string name="TYPE_SEARCH">SEARCH</string>
+    <string name="NO_IMAGE">NO IMAGE</string>
+    <string name="DELETE">DELETE</string>
+    <string name="DISCARD">DISCARD</string>
+    <string name="AGREE">AGREE</string>
+    <string name="DISAGREE">DISAGREE</string>
+    <string name="OPEN">OPEN</string>
+    <string name="SAVE">SAVE</string>
+    <string name="NEXT">NEXT</string>
+    <string name="BACK">BACK</string>
+    <string name="SKIP">SKIP</string>
+
+
+    <string name="farm_int">Farm Name</string>
+    <string name="farmer_name">Farmer Name</string>
+    <string name="farm_village">Village </string>
+    <string name="farm_taluka">Taluka </string>
+    <string name="farm_distirct">District</string>
+    <string name="farm_contact">Mobile No</string>
+    <string name="farm_sheddimen">Length x Width</string>
+    <string name="farm_capacity">Farm Capacity</string>
+    <string name="farm_prevcomp">Previous Company</string>
+    <string name="farm_detail">Detail</string>
+    <string name="acname_zipcode">Pin Code</string>
+
+
+    <string name="action_settings">Settings</string>
+    <string name="action_profile">Profile</string>
+    <string name="unknown_response">Unexpected onActivityResult response code</string>
+    <string name="sign_in_cancelled">Sign in cancelled</string>
+    <string name="no_internet_connection">No internet connection</string>
+    <string name="unknown_error">An unknown error occurred</string>
+    <!-- Auth UI - Signed in -->
+    <string name="signed_in_header">You are signed in!</string>
+    <string name="sign_out">Sign out</string>
+    <string name="delete_account_label">Delete account</string>
+    <string name="login_account_label">Sign in</string>
+
+    <string name="sign_out_failed">Sign out failed</string>
+    <string name="delete_account_failed">Delete account failed</string>
+
+    <string name="user_profile_header">User profile:</string>
+    <string name="profile_picture_content_desc">Profile picture</string>
+    <string name="idp_token">IDP Token</string>
+    <string name="idp_secret">IDP Secret</string>
+    <string name="location_permissions_required">Location permissions are required for tracking
+        location. Please grant these permissions to continue.</string>
+    <string name="login_required">Application need authentication for tracking
+        location.Please sign in to continue.</string>
+    <string name="missing_inputs">Please enter a device ID</string>
+    <string name="tracking">Tracking &#x2713;</string>
+    <string name="not_tracking">Not tracking &#x2718;</string>
+    <string name="connecting">Connecting &#8230;</string>
+    <string name="status">status</string>
+    <string name="location_lat">location_lat</string>
+    <string name="location_lng">location_lng</string>
+    <string name="location_permission_required">Location permission required.</string>
+    <string name="gps_required">Gps not enabled.</string>
+    <string name="enable">Enable</string>
+    <string name="auth_failed">Firebase authentication failed</string>
+    <string name="gplay_failed">Google play service failed</string>
+    <string name="confirm_stop">Do you really want to disable location tracking?</string>
+    <string name="enter_device_id">Enter device id</string>
+    <string name="start_tracking">Start Tracking</string>
+    <string name="stop_tracking">Stop Tracking</string>
+
+
+    <string name="admob_uid" translatable="false">ca-app-pub-3288543917013516~8688956469/</string>
+    <!--// Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713-->
+    <!--My uid:ca-app-pub-3288543917013516~8688956469-->
+    <string name="firebase_path" translatable="false">geo_devices/</string>
+    <string name="prefs" translatable="false">prefs</string>
+    <string name="device_id" translatable="false">device_id</string>
+
+    <string name="title_alert_no_intenet">No internet</string>
+    <string name="msg_alert_no_internet">Please make sure that you have active internet connection.</string>
+    <string name="no_google_playservice_available">No Google Playservice found. Please install it.</string>
+    <string name="msg_location_service_not_started">Location Tracking Not Started</string>
+    <string name="msg_location_service_started">Location Tracking Started</string>
+    <string name="btn_label_refresh">Refresh</string>
+
+    <string name="network_not_enabled">Location Is Off</string>
+    <string name="open_location_settings">Open Location Setting</string>
+    <string name="location_yes">Yes</string>
+    <string name="location_no">Cancle</string>
+
+
+    <string name="dialog_cannot_tracking_title_text">Cannot start tracking!</string>
+    <string name="dialog_cannot_tracking_message_text">No active travel</string>
+    <string name="completed">Completed</string>
+    <string name="your_text_here">Your text here</string>
+    <string name="travel_title_text">Travel title</string>
+    <string name="info_dialog_start_text">Start:</string>
+    <string name="info_dialog_end_text">End:</string>
+    <string name="info_dialog_created_text">Created:</string>
+    <string name="attachment_error">Attachment error</string>
+    <string name="close">Close</string>
+
+    <string name="edit_travel_dialog_title_create">Create new travel</string>
+    <string name="edit_travel">Edit travel</string>
+    <string name="edit_travel_dialog_default_title">Travel at %s</string>
+
+    <string name="default_travel_title">Uncategorized</string>
+    <string name="default_travel_description">Default category</string>
+
+    <string name="login_activity_progress_dialog_title">Loading</string>
+    <string name="login_activity_progress_dialog_message">Authenticating with Firebase...</string>
+    <string name="login_activity_error_dialog_title">Authentication Error</string>
+    <string name="login_activity_error_message_network">Network error: %s</string>
+    <string name="login_activity_error_message_auth">Error authenticating with Google: %s</string>
+    <string name="login_activity_error_message_invalid_provider">Invalid login provider: %s</string>
+
+    <string name="travel_activity_title">A Travel</string>
+
+    <string name="diary_list_action_mode_title_text">%1$d/%2$d</string>
+    <string name="reminder_list_action_mode_title_text">%1$d/%2$d</string>
+
+    <string name="reminder_dont_remind_text">Don\'t remind</string>
+    <string name="reminder_choose_location_text">Choose location</string>
+    <string name="reminder_new_remind_item_default_title">New remind item</string>
+    <string name="reminder_no_title_text">No title</string>
+    <string name="reminder_new_remind_item_default_text">Write text here to remind</string>
+    <string name="reminder_show_checkboxes">Show Checkboxes</string>
+    <string name="reminder_hide_checkboxes">Hide Checkboxes</string>
+    <string name="reminder_error_save_text">Cannot save changes</string>
+    <string name="reminder_error_data_text">Invalid data</string>
+    <string name="reminder_error_time_text">Invalid time</string>
+    <string name="reminder_error_distance_text">Invalid distance</string>
+    <string name="reminder_error_location_text">Invalid location</string>
+    <string name="reminder_place_picker_progress_dialog_title"></string>
+    <string name="reminder_place_picker_progress_dialog_message">Loading...</string>
+    <string-array name="reminder_type_names">
+        <item>Don\'t remind</item>
+        <item>Remind at time</item>
+        <item>Remind at location</item>
+    </string-array>
+
+    <string name="reminder_choose_distance_text">Enter a distance, or select from the list</string>
+    <string-array name="reminder_distance_values">
+        <item>150</item>
+        <item>300</item>
+        <item>500</item>
+        <item>1000</item>
+        <item>1500</item>
+        <item>3000</item>
+        <item>5000</item>
+    </string-array>
+
+    <string-array name="interval_names">
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>10 hours</item>
+    </string-array>
+
+    <string-array name="interval_values">
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>600</item>
+    </string-array>
+
+    <string name="no_location_data_provided_text">No location data provided</string>
+    <string name="geocoder_service_not_available">Sorry, the service is not available</string>
+    <string name="geocoder_invalid_lat_long_used">Invalid latitude or longitude used</string>
+    <string name="geocoder_no_address_found">Sorry, no address found</string>
+    <string name="geocoder_address_found">Address found</string>
+    <string name="geocoder_no_geocoder_available">No geocoder available</string>
+    <string name="location_format_address_line_with_gps">(%1$.6f, %2$.6f)</string>
+
+    <string name="weather_api_data_url">http://api.openweathermap.org/data/2.5/weather?lat=%1$s&amp;lon=%2$s&amp;units=%3$s&amp;appid=%4$s&amp;lang=%5$s</string>
+    <string name="weather_api_icon_url">http://openweathermap.org/img/w/%s.png</string>
+    <string name="weather_api_info_text">%1$.0f ℃, %2$s</string>
+    <string name="weather_api_na_text">N/A</string>
+
+    <string name="travels_select_action_text">Select The Action</string>
+    <string name="travels_delete_question_text">Delete Travel?</string>
+    <string name="travels_delete_warning_text">You\'ll lose all diary notes, reminder items and tracks for the selected travel!</string>
+
+    <string name="not_synced_image_warning">Some of your photos are not synchronized.
+        \nIt could have happened because sync is disabled on other devices.</string>
+    <string name="dont_show_again">Don\'t show again</string>
+    <string name="hide">Hide</string>
+    <string name="new_travel">New travel</string>
+    <string name="description">Description</string>
+    <string name="title_field_is_empty">Title field is empty</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="firebase_server_key">AAAA4Ay465M:APA91bFCn9W0D68-GFu59gMs5dHYHg7bvL-oIIdB6nCUjZz6cCyc5mgynWdBIrqRUsYyQXAYUVJ9BZm2QrQZGXo--spVoTNllKQEj2NFYglbzjl82pe5NVabh-yvnwsyQ2nz-25XNp3L</string>
+    <string name="fcm_token">FCM Token: %s</string>
+
+    <string name="dashboard_sales">Sales</string>
+    <string name="dashboard_purchase">Purchase</string>
+
+    <string name="button_addparty">+Add Party</string>
+    <string name="button_additem">+Add Item</string>
+
+    <string name="vouchertype">Voucher Type</string>
+    <string name="accountsaveerror">Some Error Occured Please Try Again..</string>
+    <string name="productnameexist">This Product Name Already Exists, Please Enter Other Product Name</string>
+    <string name="accountnameexist">This Account Name Already Exists, Please Enter Other Account Name</string>
+    <string name="selectaccountname">Please Select Account Name</string>
+    <string name="selectproductcategory">Please Select Product Category</string>
+    <string name="selectproductupdatesuccess">New Product Updated Successfully..</string>
+    <string name="supplyclearancecreated">Supply Clearance Created Successfully....</string>
+    <string name="somethingwentwrong">Something Went Wrong, Please Check Detail..</string>
+    <string name="plzaddproduct">Please Add Product First...</string>
+    <string name="selectcustomername">Please Select Customer Name</string>
+    <string name="entercustomerinvno">Please Enter Customer Incoice No...</string>
+    <string name="selectsuppliername">Please Select Supplier Name</string>
+    <string name="entersupplierinvno">Please Enter Supplier Incoice No...</string>
+    <string name="selectproductname">Please Select Product Name</string>
+    <string name="addnewcompany">New Company Added Successfully..</string>
+    <string name="selectfarmname">Please Select Proper Farm Name</string>
+    <string name="selectfeedname">Please Select Proper Feed Name For Supply</string>
+    <string name="savefeedsupply">Feed Supply Voucher Save Successfully</string>
+    <string name="farmupdate">New Farm Updated Successfully..</string>
+    <string name="enterfarmcapacity">Please Enter Farm capacity</string>
+    <string name="enterfarmname">Please Enter Farm name</string>
+    <string name="entersupplbillno">Please Enter Proper Supplier Bill No...</string>
+    <string name="addbirdage">Please Add Bird Age First...</string>
+    <string name="selectbirdname">Please Select Proper Bird Name First...</string>
+    <string name="savebirdinvoice"> Bird Purchase Invoice Save Successfully....</string>
+    <string name="savebirdsale"> Bird Sale Invoice Save Successfully...</string>
+    <string name="farmadd"> New Farm Added Successfully...</string>
+    <string name="selectparty"> Please Select Party Name...</string>
+    <string name="enterreceiptno"> Please Enter Receipt No...</string>
+    <string name="enteramount"> Please Enter Amount, Amount Is Not Zero Or Blank</string>
+    <string name="productname"> Product Name</string>
+    <string name="category">Category</string>
+    <string name="purchaserate">Purchase Rate</string>
+    <string name="saleserate">Sale Rate</string>
+    <string name="save">Save</string>
+    <string name="cancle">Cancle</string>
+    <string name="businessummary">Business Summary</string>
+    <string name="accountmaster">Account Master</string>
+    <string name="accounttype">Account Type</string>
+    <string name="addopeningbalance">+ Add Opening Balance</string>
+    <string name="addcontactdetail">+ Add Contact Details</string>
+    <string name="addaddress">+ Add Address</string>
+    <string name="india">India</string>
+    <string name="state">State</string>
+    <string name="selectperiod">From :</string>
+    <string name="date">Date :</string>
+    <string name="lastbatchno">Last Batch No :</string>
+    <string name="newbatchno">New Batch No :</string>
+    <string name="checkbox2">Cleaning And Disinfecting the Shed</string>
+    <string name="checkbox1">Removing Manure Out</string>
+    <string name="checkbox3">Cleaning and Disinfecting the Equipment</string>
+    <string name="checkbox4">Arrenging New Liter Inside Shed</string>
+    <string name="checkbox5">Installing of Light And Brooding Tent</string>
+    <string name="checkbox6">Inspecing the Shed is Ready to New Batch</string>
+    <string name="openingqty">Opn.Qty</string>
+    <string name="quantityin">Qty In</string>
+    <string name="quantityout">Qty Out</string>
+    <string name="closingqty">ClQty</string>
+    <string name="edit">Edit</string>
+    <string name="netamount">Net Amount :</string>
+    <string name="partyname">Party Name</string>
+    <string name="date1">Date</string>
+    <string name="particulars">Particulars</string>
+    <string name="debit">Debit</string>
+    <string name="credit">Credit</string>
+    <string name="netoutstanding">Net Outstanding :</string>
+    <string name="signupusingmobile">Sign up using Mobile No.</string>
+    <string name="name22">Name</string>
+    <string name="mobileno">Mobile Number</string>
+
+    <string name="termscondition">I agree to Poultry Soft Terms of Service, Privacy Poliy and Content Policies</string>
+    <string name="signup">Sign up</string>
+    <string name="transactiontype">Transaction Type</string>
+    <string name="recivablepayable">Recivable/Payable</string>
+    <string name="total">Total :</string>
+    <string name="receiptno">Receipt No. :</string>
+    <string name="receiptno1">Receipt No</string>
+    <string name="party">Party</string>
+    <string name="received">Received</string>
+    <string name="paid">Paid</string>
+    <string name="select_account">Select Account</string>
+    <string name="totalamount">Total Amount :</string>
+    <string name="receipttype">Receipt Type</string>
+    <string name="addnew">Add New</string>
+    <string name="packing">Packing</string>
+    <string name="paymentto">Payment No. :</string>
+    <string name="paymentto1">Payment No</string>
+    <string name="suppliername">Supplier Name</string>
+    <string name="address">Address</string>
+    <string name="supplieraddress">Supplier Address</string>
+    <string name="taluka">Taluka</string>
+    <string name="district">District</string>
+    <string name="state1">State</string>
+    <string name="farmname">Farm Name</string>
+    <string name="farmaddress">Farm Address</string>
+    <string name="farmcapacity">Farm Capacity</string>
+    <string name="ledgername">Ledger Name</string>
+    <string name="openingbalance">Opening Balance</string>
+    <string name="add">+Add</string>
+    <string name="feedsupplyno">Feed Supply No. :</string>
+    <string name="voucherno">Voucher No</string>
+    <string name="stockqty">Stock Qty</string>
+    <string name="quantityinkg">Quantity In Kg</string>
+    <string name="quantityinbag">Bag Quantity</string>
+    <string name="feedratekg">Feed Rate/ Kg</string>
+    <string name="feedamount">Feed Amount</string>
+    <string name="entryno">Entry No. :</string>
+    <string name="quantityingram">Quantity In Gram</string>
+    <string name="selectfarm">Select Farm</string>
+    <string name="batchno">Batch No.</string>
+    <string name="birdplaceage">Bird Place Age</string>
+    <string name="age">Age</string>
+    <string name="addnew1">Add New</string>
+    <string name="search">Search</string>
+    <string name="OkDialogTitle">Ok</string>
+    <string name="transferdcno">DC No.</string>
+
+    <string name="amount">Amount</string>
+    <string name="addnewfarm">Add New Farm</string>
+    <string name="supplyclearance">Supply Clearance</string>
+    <string name="birdplacement">Bird Placement</string>
+    <string name="birdplace">Bird Place :</string>
+    <string name="feedsupplytofarm">Feed Supply To Farm</string>
+    <string name="dailyfeedconsumption">Daily Feed Consumption</string>
+    <string name="dailymortality">Daily Mortality</string>
+    <string name="eddproduction">Eggs Production</string>
+    <string name="birdsale">Bird Sale</string>
+    <string name="production_Quanity">Production Quantity</string>
+    <string name="report_start">Report Start</string>
+    <string name="report_started_at_format">Report started at %s</string>
+    <string name="report_finish">Report Finish</string>
+    <string name="report_finished_at_format">Report finished at %s</string>
+    <string name="noconnection">Kindly connect to a WIFI network or enable Mobile Data</string>
+    <string name="send_otp">Send OTP</string>
+    <string name="otp">OTP</string>
+    <string name="confirm_otp">Confirm OTP</string>
+    <string name="feed_production">Feed Production</string>
+    <string name="feed_supply">Feed Supply</string>
+    <string name="feed_requirement">Feed Requirement</string>
+    <string name="feed_stock">Feed Stock</string>
+    <string name="select_farmer">+Select Farmer</string>
+    <string name="from_farmname">+From Farm</string>
+    <string name="to_farmname">+To Farm</string>
+    <string name="order_no">Order No</string>
+    <string name="order_date">Order Date</string>
+    <string name="choose_date">Choose Date</string>
+    <string name="_0_0">0.0</string>
+    <string name="select_feed">Select Feed</string>
+    <string name="con_qty">Con.Qty</string>
+    <string name="balance_qty">Balance Qty</string>
+    <string name="rate">Rate</string>
+    <string name="product_name">Product Name</string>
+    <string name="total_amount">Total Amount</string>
+    <string name="product_subtotal">Product Quantity</string>
+    <string name="product_total">Product Total</string>
+    <string name="product_discount">Product Rate</string>
+    <string name="discount_amount">Discount Amount</string>
+    <string name="gst_amount">GST Amount</string>
+    <string name="gstpercent">GST %</string>
+    <string name="gst_total">GST Total</string>
+    <string name="delete_item">Delete Item</string>
+    <string name="cash">Cash</string>
+    <string name="james_pratterson">James Pratterson</string>
+    <string name="root_start">Root Start</string>
+    <string name="daily_entry">Daily Entry</string>
+    <string name="new_farm_enquiry">New Farm Enquiry</string>
+    <string name="leave_request">Leave Request</string>
+    <string name="feed_reqquirement">Feed Reqquirement</string>
+    <string name="chiks_placement">Chiks Placement</string>
+    <string name="supply_clearance">Supply Clearance</string>
+    <string name="feed_transfer">Feed Transfer Out</string>
+    <string name="feed_transferin">Feed Transfer IN</string>
+    <string name="notification">Notification</string>
+    <string name="root_stop">Root Stop</string>
+    <string name="biometric_login">Biometric Login</string>
+    <string-array name="drcr">
+        <item>DR</item>
+        <item>CR</item>
+    </string-array>
+    <string-array name="statename">
+        <item>Andaman and Nicobar</item>
+        <item>Andra Pradesh</item>
+        <item>Arunachal Pradesh</item>
+        <item>Assam</item>
+        <item>Bihar</item>
+        <item>Chandigarh</item>
+        <item>Chhattisgarh</item>
+        <item>Dadar and Nagar Haveli</item>
+        <item>Daman and Diu</item>
+        <item>Delhi</item>
+        <item>Goa</item>
+        <item>Gujarat</item>
+        <item>Haryana</item>
+        <item>Himachal Pradesh</item>
+        <item>Jammu and Kashmir</item>
+        <item>Jharkhand</item>
+        <item>Karnataka</item>
+        <item>Kerala</item>
+        <item>Lakshadeep</item>
+        <item>Madya Pradesh</item>
+        <item>Maharashtra</item>
+        <item>Manipur</item>
+        <item>Meghalaya</item>
+        <item>Mizoram</item>
+        <item>Nagaland</item>
+        <item>Orissa</item>
+        <item>Pondicherry</item>
+        <item>Punjab</item>
+        <item>Rajasthan</item>
+        <item>Sikkim</item>
+        <item>Tamil Nadu</item>
+        <item>Telagana</item>
+        <item>Tripura</item>
+        <item>Uttaranchal</item>
+        <item>Uttar Pradesh</item>
+        <item>West Bengal</item>
 
     </string-array>
 </resources>

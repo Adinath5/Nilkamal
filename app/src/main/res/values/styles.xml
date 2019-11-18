@@ -1,7 +1,7 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
-    <style name="Base.PSTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="Base.PSTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorButtonNormal">@color/global__primary</item>
         <item name="colorPrimary">@color/global__primary</item>
         <item name="colorPrimaryDark">@color/global__primary_dark</item>
@@ -13,7 +13,7 @@
 
     </style>
 
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/global__primary</item>
         <item name="colorPrimaryDark">@color/global__primary_dark</item>
@@ -35,27 +35,26 @@
         <item name="actionMenuTextColor">@color/text__white</item>
         <!--<item name="actionOverflowButtonStyle">@style/MyActionButtonOverFlow</item>-->
     </style>
-
+    <style name="Rounded" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
     <!-- For main menu icon color -->
     <style name="MyDrawerArrowToggle" parent="Widget.AppCompat.DrawerArrowToggle">
         <item name="color">@color/text__white</item>
         <item name="actionMenuTextColor">@color/text__white</item>
     </style>
-
-
     <!-- Appbar and toolbar theme -->
-    <style name="Base.PSTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+    <style name="Base.PSTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar">
         <!-- For Toolbar Back Icon -->
         <item name="colorControlNormal">@color/text__white</item>
 
     </style>
 
-    <style name="Base.PSTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+    <style name="Base.PSTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light">
         <item name="android:textColorPrimary">@color/global__accent</item>
         <item name="actionMenuTextColor">@color/global__accent</item>
     </style>
-
-
     <!-- Toolbar Event -->
     <style name="ToolBarStyle.Event" parent="ToolBarStyle">
         <item name="titleTextAppearance">@style/TextAppearance.Widget.Event.Toolbar.Title</item>
@@ -75,8 +74,6 @@
         <item name="android:textSize">@dimen/font_h6_size</item>
 
     </style>
-
-
     <!-- SelectableItemTheme -->
     <style name="SelectableItemTheme">
         <item name="colorControlHighlight">@color/global__accent</item>
@@ -86,8 +83,6 @@
         <item name="android:theme">@style/SelectableItemTheme</item>
         <item name="android:background">?android:attr/selectableItemBackground</item>
     </style>
-
-
     <!-- Progress Bar -->
     <style name="CustomProgressBarHorizontal" parent="android:Widget.ProgressBar.Horizontal">
         <item name="android:progressDrawable">@drawable/custom_progress_bar_horizontal</item>
@@ -142,5 +137,52 @@
     <!--<inews_titlename="colorControlNormal">@color/colorAccent</item>-->
     <!--</style>-->
 
+    <style name="CustomTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textColor">@color/md_grey_300</item>
+        <item name="android:textStyle">bold</item>
+        <item name="textAllCaps">true</item>
+    </style>
 
+    <style name="TextAppearance.Subhead.Bold" parent="@style/TextAppearance.AppCompat.Subhead">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.Medium.Bold" parent="@style/TextAppearance.AppCompat.Medium">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="RippleStyleWhite">
+        <item name="mrl_rippleOverlay">true</item>
+        <item name="mrl_rippleColor">#80FFFFFF</item>
+        <item name="mrl_rippleHover">true</item>
+        <item name="mrl_rippleAlpha">0.2</item>
+    </style>
+
+    <style name="RippleStyleBlack" parent="RippleStyleWhite">
+        <item name="mrl_rippleColor">#8096989A</item>
+    </style>
+
+    <style name="RippleStyleDark" parent="RippleStyleWhite">
+        <item name="mrl_rippleColor">#80000000</item>
+    </style>
+    <style name="SwitchTheme" parent="Theme.AppCompat.Light">
+        <item name="android:colorControlActivated" tools:ignore="NewApi">#148E13</item>
+    </style>
+    <style name="HintText" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/poppinsregular</item>
+        <item name="android:textColor">@color/md_light_blue_900</item>
+    </style>
+    <style name="InputText" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/poppinsregular</item>
+        <item name="android:color">@color/md_light_blue_900</item>
+        <item name="android:textColor">@color/md_light_blue_900</item>
+    </style>
+
+    <style name="EditText.Blue" parent="@style/AppTheme">
+        <item name="colorControlActivated">@color/global__primary</item>
+        <item name="colorControlHighlight">@color/global__primary</item>
+        <item name="colorControlNormal">@color/global__primary_light</item>
+    </style>
 </resources>

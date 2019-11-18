@@ -1,187 +1,204 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.atharvainfo.nilkamal">
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="com.atharvainfo.nilkamal.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- for card.io card scanning -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+    <uses-permission android:name="android.permission.NEARBY_WIFI_DEVICES"
+        android:usesPermissionFlags="neverForLocation"
+        tools:targetApi="s" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+
+    <uses-permission
+        android:name="android.permission.ACCESS_BACKGROUND_LOCATION"
+        tools:node="remove" />
+
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="true" />
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <permission
+        android:name="com.atharvainfo.nilkamal.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <dist:module dist:instant="true" />
 
     <application
         android:name=".nilkamalpoultry"
         android:allowBackup="true"
+        android:exported="true"
         android:icon="@drawable/logo1"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@drawable/logo1"
         android:supportsRtl="true"
-        android:theme="@style/Base.PSTheme">
-        <activity android:name=".Activity.SplashActivity">
+        android:theme="@style/Base.PSTheme"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".Activity.FeedtransferItemselect"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.FeedTransferOut"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.OperatorDashBoard"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.FeedStockSelect"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.rpt_eggsproduction"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.rpt_dailyfeedcons"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.RegisterUser"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.FarmListAll"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.usernotification"
+            android:exported="true" />
+        <activity android:name=".Activity.itemselectqot" />
+        <activity android:name=".Activity.addpulletcustomer" />
+        <activity android:name=".Activity.PulletQuotation" />
+        <activity android:name=".Activity.FarmFeedSupply" />
+        <activity android:name=".Activity.FeedMillSpMain" />
+        <activity android:name=".Activity.LayerEggsProduction" />
+        <activity android:name=".Activity.LayerDailyMortality" />
+        <activity android:name=".Activity.FarmListLayer" />
+        <activity android:name=".Activity.LayerFeedConsumption" />
+        <activity android:name=".Activity.LayerFarmSpMain" />
+        <activity android:name=".Activity.FeedProduction" />
+        <activity android:name=".Activity.rpt_cashreceiptregister" />
+        <activity android:name=".Activity.SupplyClearance" />
+        <activity android:name=".Activity.rpt_cashbook" />
+        <activity android:name=".Activity.FarmMortentryPhoto" />
+        <activity android:name=".Activity.ActivityReceipt" />
+        <activity android:name=".Activity.rpt_accountstatementone" />
+        <activity android:name=".Activity.rpt_receivablepayable" />
+        <activity android:name=".Activity.rpt_purchaseregister" />
+        <activity android:name=".Activity.rpt_salesregister" />
+        <activity android:name=".Activity.AllAccountList" />
+        <activity android:name=".Activity.ActivityPayment" />
+        <activity android:name=".Activity.rpt_accountstatement" />
+        <activity android:name=".Activity.Activity_webview" />
+        <activity android:name=".Activity.rpt_spkmreport" />
+        <activity android:name=".Activity.rpt_spdailyvisit" />
+        <activity android:name=".Activity.rpt_farmhistory" />
+        <activity android:name=".Activity.AdminreportFarmhistory" />
+        <activity android:name=".Activity.ReportsAdmin" />
+        <activity android:name=".Activity.AdminMain" />
+        <activity android:name=".Activity.ManagerMain" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity android:name=".Activity.PathGoogleMapActivity" />
+        <activity android:name=".Activity.SupervisorList" />
+        <activity android:name=".Activity.Chat" />
+        <activity android:name=".Activity.SpRootStopActivity" />
+        <activity android:name=".Activity.FarmfeedEntrylast" />
+        <activity android:name=".Activity.FarmfeedEntryphoto" />
+        <activity android:name=".Activity.feedconsitemselect" />
+        <activity android:name=".Activity.FeedConsumptionEntry" />
+        <activity android:name=".Activity.FarmHistoy" />
+        <activity android:name=".Activity.FeedProducts" />
+        <activity android:name=".Activity.FarmListSp" />
+        <activity android:name=".Activity.FeedRequirement" />
+        <activity android:name=".Activity.FarmEnquiry" />
+        <activity android:name=".Activity.SpFarmList" />
+        <activity android:name=".Activity.SpRootStartActivity" />
+        <activity android:name=".Activity.LoginActivity" />
+        <activity android:name=".Activity.SaleActivity" />
+        <activity android:name=".Activity.SaleItemSelectActivity" />
+        <activity android:name=".Activity.SaleAccountList" />
+        <activity android:name=".Activity.ItemSelectActivity" />
+        <activity android:name=".Activity.NewPartyActivity" />
+        <activity android:name=".Activity.PurchaseAcccountList" />
+        <activity android:name=".Activity.PurchaseActivity" />
+        <activity
+            android:name=".Activity.SplashActivity"
+            android:exported="true"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Activity.SupervisorMain" />
+        <activity android:name=".Activity.NoItemInternetImage" />
 
-        </activity>
         <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAgws03LrD51BaHxWguCJ4qfh6WwCJYrjg" />
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyDf0YSBydwjn8RzN3yDk9wd_B4BUQ0vmmg" />
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <receiver
-            android:name="com.google.android.gms.analytics.AnalyticsReceiver"
-            android:enabled="true">
-            <intent-filter>
-                <action android:name="com.google.android.gms.analytics.ANALYTICS_DISPATCH" />
-            </intent-filter>
-        </receiver>
-
         <service
-            android:name="com.google.android.gms.analytics.AnalyticsService"
-            android:enabled="true"
-            android:exported="false" />
+            android:name=".services.MessageReceiver"
+            android:exported="false"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".services.InstanceIdService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-8861286708574486~3807216946" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:exported="false"
+            android:resource="@drawable/logo1" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:exported="false"
+            android:resource="@color/md_grey_70" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_path" />
+        </provider>
     </application>
-
-    <compatible-screens>
-
-        <!-- no small size screens -->
-        <screen
-            android:screenDensity="ldpi"
-            android:screenSize="small" /> <!-- approximately 120 dpi -->
-        <screen
-            android:screenDensity="mdpi"
-            android:screenSize="small" /> <!-- approximately 160 dpi -->
-        <screen
-            android:screenDensity="hdpi"
-            android:screenSize="small" /> <!-- approximately 240 dpi -->
-        <screen
-            android:screenDensity="280"
-            android:screenSize="small" /> <!-- Workaround -->
-        <screen
-            android:screenDensity="xhdpi"
-            android:screenSize="small" /> <!-- approximately 320 dpi -->
-        <screen
-            android:screenDensity="360"
-            android:screenSize="small" /> <!-- Workaround -->
-        <screen
-            android:screenDensity="420"
-            android:screenSize="small" /> <!-- Workaround -->
-        <screen
-            android:screenDensity="480"
-            android:screenSize="small" /> <!-- Workaround -->
-        <screen
-            android:screenDensity="560"
-            android:screenSize="small" /> <!-- Workaround -->
-        <screen
-            android:screenDensity="640"
-            android:screenSize="small" /> <!-- Workaround -->
-
-
-        <!-- all normal size screens -->
-        <screen
-            android:screenDensity="ldpi"
-            android:screenSize="normal" /> <!-- approximately 120 dpi -->
-        <screen
-            android:screenDensity="mdpi"
-            android:screenSize="normal" /> <!-- approximately 160 dpi -->
-        <screen
-            android:screenDensity="hdpi"
-            android:screenSize="normal" /> <!-- approximately 240 dpi -->
-        <screen
-            android:screenDensity="280"
-            android:screenSize="normal" /> <!-- Workaround -->
-        <screen
-            android:screenDensity="xhdpi"
-            android:screenSize="normal" /> <!-- approximately 320 dpi -->
-        <screen
-            android:screenDensity="360"
-            android:screenSize="normal" /> <!-- Workaround -->
-        <screen
-            android:screenDensity="420"
-            android:screenSize="normal" /> <!-- Workaround -->
-        <screen
-            android:screenDensity="480"
-            android:screenSize="normal" /> <!-- Workaround -->
-        <screen
-            android:screenDensity="560"
-            android:screenSize="normal" /> <!-- Workaround -->
-        <screen
-            android:screenDensity="640"
-            android:screenSize="normal" /> <!-- Workaround -->
-
-
-        <!-- all large size screens -->
-        <screen
-            android:screenDensity="ldpi"
-            android:screenSize="large" />
-        <screen
-            android:screenDensity="mdpi"
-            android:screenSize="large" />
-        <screen
-            android:screenDensity="hdpi"
-            android:screenSize="large" />
-        <screen
-            android:screenDensity="xhdpi"
-            android:screenSize="large" />
-
-        <!-- all xlarge size screens -->
-        <screen
-            android:screenDensity="ldpi"
-            android:screenSize="xlarge" />
-        <screen
-            android:screenDensity="mdpi"
-            android:screenSize="xlarge" />
-        <screen
-            android:screenDensity="hdpi"
-            android:screenSize="xlarge" />
-        <screen
-            android:screenDensity="xhdpi"
-            android:screenSize="xlarge" />
-
-        <!-- Special case for Nexus 7 -->
-        <screen
-            android:screenDensity="213"
-            android:screenSize="large" />
-
-        <!-- xxhdpi -->
-
-        <screen
-            android:screenDensity="480"
-            android:screenSize="normal" />
-        <screen
-            android:screenDensity="480"
-            android:screenSize="large" />
-        <screen
-            android:screenDensity="480"
-            android:screenSize="xlarge" />
-    </compatible-screens>
-
-    <supports-screens
-        android:anyDensity="true"
-        android:largeScreens="true"
-        android:normalScreens="true"
-        android:resizeable="true"
-        android:smallScreens="true"
-        android:xlargeScreens="true" />
-    <uses-permission android:name="com.atharvainfo.nilkamal.permission.MAPS_RECEIVE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- for card.io card scanning -->
-    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
-
-    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
 
 </manifest>

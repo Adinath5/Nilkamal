@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "962286119827-ko7h87pmk8lr04lbduodqe091t545eql.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.atharvainfo.nilkamal",
+            "certificate_hash": "990f73b8a130b1a7dd183a2548f421731562c3ac"
+          }
+        },
+        {
           "client_id": "962286119827-g7vu1qdco7es90735hpmcaoaibtgppjf.apps.googleusercontent.com",
           "client_type": 3
         }

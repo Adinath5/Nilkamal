@@ -5,15 +5,13 @@
 
     <item>
         <bitmap
-            android:gravity="center|bottom"
-            android:src="@drawable/splash_loading" />
+            android:gravity="fill"
+            android:src="@drawable/splashs" />
     </item>
 
-    <item>
+    <!--<item>
         <bitmap
             android:gravity="center"
             android:src="@drawable/logo1"/>
-
-        <!--@mipmap/ic_launcher-->
-    </item>
+    </item>-->
 </layer-list>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_view4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp"
+        card_view:contentPadding="5dp"
+        card_view:cardCornerRadius="2dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtvdate"
+                        android:textSize="12sp"
+                        android:text="Date"
+                        android:textStyle="normal"
+                        android:fontFamily="@font/poppinsregular"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtperticulars"
+                        android:layout_toEndOf="@id/txtvdate"
+                        android:layout_toStartOf="@id/txtdramt"
+                        android:textSize="12sp"
+                        android:layout_marginStart="10dp"
+                        android:text="Particular"
+                        android:textStyle="normal"
+                        android:fontFamily="@font/poppinsregular"/>
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtdramt"
+                        android:textSize="12sp"
+                        android:layout_toStartOf="@id/txtcramt"
+                        android:layout_marginEnd="10dp"
+                        android:text="0.00"
+                        android:textAlignment="textEnd"
+                        android:textStyle="normal"
+                        android:fontFamily="@font/poppinsregular"/>
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtcramt"
+                        android:textSize="12sp"
+                        android:layout_alignParentEnd="true"
+                        android:text="0.00"
+                        android:textAlignment="textEnd"
+                        android:textStyle="normal"
+                        android:fontFamily="@font/poppinsregular"/>
+
+                </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</LinearLayout>

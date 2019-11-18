@@ -5,15 +5,17 @@ import android.app.ProgressDialog;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
-import android.support.v7.widget.RecyclerView;
 import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
+
 
 import com.atharvainfo.nilkamal.Others.ConnectionDetector;
 import com.atharvainfo.nilkamal.Others.PSDialogMsg;
@@ -196,7 +198,7 @@ public class HomeFragment extends Fragment {
 
     private void init() {
 
-        mPager = (ViewPager) view.findViewById(R.id.pager);
+        mPager = view.findViewById(R.id.pager);
         mPager.setAdapter(new SlidingImage_Adapter(getActivity(), mResources));
 
         CirclePageIndicator indicator = (CirclePageIndicator)
@@ -230,24 +232,7 @@ public class HomeFragment extends Fragment {
         }, 3000, 3000);
 
         // Pager listener over indicator
-        indicator.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
-            @Override
-            public void onPageSelected(int position) {
-                currentPage = position;
-
-            }
-
-            @Override
-            public void onPageScrolled(int pos, float arg1, int arg2) {
-
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int pos) {
-
-            }
-        });
 
     }
 

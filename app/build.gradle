@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'com.google.gms.google-services'
 android {
-    compileSdkVersion 28
+    compileSdkVersion 34
     defaultConfig {
         applicationId "com.atharvainfo.nilkamal"
-        minSdkVersion 16
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion 24
+        targetSdkVersion 34
+        versionCode 6
+        versionName "1.0.6"
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled true
     }
@@ -16,36 +16,68 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+
     }
-    dexOptions {
-        javaMaxHeapSize "4g"
+    buildTypes.each {
+        // All keys defined in gradle.properties file
+        // Replace all keys with your keys
+        it.buildConfigField 'String', 'GOOGLE_API_KEY', '"AIzaSyDf0YSBydwjn8RzN3yDk9wd_B4BUQ0vmmg"'
+        //it.buildConfigField 'String', 'GOOGLE_API_SERVER_KEY', GoogleApiServerKey
+        it.buildConfigField 'String', 'GOOGLE_ANDROID_CLIENT_ID', '"962286119827-51gic81fth6icme1dts4k9bdkvsjnpa0.apps.googleusercontent.com"'
+        it.buildConfigField 'String', 'FIREBASE_ROOT_URL', '"https://nilkamal-b0462.firebaseio.com/"'
+        //it.buildConfigField 'String', 'OPENWEATHERMAP_AIPID', WeatherApiKey
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    namespace 'com.atharvainfo.nilkamal'
+
+    tasks.register('indexAssets') {
+        description 'Index Build Variant assets for faster lookup by AssetManager'
+
+        ext.assetsSrcDir = file("${projectDir}/src/main/assets")
+
+        inputs.dir assetsSrcDir
+
+        doLast {
+            android.applicationVariants.each { target ->
+                // create index
+                def contents = ""
+                def tree = fileTree(dir: "${ext.assetsSrcDir}", include: ['**/*.ttf'], exclude: ['**/.svn/**', '*.index'])
+                // use this instead if you have assets folders in each flavor:
+                // def tree = fileTree(dir: "${ext.variantPath}", exclude: ['**/.svn/**', '*.index'])
+                tree.visit { fileDetails ->
+                    contents += "${fileDetails.relativePath}" + "\n"
+                }
+                // create index file
+                def assetIndexFile = new File("${ext.assetsSrcDir}/assets.index")
+                assetIndexFile.write contents
+            }
+        }
+    }
+    indexAssets.dependsOn {
+        tasks.matching { task -> task.name.startsWith('merge') && task.name.endsWith('Assets') }
+    }
+
+    tasks.withType(JavaCompile).configureEach {
+        compileTask -> compileTask.dependsOn indexAssets
+    }
+
+    indexAssets
 }
-
-repositories {
-
-    maven { url "https://jitpack.io" }
-    jcenter()
-    maven {
-        url 'https://maven.google.com'
-    }
-
-}
-
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     //noinspection GradleCompatible
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.android.support:design:28.0.0'
-    implementation 'com.android.support:support-v4:28.0.0'
-    implementation 'com.android.support:cardview-v7:28.0.0'
-    implementation 'com.android.support:recyclerview-v7:28.0.0'
-    implementation 'com.android.support:percent:28.0.0'
-    implementation 'com.google.android.gms:play-services:12.0.0'
-    implementation 'com.android.support:support-vector-drawable:28.0.0'
-    implementation 'de.hdodenhof:circleimageview:2.2.0'
-    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'com.android.support.constraint:constraint-layout:2.0.4'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.firebase:firebase-inappmessaging-display:20.4.0'
     implementation 'devs.mulham.horizontalcalendar:horizontalcalendar:1.1.5'
     //implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     implementation 'com.android.support:multidex:1.0.3'
@@ -53,11 +85,84 @@ dependencies {
     //implementation 'com.google.android.gms:play-services-analytics:12.0.0'
     implementation 'com.squareup.picasso:picasso:2.5.2'
     // Retrofit
-    implementation "com.squareup.retrofit2:retrofit:2.4.0"
-    implementation "com.squareup.retrofit2:converter-gson:2.4.0"
-    implementation 'de.hdodenhof:circleimageview:3.0.0'
+    implementation 'org.jsoup:jsoup:1.16.1'
+    implementation('org.apache.httpcomponents:httpmime:4.5.6') {
+        exclude module: 'httpclient'
+    }
+    implementation 'org.apache.httpcomponents:httpclient-android:4.3.5'
+    implementation "com.squareup.retrofit2:retrofit:2.5.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.5.0"
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.github.JakeWharton:ViewPagerIndicator:2.4.1'
-    implementation 'com.github.bumptech.glide:glide:4.7.1'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+    implementation 'com.android.support.constraint:constraint-layout:2.0.4'
+    implementation "androidx.legacy:legacy-support-v4:1.0.0"
+    implementation "com.android.support:support-annotations:28.0.0"
+    implementation 'com.github.clans:fab:1.6.4'
+
+    implementation 'cz.msebera.android:httpclient:4.3.6'
+
+    implementation 'com.shamanland:xdroid-toaster:0.0.10'
+    implementation 'com.daimajia.slider:library:1.1.5@aar'
+    implementation 'com.nineoldandroids:library:2.4.0'
+    implementation 'com.balysv:material-ripple:1.0.2'
+
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.15.1'
+
+    implementation 'com.google.firebase:firebase-appindexing:20.0.0'
+    implementation 'com.firebase:firebase-client-android:2.5.2'
+    implementation 'com.google.firebase:firebase-storage:20.3.0'
+    implementation 'com.firebaseui:firebase-ui:8.0.2'
+    implementation platform('com.google.firebase:firebase-bom:28.3.1')
+
+    // Declare the dependency for the Firebase Authentication library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-auth'
+
+    implementation 'com.firebase:geofire-android:3.2.0'
+    implementation "com.google.firebase:firebase-core:21.1.1"
+    implementation 'com.google.firebase:firebase-crash:16.2.1'
+    implementation 'com.google.firebase:firebase-messaging:23.4.0'
+    implementation 'com.google.firebase:firebase-database:20.3.0'
+    implementation 'com.google.firebase:firebase-config:'
+    implementation 'com.google.firebase:firebase-messaging:23.4.0'
+    implementation 'androidx.work:work-runtime:2.9.0'
+
+    implementation 'com.google.android.gms:play-services-location:21.1.0'
+    implementation 'com.google.android.gms:play-services-ads:22.6.0'
+    implementation 'com.google.android.gms:play-services-maps:18.2.0'
+    implementation 'com.google.android.gms:play-services-gcm:17.0.0'
+    implementation 'com.google.android.play:core:1.10.3'
+
+    implementation 'com.google.maps.android:android-maps-utils:3.4.0'
+    implementation 'com.google.android.gms:play-services-auth:20.7.0'
+    implementation 'com.google.android.gms:play-services-plus:17.0.0'
+    implementation 'com.google.android.gms:play-services-location:21.1.0'
+    implementation 'com.google.android.gms:play-services-places:17.0.0'
+    implementation 'com.google.firebase:firebase-iid:21.1.0'
+
+    annotationProcessor 'com.jakewharton:butterknife:7.0.1'
+    implementation 'com.squareup:otto:1.3.8'
+    implementation 'com.squareup.okhttp3:okhttp:3.12.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.0.1'
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+    implementation 'com.android.volley:volley:1.2.1'
+    // implementation of LinearLayoutManager which wraps its contents
+    implementation 'org.solovyev.android.views:linear-layout-manager:0.5@aar'
+    implementation 'androidx.browser:browser:1.7.0'
+    implementation 'com.itextpdf:itextg:5.5.10'
+    implementation 'com.itextpdf:itext-pdfa:5.5.13.3'
+    implementation 'com.balysv:material-ripple:1.0.2'
+    implementation group: 'com.itextpdf.tool', name: 'xmlworker', version: '5.5.13.3'
+    implementation 'com.yarolegovich:discrete-scrollview:1.5.1'
+    implementation 'com.karumi:dexter:6.2.3'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation 'com.geniusforapp.fancydialog:FancyDialog:0.1.4'
+    implementation 'com.github.chrisbanes:PhotoView:2.3.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.15.1'
+    implementation "androidx.biometric:biometric:1.2.0-alpha05"
 
 }

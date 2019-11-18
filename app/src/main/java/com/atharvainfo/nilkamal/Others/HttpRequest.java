@@ -49,7 +49,7 @@ public class HttpRequest {
         }
     }
     //prepare request in GET method
-    //@return HttpRequest this instance -> for chaining method @see line 22
+    //@return HttpRequest this instance -> for chaining method @see line1 22
     public HttpRequest prepare() throws IOException {
         prepareAll(Method.GET);
         return this;
@@ -59,7 +59,7 @@ public class HttpRequest {
      * HttpRequest.Method.PUT, HttpRequest.Method.GET & HttpRequest.Method.DELETE
      *
      * @param method HttpRequest.Method - nested enum HttpRequest.Method constant
-     * @return HttpRequest this instance -> for chaining method @see line 22
+     * @return HttpRequest this instance -> for chaining method @see line1 22
      * @throws IOException - should be checked by caller
      * */
     public HttpRequest prepare(Method method)throws IOException {
@@ -70,7 +70,7 @@ public class HttpRequest {
      * Adding request headers (standard format "Key":"Value")
      *
      * @param headers String variadic params in standard format "Key":"Value"
-     * @return HttpRequest this instance -> for chaining method @see line 22
+     * @return HttpRequest this instance -> for chaining method @see line1 22
      * */
     public HttpRequest withHeaders(String... headers){
         for(int i=0,last=headers.length;i<last;i++) {
@@ -84,7 +84,7 @@ public class HttpRequest {
      * Writes query to open stream to server
      *
      * @param query String params in format of key1=v1&key2=v2 to open stream to server
-     * @return HttpRequest this instance -> for chaining method @see line 22
+     * @return HttpRequest this instance -> for chaining method @see line1 22
      * @throws IOException - should be checked by caller
      * */
     public HttpRequest withData(String query) throws IOException {
@@ -99,7 +99,7 @@ public class HttpRequest {
      * for map: {Iam=Groot} -> builds "Iam=Groot"
      *
      * @param params HashMap consists of key-> value pairs to build query from
-     * @return HttpRequest this instance -> for chaining method @see line 22
+     * @return HttpRequest this instance -> for chaining method @see line1 22
      * @throws IOException - should be checked by caller
      * */
     public HttpRequest withData(HashMap<String, String> params) throws IOException {
