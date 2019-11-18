@@ -134,6 +134,12 @@ public class SaleReport extends Fragment {
 
             }
         });
+        btnaddcustomer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), AddCustomerSale.class));
+            }
+        });
         btnadditem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

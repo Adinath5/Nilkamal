@@ -227,6 +227,13 @@
     <string name="AddCustomer_EmailId">Email Id</string>
     <string name="AddCustomer_btnadd">Add</string>
 
+    <!-- Add_CustomerSale-->
+    <string name="AddCustomerSale_Title"> ADD CUSTOMER</string>
+    <string name="AddCustomerSale_CustomerName">Customer Name</string>
+    <string name="AddCustomerSale_Address">Address</string>
+    <string name="AddCustomerSale_ContactNo">Contact No</string>
+    <string name="AddCustomerSale_EmailId">Email Id</string>
+    <string name="AddCustomerSale_btnadd">Add</string>
 
 
 
