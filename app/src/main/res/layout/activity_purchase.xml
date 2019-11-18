@@ -70,13 +70,26 @@
                         android:textStyle="bold"
                         android:layout_marginStart="10dp" />
 
+
+                    <TextView
+                        android:id="@+id/custname"
+                        android:layout_width="220dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_below="@+id/txtbill"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        />
+
                     <Button
                         android:id="@+id/btnadd"
                         android:layout_width="170dp"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="5dp"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/txtbill"
+                        android:layout_below="@+id/custname"
                         android:text="@string/PurchaseInvoice_AddCustomer"
                         android:textColor="@color/md_green_700"
                         android:background="@drawable/dashed_border"/>

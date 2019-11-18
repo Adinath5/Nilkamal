@@ -56,7 +56,7 @@ public class AddCustomer extends Fragment {
 
                 Toast.makeText(getActivity(), "Data Save Sucessfully", Toast.LENGTH_LONG).show();
                 // finish();
-                isResumed();
+                getActivity().finish();
 
             }
         });
